@@ -9,7 +9,7 @@
 <body>
       <nav>
         <div class="menu">
-        <img src="img/logo-2" alt="logo do hotel">
+        <img src="img/logo-2.png" alt="logo do hotel">
 <div class="textos-nav">
         <h1>Hotel Villa do Sol</h1>
 
