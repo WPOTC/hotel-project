@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/sobre.css">
     <title>Hotel Villa do Sol</title>
 </head>
 <body>
       <nav>
-        <img src="" alt="">
-
+        <div class="menu">
+        <img src="img/logo-2" alt="logo do hotel">
+<div class="textos-nav">
         <h1>Hotel Villa do Sol</h1>
 
         <ul>
@@ -16,6 +18,8 @@
     <li><a href="quartos.php">QUARTOS</a></li>
     <li><a href="sobre.php">SOBRE NÓS</a></li>
 </ul>
+</div>
+</div>
     </nav>
 
     <div>
