@@ -20,7 +20,7 @@
         <h1>Hotel Villa do Sol</h1>
 
         <ul>
-          <li><a href="index.php">INICIO</a></li>
+          <li><a href="index.php">INÍCIO</a></li>
           <li><a href="quartos.php">QUARTOS</a></li>
           <li><a href="sobre.php">SOBRE NÓS</a></li>
 
