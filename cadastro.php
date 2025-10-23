@@ -19,6 +19,9 @@
     </nav>
    
     <div>
+
+    <h1>Cadastre-se</h1>
+
        <form method="post">
         <label for="nome">Nome:</label>
         <input type="text" name="nome" required><br><br>
