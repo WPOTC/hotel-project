@@ -44,17 +44,17 @@
     <button type="submit">Agendar</button>
 
     <h2>Casa de campo</h2>
-    <h3>R$ 1.500,00</h3>
+    <h3>R$ 1.500,00</h3>
 
     <button type="submit">Agendar</button>
 
     <h2>Suíte elegante</h2>
-    <h3>R$ 135,00</h3>
+    <h3>R$ 135,00</h3>
 
     <button type="submit">Agendar</button>
 
     <h2>Suíte mais mais</h2>
-    <h3>R$ 24.000,00</h3>
+    <h3>R$ 24.000,00</h3>
 
     <button type="submit">Agendar</button>
 </body>
