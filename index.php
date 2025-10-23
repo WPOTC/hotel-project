@@ -9,9 +9,13 @@
 </head>
 
 <body>
+
   <nav>
     <div class="menu">
-      <img src="img/logo-2.png" alt="">
+
+      <div class="menulogo">
+        <img src="img/logo-2.png" alt="">
+      </div>
 
       <div class="textos-nav">
         <h1>Hotel Villa do Sol</h1>
@@ -26,8 +30,18 @@
     </div>
   </nav>
 
-  <div>
-    <img src="" alt="">
+  <div class="conteudo">
+    <div class="slider">
+      <button class="prev">⟨</button>
+
+      <div class="slides">
+        <img src="img/hotel_frente.png" alt="Fachada do Hotel">
+        <img src="img/hotel1.png" alt="Interior do Hotel">
+      </div>
+
+      <button class="next">⟩</button>
+    </div>
+
     <p>Respire fundo.
       Ouça o som dos pássaros e sinta o toque da brisa suave entre as árvores.
       Aqui, o tempo desacelera e o luxo se revela em cada detalhe.
