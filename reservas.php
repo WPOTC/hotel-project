@@ -31,11 +31,11 @@
       </header>
       <form>
 
-        Quantos hospedes viream: <input type="number" name="Quantidade" min="1" max="4" step="2"><br><br>
+        Quantos hospedes viream: <input type="number" name="Quantidade" min="1" max="4" step="2"><br>
 
-        Data de entrada: <input type="date" name="Data de entrada"><br><br>
+        Data de entrada: <input type="date" name="Data de entrada"><br>
 
-        Data de saída: <input type="date" name="Data de saída"><br><br>
+        Data de saída: <input type="date" name="Data de saída"><br>
 
         <input type="submit" value="Reservar">
 
