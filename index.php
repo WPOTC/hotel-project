@@ -77,16 +77,13 @@
 
       <div class="texto">
 
-
-       Hotel Villa do Sol — o refúgio perfeito entre o luxo e a natureza.
-       Reserve sua experiência e descubra o verdadeiro significado de bem-estar.</p>
         <p>Entre montanhas e jardins exuberantes, o Villa do Sol é um refúgio de elegância e tranquilidade.
       Cada detalhe foi pensado para oferecer conforto, sofisticação e uma conexão genuína com a natureza.
       Nossas suítes combinam design rústico e toques modernos, criando o equilíbrio perfeito entre aconchego e requinte.
       Desfrute de jantares à luz de velas, piscinas cercadas por verde e momentos de puro relaxamento.
       Aqui, o tempo desacelera e o silêncio se transforma em poesia.
-      Viva o luxo natural, onde cada amanhecer é um convite à paz.
-    ☀️ Hotel Villa do Sol — seu refúgio entre o céu e a terra.</p>
+      Viva o luxo natural, onde cada amanhecer é um convite à paz.</p>
+     <p>Hotel Villa do Sol — seu refúgio entre o céu e a terra.</p>
 
       </div>
 
