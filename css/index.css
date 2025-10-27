@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
+@font-face {
+  font-family: 'Titulo';
+  src: url('../Font/FortalesiaScript_PERSONAL_USE_ONLY.otf');
+}
 
 *{
     font-family: Arimo;
@@ -31,33 +35,26 @@ nav {
 
 .menulogo{
     margin-left: 0;
-    width: 40%;
+    width: 35%;
 }
 
 .textos-nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
+  align-items: center;
 }
-
 .menu h1 {
-  color: white;
-  font-size: 50px;
-  text-shadow:
-    2px 0 #E9B150,
-    -2px 0 #E9B150,
-    0 2px #E9B150,
-    0 -2px #E9B150,
-    2px 2px #E9B150,
-    -2px -2px #E9B150,
-    2px -2px #E9B150,
-    -2px 2px #E9B150;
+  color: #E9B150;
+  font-family: 'Titulo';
+  font-size: 80px;
+  margin-bottom: 5px;
+  text-shadow: 0.5px 0.5px 65px whitesmoke;
 }
 
 ul {
   display: flex;
-  margin: 10px;
+  margin: 30px;
   padding: 0;
 }
 
@@ -73,7 +70,7 @@ a {
   border: 4px solid #0A4B0D;
   border-radius: 10px;
   padding: 5px 10px;
-  
+
 }
 
 a {
@@ -114,7 +111,7 @@ a:hover {
   margin-top: 10px;
   background-color: #74180D;
   margin: 80px;
-  max-width: 1000px;
+  width: 1000px;
   border: 10px solid #74180D;
   border-radius: 10px;
   margin-left: 250px;
@@ -122,12 +119,22 @@ a:hover {
 
 
 /* Bloco de cada slider + texto */
-.bloco {
+.bloco1 {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 30px;
   flex-wrap: wrap;
   margin: 1em;
+  
+}
+
+.bloco2 {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin: 1em;
+  flex-direction: row-reverse;
 }
 
 /* Slider */
@@ -171,6 +178,7 @@ a:hover {
 .texto {
   flex: 1;
   color: white;
+  
 }
 
 .texto p {

@@ -48,6 +48,29 @@
             Número de contato: (11) 1234-5678. Email:villasol@gmail.com </p>
     </footer>
 
+<<<<<<< HEAD:cadastro.php
+=======
+        <label for="cpf"> CPF: </label>
+        <input type="number" name="cpf" required><br><br>
+    
+        <label for="telefone"> Telefone: </label>
+        <input type="number" name="telefone" required><br><br>
+    
+        <label for="senha">Senha:</label>
+        <input type="password" name="senha" required><br><br>
+
+        <input type="submit" value="Cadastrar">
+    </form>
+</div>
+
+       <footer role="contentinfo">
+  <div class="container">
+    <p>© 2025 Hotel Villa do Sol . Todos os direitos reservados.
+        Número de contato: (11) 1234-5678. Email:villasol@gmail.com 
+    </p>
+  </div>
+</footer>
+>>>>>>> fdce08ffd1d0bc7a213463d8332d9f86ce8b7db3:cadastrarUsuario.php
 
 </body>
 

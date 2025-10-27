@@ -6,21 +6,29 @@
     <title>Document</title>
 </head>
 <body>
+
     <nav>
-        <img src="" alt="">
+        <div class="menu">
 
-        <h1>Hotel Villa do Sol</h1>
+            <div class="menulogo">
+                <img src="img/logo-2.png" alt="">
+            </div>
 
-        <ul>
-    <li><a href="index.php">INICIO</a></li>
-    <li><a href="quartos.php">QUARTOS</a></li>
-    <li><a href="sobre.php">SOBRE NÓS</a></li>
-</ul>
+            <div class="textos-nav">
+                <h1>Hotel Villa do Sol</h1>
+
+                <ul>
+                    <li><a href="index.php">INÍCIO</a></li>
+                    <li><a href="quartos.php">QUARTOS</a></li>
+                    <li><a href="sobre.php">SOBRE NÓS</a></li>
+
+                </ul>
+            </div>
+        </div>
     </nav>
-
-    <div>
-
     <h1>Quartos</h1>
+
+    <a href="cadastrarquartos.php">Cadastrar Quarto</a>
     
     <div>
     <h2>Suíte Presidencial</h2>
