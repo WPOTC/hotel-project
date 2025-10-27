@@ -35,6 +35,8 @@
     <div>
     <h2>Suíte Presidencial</h2>
     <img src="img/suite-presidencial.jpg" alt="">
+
+    <img src="img/banheiro-suite-presidenciall.png" alt="">
     <h3>R$ 1.187,68</h3>
 
     <button type="submit">Agendar</button>
