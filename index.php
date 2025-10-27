@@ -28,6 +28,15 @@
         </ul>
       </div>
     </div>
+    <?php
+    if(isset($usuarios)){
+            echo "Seja bem-vindo(a), " . htmlspecialchars($usuarios['nome']) . "!";
+        }
+        if(!isset($usuarios)){
+            echo "<a href = 'View/Usuario/cadastrarUsuario.php'>Cadastre-se</a>";
+         
+        }
+        ?>
   </nav>
 
   <div class="conteudo">

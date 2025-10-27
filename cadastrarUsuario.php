@@ -35,7 +35,6 @@
         <label for="telefone"> Telefone: </label>
         <input type="number" name="telefone" required><br><br>
     
-        <input type="password" name="senha" required><br><br>
         <label for="senha">Senha:</label>
         <input type="password" name="senha" required><br><br>
 
