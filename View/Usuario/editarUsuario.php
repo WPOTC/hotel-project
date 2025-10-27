@@ -28,7 +28,15 @@ $UsuarioController = new UsuarioController($pdo);
       <div class="textos-nav">
         <h1>Hotel Villa do Sol</h1>
         </div>
-
+      
+        <?php
+        if(isset($_SESSION['nome'])){
+            echo "<a href = 'View/Usuario/exibirUsuario.php'>Imagem</a>" . "Seja bem-vindo(a), " . htmlspecialchars($_SESSION['nome']) . "!";
+        }elseif(!isset($_SESSION['nome'])){
+            echo "<a href = 'View/Usuario/cadastrarUsuario.php'>Cadastre-se</a>";
+         
+        }
+        ?>
      
         </div>
   </nav>
