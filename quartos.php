@@ -6,7 +6,10 @@
     <title>Document</title>
 </head>
 <body>
+    
     <h1>Quartos</h1>
+
+    <a href="cadastrarquartos.php">Cadastrar Quarto</a>
     
     <h2>Suíte Presidencial</h2>
     <h3>R$ 1.187,68</h3>
