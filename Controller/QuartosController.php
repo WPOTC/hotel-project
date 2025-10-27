@@ -5,38 +5,67 @@ require_once "C:/Turma1/xampp/htdocs/mvc/Model/QuartosModel.php";
 
 class QuartosController {  
   
-    private $ReservasModel;
+    private $QuartosModel;
 
    public function __construct($pdo) {
-      $this->ReservasModel = new ReservasController($pdo);
+      $this->QuartosModel = new QuartosModel($pdo);
    }
 
 
    public function listar(){
-    $Reservas = $this->ReservasModel->listar();
-   include 'C:/Turma1/xampp/htdocs/mvc/View/Reservas/ReservasPagamento.php';
-   return $Reservas;
+    $Quartos = $this->QuartosModel->listar();
+   include 'C:/Turma1/xampp/htdocs/mvc/View/quartos/ListarQuartos.php';
+   return $Quartos;
    }
 
-   public function cadastrar(	$data,	$hospedes,	$ocupacao	
- ) {
-    return $this->ReservasModel->cadastrar($data, $hospedes, $ocupacao);
+   public function Cadastrar(	$nome,	$descricao,	$imagens
+ ) { $resultado = false;
+
+    $idQuartos = $this->QuartosModel->Cadastrar($nome, $descricao, $imagens);
+
+    if ($idQuartos) {
+        // Processar upload das imagens
+        $pasta = "C:/Turma1/xampp/htdocs/divineshop/uploads/" ;
+        if (!is_dir($pasta)) {
+            mkdir($pasta, 0777, true);
+        }
+
+        foreach ($imagens['tmp_name'] as $key => $tmp_name) {
+            $nomeOriginal = $imagens['name'][$key];
+            $extensao = pathinfo($nomeOriginal, PATHINFO_EXTENSION);
+            $novoNome = uniqid("img_") . "." . $extensao;
+            $caminhoFinal = $pasta . $novoNome;
+
+            if (move_uploaded_file($tmp_name, $caminhoFinal)) {
+                // Salvar caminho da imagem no banco de dados
+               $caminhoRelativo = "uploads/" . $novoNome;
+               $this->QuartosModel->salvarImagem($idQuartos, $caminhoRelativo);
+               $resultado = true;
+            }
+        }
+   
    }
 
+   $_SESSION['mensagem'] =  "Quarto cadastrado com sucesso!" ;
 
-public function editar ($data,	$hospedes,	$ocupacao, $id){
-   return $this->ReservasModel->editar($data, $hospedes, 
-   $ocupacao,
-               $id);
+   $_SESSION['mensagem'] = "Erro ao cadastrar quarto.";
+    
+    return $resultado;
 }
 
-public function buscarReservas($id){
-   return $this->ReservasModel->buscarReservas($id);
+public function editar ($nome,	$descricao,	 $id){
+   return $this->QuartosModel->editar($nome, $descricao, 
+   $id);
 }
 
-public function deletarReservas($id){
-   $Reservas = $this->ReservasModel->deletarReservas($id);
-   return $Reservas;
+public function buscarQuartos($id){
+   return $this->QuartosModel->buscarQuartos($id);
+}
+
+public function deletarQuartos($id){
+   $Quartos = $this->QuartosModel->deletarQuartos($id);
+   return $Quartos;
 }
 
 }
+
