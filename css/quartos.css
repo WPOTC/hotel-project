@@ -6,6 +6,7 @@
 
 *{
     font-family: Arimo;
+    color: white;
 }
 
 body {
@@ -105,43 +106,4 @@ a::before {
 /* E opcionalmente muda a cor do texto */
 a:hover {
   color: #E9B150;
-}
-
-.bloco {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #6e150c; /* marrom vinho */
-  border-radius: 8px;
-  padding: 30px;
-  margin: 50px auto;
-  width: 70%;
-  color: #fff;
-  gap: 20px;
-}
-
-
-
-.texto {
-  flex: 1;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-.imagem {
-  flex: 0 0 250px;
-}
-
-.imagem img {
-  width: 100%;
-  border-radius: 8px;
-  object-fit: cover;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #16360B;
-    color: white;
-    margin-top: 20px;
 }
