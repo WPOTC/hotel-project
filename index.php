@@ -13,7 +13,8 @@ session_start();
 <body>
 <?php
 
-if($_SESSION['email'] == 'v1ll4s0l@gmail.com'){
+
+if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
    echo '<nav>
     <div class="menu">
 

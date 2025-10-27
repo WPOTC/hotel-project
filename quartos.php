@@ -14,7 +14,7 @@ session_start();
 ?>
 <?php
 
-if($_SESSION['email'] == 'v1ll4s0l@gmail.com'){
+if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
    echo '<nav>
     <div class="menu">
 
@@ -73,8 +73,12 @@ if($_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 
     <div class="comeco">
         <h1>Quartos</h1>
-
-        <a href="cadastrarquartos.php">Cadastrar Quarto</a>
+<?php
+if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
+    echo " <a href='cadastrarquartos.php'>Cadastrar Quarto</a>";
+}
+?>
+       
     </div>
 
     <div class="bloco1">
