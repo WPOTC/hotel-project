@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/quartos.css">
+    <title>Quartos</title>
 </head>
 <body>
 
@@ -20,18 +21,20 @@
                 <ul>
                     <li><a href="index.php">INÍCIO</a></li>
                     <li><a href="quartos.php">QUARTOS</a></li>
-                    <li><a href="sobre.php">SOBRE NÓS</a></li>
+                    <li><a href="sobre.php">SOBRE NÓS</a></li> 
+                   
 
                 </ul>
             </div>
         </div>
     </nav>
-    <h1>Quartos</h1>
-
-    <a href="cadastrarquartos.php">Cadastrar Quarto</a>
+    <h1>Quartos</h1> 
     
+    <a href="cadastrarquartos.php">Cadastrar Quarto</a>
+
     <div>
     <h2>Suíte Presidencial</h2>
+    <img src="img/suite-presidencial.jpg" alt="">
     <h3>R$ 1.187,68</h3>
 
     <button type="submit">Agendar</button>
@@ -39,6 +42,7 @@
 
     <div>
     <h2>Suíte Master</h2>
+    <img src="img/master.jpg" alt="">
     <h3>R$ 559,90</h3>
 
     <button type="submit">Agendar</button>
@@ -46,6 +50,7 @@
 
     <div>
     <h2>Suíte Premium / Deluxe</h2>
+    <img src="img/suite-premium.jpg" alt="">
     <h3>R$ 570,00</h3>
 
     <button type="submit">Agendar</button>
@@ -53,6 +58,7 @@
 
     <div>
     <h2>Suíte Júnior</h2>
+    <img src="img/junior.jpg" alt="">
     <h3>R$ 254,00</h3>
 
     <button type="submit">Agendar</button>
@@ -60,6 +66,7 @@
 
     <div>
     <h2>Spa Suite</h2>
+    <img src="img/spa.jpg" alt="">
     <h3>R$ 999,00</h3>
 
     <button type="submit">Agendar</button>
@@ -67,6 +74,7 @@
 
     <div>
     <h2>Suíte econômica</h2>
+    <img src="img/" alt="">
     <h3>R$ 400,00</h3>
 
     <button type="submit">Agendar</button>
@@ -74,6 +82,7 @@
 
     <div>
     <h2>Suíte Real</h2>
+    <img src="img/real.jpg" alt="">
     <h3>R$ 390,00</h3>
 
     <button type="submit">Agendar</button>
