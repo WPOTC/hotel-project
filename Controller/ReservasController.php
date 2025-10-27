@@ -1,7 +1,7 @@
 <?php
 
 
-require_once "C:/Turma1/xampp/htdocs/mvc/Model/ReservasModel.php";
+require_once "C:/Turma1/xampp/htdocs/hotel-project/Model/ReservasModel.php";
 
 class ReservasController {  
   
@@ -14,7 +14,7 @@ class ReservasController {
 
    public function listar(){
     $Reservas = $this->ReservasModel->listar();
-   include 'C:/Turma1/xampp/htdocs/mvc/View/Reservas/ReservasPagamento.php';
+   include 'C:/Turma1/xampp/htdocs/hotel-project/View/Reservas/ReservasPagamento.php';
    return $Reservas;
    }
 

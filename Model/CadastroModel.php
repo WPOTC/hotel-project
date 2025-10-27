@@ -16,11 +16,29 @@ class UsuarioModel{
         $stmt = $this->pdo->query("SELECT *FROM cadastro WHERE id = $id");
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+    
 
     public function cadastrarUsuario($nome , $email , $cpf , $telefone , $senha){
-        $sql = "INSERT INTO pagamento (nome, email, cpf, telefone, senha) VALUES (:nome, :email, :cpf, :telefone, :senha)";
+        $verifica = $this->verificarEmailExistente($email);
+        if ($verifica) {
+          return false;
+            
+        }else{
+        $sql = "INSERT INTO cadastro (nome, email, cpf, telefone, senha) VALUES (:nome, :email, :cpf, :telefone, :senha)";
         $stmt = $this->pdo->prepare($sql);
-        return $stmt->execute([':nome' => $nome, ':email' => $email, ':cpf' => $cpf, ':telefone' => $telefone, ':senha' => $senha]);
+        $stmt->execute([':nome' => $nome, ':email' => $email, ':cpf' => $cpf, ':telefone' => $telefone, ':senha' => $senha]);
+        return true;
+        }  
+
+    }
+
+    public function verificarEmailExistente($email) {
+        $sql = "SELECT COUNT(*) FROM cadastro WHERE email = :email";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
+        $count = $stmt->fetchColumn();
+        return $count > 0;
     }
 
     public function editarUsuario($nome, $email,  $cpf, $telefone, $senha, $id){
@@ -34,6 +52,27 @@ class UsuarioModel{
         $stmt = $this->pdo->prepare($sql);
         return $stmt->execute([$id]);
     }
+
+    public function loginUsuario($email, $senha) {
+    $sql = "SELECT * FROM cadastro WHERE email = :email AND senha = :senha";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':senha', $senha);
+    $stmt->execute();
+
+    $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($usuario) {
+        session_start();
+        $_SESSION['nome'] = $usuario['nome'];
+        $_SESSION['email'] = $usuario['email'];
+        $_SESSION['id'] = $usuario['id'];
+
+        return $usuario;
+    } else {
+        return null;
+    }
+}
 }
 
 ?>

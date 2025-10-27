@@ -6,26 +6,61 @@
     <title>Document</title>
 </head>
 <body>
+<?php
+session_start();
+?>
+<?php
 
-    <nav>
-        <div class="menu">
+if($_SESSION['email'] == 'v1ll4s0l@gmail.com'){
+   echo '<nav>
+    <div class="menu">
 
-            <div class="menulogo">
-                <img src="img/logo-2.png" alt="">
-            </div>
+      <div class="menulogo">
+        <img src="img/logo-2.png" alt="">
+      </div>
 
-            <div class="textos-nav">
-                <h1>Hotel Villa do Sol</h1>
+      <div class="textos-nav">
+        <h1>Hotel Villa do Sol</h1>
 
-                <ul>
-                    <li><a href="index.php">INÍCIO</a></li>
-                    <li><a href="quartos.php">QUARTOS</a></li>
-                    <li><a href="sobre.php">SOBRE NÓS</a></li>
+        <ul>
+          <li><a href="index.php">INÍCIO</a></li>
+          <li><a href="quartos.php">QUARTOS</a></li>
+          <li><a href="sobre.php">SOBRE NÓS</a></li>
+          <li><a href="checkout.php">RESERVAS</a></li>
 
-                </ul>
-            </div>
-        </div>
-    </nav>
+        </ul>
+      </div>
+    </div>';
+}else{
+  echo '<nav>
+    <div class="menu">
+
+      <div class="menulogo">
+        <img src="img/logo-2.png" alt="">
+      </div>
+
+      <div class="textos-nav">
+        <h1>Hotel Villa do Sol</h1>
+
+        <ul>
+          <li><a href="index.php">INÍCIO</a></li>
+          <li><a href="quartos.php">QUARTOS</a></li>
+          <li><a href="sobre.php">SOBRE NÓS</a></li>
+
+        </ul>
+      </div>
+    </div>';
+}
+
+
+    if(isset($_SESSION['nome'])){
+            echo "<a href = 'View/Usuario/exibirUsuario.php'>Imagem</a>" . "Seja bem-vindo(a), " . htmlspecialchars($_SESSION['nome']) . "!";
+        }elseif(!isset($_SESSION['nome'])){
+            echo "<a href = 'View/Usuario/cadastrarUsuario.php'>Cadastre-se</a>";
+         
+        }
+        ?>
+  </nav>
     <h1>Quartos</h1>
 
     <a href="cadastrarquartos.php">Cadastrar Quarto</a>

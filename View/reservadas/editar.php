@@ -1,7 +1,7 @@
 <?php
 
-require_once "C:/Turma1/xampp/htdocs/mvc/DB/Database.php";
-require_once  "C:/Turma1/xampp/htdocs/mvc/Controller/ReservasController.php";
+require_once "C:/Turma1/xampp/htdocs/hotel-project/DB/Database.php";
+require_once  "C:/Turma1/xampp/htdocs/hotel-project/Controller/ReservasController.php";
 
 $ReservasController = new ReservasController($pdo);
 
