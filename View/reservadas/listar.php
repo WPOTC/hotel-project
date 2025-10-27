@@ -3,7 +3,7 @@
 
    
 
-       if(empty($usuarios)) {
+       if(empty($Reservas)) {
         echo "<p>Nenhuma Reserva realizada.</p>";
         echo "<a href= 'View/Reservas/cadastrar.php'>Cadastrar</a>";
         return;
@@ -14,8 +14,8 @@
         echo "<tr><td><a href= 'View/Reservas/cadastrar.php'>Cadastrar</a></td></tr>";
         echo "<tr><th>ID</th><th>data</th><th>hospedes</th><th>ocupacao</th></tr>";
 
-        foreach($Reservas as $Reserva) {
-            $id = $Reserva['id'];
+        foreach($Reservas as $reservas) {
+            $id = $Reservas['id'];
             echo "<tr>";
             echo "<td>{$id}</td>";
             echo "<td>{$Reservas['data']}</td>";
