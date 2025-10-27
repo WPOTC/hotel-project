@@ -28,6 +28,15 @@
         </ul>
       </div>
     </div>
+    <?php
+    if(isset($usuarios)){
+            echo "Seja bem-vindo(a), " . htmlspecialchars($usuarios['nome']) . "!";
+        }
+        if(!isset($usuarios)){
+            echo "<a href = 'View/Usuario/cadastrarUsuario.php'>Cadastre-se</a>";
+         
+        }
+        ?>
   </nav>
 
   <div class="conteudo">
@@ -82,8 +91,8 @@
       Nossas suítes combinam design rústico e toques modernos, criando o equilíbrio perfeito entre aconchego e requinte.
       Desfrute de jantares à luz de velas, piscinas cercadas por verde e momentos de puro relaxamento.
       Aqui, o tempo desacelera e o silêncio se transforma em poesia.
-      Viva o luxo natural, onde cada amanhecer é um convite à paz.
-    ☀️ Hotel Villa do Sol — seu refúgio entre o céu e a terra.</p>
+      Viva o luxo natural, onde cada amanhecer é um convite à paz.</p>
+     <p>Hotel Villa do Sol — seu refúgio entre o céu e a terra.</p>
 
       </div>
 
