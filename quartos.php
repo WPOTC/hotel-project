@@ -74,7 +74,9 @@
 
     <div>
     <h2>Suíte econômica</h2>
-    <img src="img/" alt="">
+    <img src="img/suite-economica.jpg" alt="">
+    <img src="img/suite-economica2.jpg" alt="">
+    <img src="img/banheiro-suite-economica.jpg" alt="">
     <h3>R$ 400,00</h3>
 
     <button type="submit">Agendar</button>
@@ -90,6 +92,9 @@
 
     <div>
     <h2>Casa de campo</h2>
+    <img src="img/casa-de-campo.jpg" alt="">
+    <img src="img/casa-de-campo2.jpg" alt="">
+    <img src="img/banheiro-casa-de-campo.jpg" alt="">
     <h3>R$ 1.500,00</h3>
 
     <button type="submit">Agendar</button>
@@ -97,6 +102,9 @@
 
     <div>
     <h2>Suíte elegante</h2>
+    <img src="img/elegante2.png" alt="">
+    <img src="img/elegante.png" alt="">
+    <img src="img/banheiro-elegante.png" alt="">
     <h3>R$ 135,00</h3>
 
     <button type="submit">Agendar</button>
@@ -104,6 +112,8 @@
 
     <div>
     <h2>Suíte mais mais</h2>
+    <img src="img/mais-mais.jpg" alt="">
+    <img src="img/" alt="">
     <h3>R$ 24.000,00</h3>
 
     <button type="submit">Agendar</button>
