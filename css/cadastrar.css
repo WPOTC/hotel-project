@@ -17,37 +17,44 @@ body{
 }
 
 
+nav h1{
+    color: white;
+    font-size: 50px;
+    text-shadow:
+        2px 0 #E9B150,
+        -2px 0 #E9B150,
+        0 2px #E9B150,
+        0 -2px #E9B150,
+        2px 2px #E9B150,
+        -2px -2px #E9B150,
+        2px -2px #E9B150,
+        -2px 2px #E9B150;
+    margin-bottom: 15px;
+    text-align: center;
+}
 
-section{
-   padding: 40px;
+form{
+     padding: 40px;
   background-color: #74180D;
-  width: 400px;
+  width: 500px;             
   border-radius: 15px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  text-align: center;
-  margin: 30px auto;
-}
-.ajuste {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 15px;
+  gap: 10px;
+  text-align: left;         
+  margin: 50px auto; 
 }
 
+ 
 nav {
-    display: flex;
-    align-items: center;       /* alinha verticalmente logo e menu */
-    justify-content: space-between; /* separa logo à esquerda e menu no centro */
-    padding: 0 20px;
+  display: flex;
+    flex-direction: column; 
+    align-items: center;    
     background-color: #16360B;
-    height: 10rem;
+    padding: 20px 0;
 }
 
-/* Logo */
+
 section img {
     width: 150px;
     height: 150px;
@@ -55,14 +62,14 @@ section img {
     border: 4px solid #fff;
 }
 
-/* Menu */
+
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center; /* centraliza horizontalmente os itens dentro da ul */
+    justify-content: center; 
     align-items: center;
     gap: 30px;
-    margin: 0 auto; /* faz a ul ficar centralizada dentro do nav */
+    margin: 0 auto; 
     padding: 0;
 }
 
@@ -71,8 +78,12 @@ nav li {
 }
 
 nav ul li a {
-    color: white;
-    text-decoration: none;
+     text-decoration: none;
+  color: white;
+  background-color: #0A4B0D;
+  border: 4px solid #0A4B0D;
+  border-radius: 10px;
+  padding: 5px 10px;
 }
 .logo{
     width: 120px;
@@ -98,13 +109,7 @@ main{
     width: 100%;
     gap: 25px;
 }
-form {
-     display: flex;
-  flex-direction: column; /* empilha os elementos */
-  gap: 10px;
-  width: 100%;
-  max-width: 300px;     /* alinha verticalmente */
-}
+
 
 input{
   padding: 8px;
@@ -122,15 +127,7 @@ button {
   cursor: pointer;
   transition: 0.3s;
 }
-main a{
-    background: #0c0c0c;
-    padding: 15px 0;
-    text-decoration: none;
-    color: dimgray;
-    border-radius: 5px;
-    box-shadow: 10px 10px #bdbdbd;
-    transition: all .5s ease-in-out ;
-}
+
 label {
   color: black;
   font-weight: 500;

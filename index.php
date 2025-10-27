@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,12 +28,21 @@
         </ul>
       </div>
     </div>
+    <?php
+    if(isset($usuarios)){
+            echo "Seja bem-vindo(a), " . htmlspecialchars($usuarios['nome']) . "!";
+        }
+        if(!isset($usuarios)){
+            echo "<a href = 'View/Usuario/cadastrarUsuario.php'>Cadastre-se</a>";
+         
+        }
+        ?>
   </nav>
 
   <div class="conteudo">
 
     <!-- Primeiro slider -->
-    <div class="bloco">
+    <div class="bloco1">
 
       <div class="slider">
 
@@ -60,13 +70,13 @@
     </div>
 
     <!-- Segundo slider -->
-    <div class="bloco">
+    <div class="bloco2">
 
       <div class="slider">
 
         <div class="slides">
-          <img src="img/recepcao.png"class="active" >
-          <img src="img/area_lazer.png" >
+          <img src="img/recepcao.png" class="active">
+          <img src="img/area_lazer.png">
         </div>
 
         <button class="prev">⟨</button>
@@ -76,9 +86,13 @@
 
       <div class="texto">
 
-        <p>Desfrute de uma recepção elegante e acolhedora, com detalhes que refletem sofisticação e conforto.</p>
-        <p>Explore a área de lazer, perfeita para relaxamento e momentos inesquecíveis, cercada pela natureza e
-          tranquilidade.</p>
+        <p>Entre montanhas e jardins exuberantes, o Villa do Sol é um refúgio de elegância e tranquilidade.
+      Cada detalhe foi pensado para oferecer conforto, sofisticação e uma conexão genuína com a natureza.
+      Nossas suítes combinam design rústico e toques modernos, criando o equilíbrio perfeito entre aconchego e requinte.
+      Desfrute de jantares à luz de velas, piscinas cercadas por verde e momentos de puro relaxamento.
+      Aqui, o tempo desacelera e o silêncio se transforma em poesia.
+      Viva o luxo natural, onde cada amanhecer é um convite à paz.</p>
+     <p>Hotel Villa do Sol — seu refúgio entre o céu e a terra.</p>
 
       </div>
 
@@ -96,21 +110,21 @@
 
   <script>
     document.querySelectorAll('.slider').forEach(slider => {
-  const slidesContainer = slider.querySelector('.slides');
-  const slides = slidesContainer.querySelectorAll('img');
-  const next = slider.querySelector('.next');
-  const prev = slider.querySelector('.prev');
+      const slidesContainer = slider.querySelector('.slides');
+      const slides = slidesContainer.querySelectorAll('img');
+      const next = slider.querySelector('.next');
+      const prev = slider.querySelector('.prev');
 
-  let index = 0;
+      let index = 0;
 
-  function showSlide(i) {
-    index = (i + slides.length) % slides.length;
-    slidesContainer.style.transform = `translateX(-${index * 100}%)`;
-  }
+      function showSlide(i) {
+        index = (i + slides.length) % slides.length;
+        slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+      }
 
-  next.addEventListener('click', () => showSlide(index + 1));
-  prev.addEventListener('click', () => showSlide(index - 1));
-});
+      next.addEventListener('click', () => showSlide(index + 1));
+      prev.addEventListener('click', () => showSlide(index - 1));
+    });
 
   </script>
 
