@@ -250,9 +250,9 @@
 
             <div class="slides">
 
-                <img src="img/mais-mais.jpg" alt="" class="active">
-                <img src="img/spa1.png" alt="">
-                <img src="img/banheiro-master.jpg" alt="">
+                <img src="img/mais-mais2.png" alt="" class="active">
+                <img src="img/mais-mais1.png" alt="">
+                <img src="img/banheiro-mais-mais.png" alt="">
 
             </div>
 
