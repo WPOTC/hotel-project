@@ -53,6 +53,8 @@
     <div>
     <h2>Suíte Premium / Deluxe</h2>
     <img src="img/suite-premium.jpg" alt="">
+    <img src="img/suite-premium2.jpg" alt="">
+    <img src="img/banheiro-premium.jpg" alt="">
     <h3>R$ 570,00</h3>
 
     <button type="submit">Agendar</button>
@@ -69,6 +71,8 @@
     <div>
     <h2>Spa Suite</h2>
     <img src="img/spa.jpg" alt="">
+    <img src="img/spa2.jpg" alt="">
+    <img src="img/" alt="">
     <h3>R$ 999,00</h3>
 
     <button type="submit">Agendar</button>
