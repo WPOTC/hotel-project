@@ -1,115 +1,70 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    font-family: "Roboto Condensed", sans-serif;    
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
-body{
-   
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #EED5B5;
-    animation: float 6s infinite alternate;
-    
+body {
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #EED5B5;
+  animation: float 6s infinite alternate;
 }
 
-
-
-section{
-    padding: 90px;
-    background-color: #74180D;
-    width: 500px;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    gap: 20px;
-    text-align: center;
-    margin: 0 auto;
-    margin-top: 30px;
+section {
+  padding: 30px;
+  background-color: #74180D;
+  width: 500px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+  text-align: center;
+  margin: 30px auto;
 }
+
 .ajuste {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 15px;
 }
 
-nav {
-    display: flex;
-    align-items: center;       /* alinha verticalmente logo e menu */
-    justify-content: space-between; /* separa logo à esquerda e menu no centro */
-    padding: 0 20px;
-    background-color: #16360B;
-    height: 10rem;
-}
-
-/* Logo */
 section img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 4px solid #fff;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid #fff;
 }
 
-/* Menu */
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center; /* centraliza horizontalmente os itens dentro da ul */
-    align-items: center;
-    gap: 30px;
-    margin: 0 auto; /* faz a ul ficar centralizada dentro do nav */
-    padding: 0;
-}
-
-nav li {
-    font-size: 20px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-.logo{
-    width: 120px;
-    
-}
-.logo img{
-    width: 100%;
-}
-
-header img{
-    width: 200px ;
-    height: 200px ;
-}
-
-header h3{
-    color: black;
-    font-size: 1.35rem;
-}
-
-main{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 25px;
-}
 form {
-  display: flex;               /* coloca os itens em linha */
-  gap: 10px;                   /* espaço entre os inputs */
-  align-items: center;         /* alinha verticalmente */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+  width: 100%;
+  max-width: 250px;
 }
 
-input{
+label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: black;
+  text-align: left;
+}
+
+input {
   padding: 8px;
   border: none;
   border-radius: 4px;
   background-color: #DA6F6F;
+  color: white;
 }
 
 button {
@@ -117,42 +72,70 @@ button {
   padding: 8px 12px;
   border: none;
   border-radius: 4px;
-  /* fundo bege */
-  color: #74180D;              /* texto vinho */
+  color: #74180D;
+  background-color: #EED5B5;
   cursor: pointer;
-  
-  
-}
-main a{
-    background: #0c0c0c;
-    padding: 15px 0;
-    text-decoration: none;
-    color: dimgray;
-    border-radius: 5px;
-    box-shadow: 10px 10px #bdbdbd;
-    transition: all .5s ease-in-out ;
+  font-weight: 600;
 }
 
-main a:hover{
-    opacity: .80;
+button:hover {
+  background-color: #d9b48a;
 }
-label {
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: black;
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background-color: #16360B;
+  height: 10rem;
 }
-footer{
- background-color: #16360B;
- text-align: center;
- padding: 30px;
- position: fixed;
- bottom: 0;
- width: 100%;
-}   
-footer p{
-    color: white;
-    font-size: 18px;
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin: 0 auto;
+  padding: 0;
 }
+
+nav li {
+  font-size: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  background-color: #0A4B0D;
+  border: 4px solid #0A4B0D;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+.logo {
+  width: 120px;
+}
+
+.logo img {
+  width: 100%;
+}
+
+footer {
+  background-color: #16360B;
+  text-align: center;
+  padding: 30px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  color: white;
+  font-size: 18px;
+}
+
 
 @media (max-width: 620px) {
     section{
