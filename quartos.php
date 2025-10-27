@@ -35,7 +35,7 @@
     <div>
     <h2>Suíte Presidencial</h2>
     <img src="img/suite-presidencial.jpg" alt="">
-
+    <img src="img/suite-presidencial2.png.png" alt="">
     <img src="img/banheiro-suite-presidenciall.png" alt="">
     <h3>R$ 1.187,68</h3>
 
@@ -44,7 +44,9 @@
 
     <div>
     <h2>Suíte Master</h2>
-    <img src="img/master.jpg" alt="">
+    <img src="img/master1.png" alt="">
+    <img src="img/master2.png" alt="">
+    <img src="img/banheiro-master.png" alt="">
     <h3>R$ 559,90</h3>
 
     <button type="submit">Agendar</button>
@@ -62,7 +64,9 @@
 
     <div>
     <h2>Suíte Júnior</h2>
-    <img src="img/junior.jpg" alt="">
+    <img src="img/junior1.png" alt="">
+    <img src="img/junior2.png" alt="">
+    <img src="img/banheiro-junior.png" alt="">
     <h3>R$ 254,00</h3>
 
     <button type="submit">Agendar</button>
@@ -72,7 +76,7 @@
     <h2>Spa Suite</h2>
     <img src="img/spa.jpg" alt="">
     <img src="img/spa2.jpg" alt="">
-    <img src="img/" alt="">
+    <img src="img/banheiro-spa.jpg" alt="">
     <h3>R$ 999,00</h3>
 
     <button type="submit">Agendar</button>
@@ -90,7 +94,9 @@
 
     <div>
     <h2>Suíte Real</h2>
-    <img src="img/real.jpg" alt="">
+    <img src="img/real1.png" alt="">
+    <img src="img/real2.png" alt="">
+    <img src="img/banheiro-real.png" alt="">
     <h3>R$ 390,00</h3>
 
     <button type="submit">Agendar</button>
