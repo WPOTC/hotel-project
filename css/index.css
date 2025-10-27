@@ -111,7 +111,7 @@ a:hover {
   margin-top: 10px;
   background-color: #74180D;
   margin: 80px;
-  max-width: 1000px;
+  width: 1000px;
   border: 10px solid #74180D;
   border-radius: 10px;
   margin-left: 250px;
@@ -119,12 +119,22 @@ a:hover {
 
 
 /* Bloco de cada slider + texto */
-.bloco {
+.bloco1 {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 30px;
   flex-wrap: wrap;
   margin: 1em;
+  
+}
+
+.bloco2 {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin: 1em;
+  flex-direction: row-reverse;
 }
 
 /* Slider */
@@ -168,6 +178,7 @@ a:hover {
 .texto {
   flex: 1;
   color: white;
+  
 }
 
 .texto p {

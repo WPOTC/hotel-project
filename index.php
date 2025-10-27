@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,7 +33,7 @@
   <div class="conteudo">
 
     <!-- Primeiro slider -->
-    <div class="bloco">
+    <div class="bloco1">
 
       <div class="slider">
 
@@ -60,13 +61,13 @@
     </div>
 
     <!-- Segundo slider -->
-    <div class="bloco">
+    <div class="bloco2">
 
       <div class="slider">
 
         <div class="slides">
-          <img src="img/recepcao.png"class="active" >
-          <img src="img/area_lazer.png" >
+          <img src="img/recepcao.png" class="active">
+          <img src="img/area_lazer.png">
         </div>
 
         <button class="prev">⟨</button>
@@ -96,21 +97,21 @@
 
   <script>
     document.querySelectorAll('.slider').forEach(slider => {
-  const slidesContainer = slider.querySelector('.slides');
-  const slides = slidesContainer.querySelectorAll('img');
-  const next = slider.querySelector('.next');
-  const prev = slider.querySelector('.prev');
+      const slidesContainer = slider.querySelector('.slides');
+      const slides = slidesContainer.querySelectorAll('img');
+      const next = slider.querySelector('.next');
+      const prev = slider.querySelector('.prev');
 
-  let index = 0;
+      let index = 0;
 
-  function showSlide(i) {
-    index = (i + slides.length) % slides.length;
-    slidesContainer.style.transform = `translateX(-${index * 100}%)`;
-  }
+      function showSlide(i) {
+        index = (i + slides.length) % slides.length;
+        slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+      }
 
-  next.addEventListener('click', () => showSlide(index + 1));
-  prev.addEventListener('click', () => showSlide(index - 1));
-});
+      next.addEventListener('click', () => showSlide(index + 1));
+      prev.addEventListener('click', () => showSlide(index - 1));
+    });
 
   </script>
 
