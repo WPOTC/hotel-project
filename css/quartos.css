@@ -107,3 +107,104 @@ a::before {
 a:hover {
   color: #E9B150;
 }
+
+.slider {
+  position: relative;
+  width: 300px;
+  height: 456px;
+  overflow: hidden;
+  border: 10px solid #74180D;;
+  border-radius: 15px;
+  margin: 20px;
+  background-color: #74180D;
+}
+
+.slider h2,h3{
+    text-align: center;
+}
+
+.slider h2{
+    background-color: #16360B;
+    border-radius: 5px;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+
+}
+
+.slides img {
+  width: 400px; /* mesma largura do slider */
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.slider button.prev,
+.slider button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.4);
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.slider button.prev { left: 10px; }
+.slider button.next { right: 10px; }
+
+.bloco1{
+    display: flex;
+    justify-content: center;
+}
+
+.bloco2{
+    display: flex;
+   justify-content: center;
+}
+
+.bloco3{
+    display: flex;
+   justify-content: center;
+}
+
+.bloco4{
+    display: flex;
+   justify-content: center;
+}
+
+.bloco5{
+    display: flex;
+   justify-content: center;
+}
+
+.botao{
+    margin-left: 115px;
+    background-color: #16360B;
+    border: 5px solid #16360B ;
+    border-radius: 5px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #16360B;
+    color: white;
+    margin-top: 20px;
+}
+
+.comeco h1{
+  color: #E9B150;
+  font-family: 'Titulo';
+  font-size: 80px;
+  margin-bottom: 5px;
+  text-shadow: 0.5px 0.5px 65px rgb(0, 0, 0);
+  text-align: center;
+  
+}
+
