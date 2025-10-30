@@ -8,7 +8,7 @@
 </head>
 <body>
 <?php
-$session_start();
+session_start();
 ?>
 <?php
 if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
