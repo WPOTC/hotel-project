@@ -25,7 +25,7 @@
 
         </header>
         <main>
-            <form action="Nome"> <h3>Cadastre-se</h3>
+            <form action="titulo"> <h3>Cadastre-se</h3>
                 <label for="Nome">Nome</label>
                 <input type="text" name="nome" required>
 

@@ -27,7 +27,7 @@
     <section>
       <header>
         <img src="img/recepcao.png" alt="">
-        <h1>Faça sua reserva</h1>
+        <h1 class="cortitulo">Faça sua reserva</h1><br>
       </header>
       <form>
 
@@ -35,8 +35,7 @@
 
         Data de entrada: <input type="date" name="Data de entrada"><br>
 
-        Data de saída: <input type="date" name="Data de saída"><br>
-
+        <p class="cortitulo">Data de saída:</p> <input type="date" name="Data de saída"><br>
         <input type="submit" value="Reservar">
 
 

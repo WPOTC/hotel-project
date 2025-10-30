@@ -27,7 +27,11 @@ section {
   text-align: center;
   margin: 30px auto;
 }
-
+header h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: white;
+}
 .ajuste {
   display: flex;
   flex-direction: column;
@@ -50,13 +54,11 @@ form {
   gap: 10px;
   width: 100%;
   max-width: 250px;
+  color: white;
 }
 
-label {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: black;
-  text-align: left;
+.cortitulo{
+  color: white;
 }
 
 input {
