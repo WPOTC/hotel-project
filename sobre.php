@@ -56,13 +56,17 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
     if(isset($_SESSION['nome'])){
             echo "<a href = 'View/Usuario/exibirUsuario.php'>Imagem</a>" . "Seja bem-vindo(a), " . htmlspecialchars($_SESSION['nome']) . "!";
         }elseif(!isset($_SESSION['nome'])){
-            echo "<a href = 'View/Usuario/cadastrarUsuario.php'>Cadastre-se</a>";
+            echo "<a href = 'View/Usuario/cadastrarUsuario.php' class='cadastro'><img src='img/logo-cadastro.png'></a>";
          
         }
         ?>
   </nav>
 
-  <div class="bloco">
+  <section class="banner">
+  <img src="img/recepcao.png" alt="Hotel Villa do Sol">
+</section>
+
+<div class="bloco">
   <div class="texto">
     <p>
       Entre as montanhas encantadas de Gramado, nasceu um refúgio pensado para quem busca mais do que hospedagem — busca experiências que aquecem a alma.
@@ -70,20 +74,18 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
       Inspirado nas vilas europeias e na beleza natural da Serra Gaúcha, o Villa do Sol foi construído com materiais rústicos e sustentáveis, preservando o charme da madeira, o toque da pedra e a luz dourada do entardecer. Tudo foi pensado para que o hóspede sinta o conforto de um lar e a magia de um paraíso escondido entre as araucárias.
     </p>
   </div>
-  <div class="imagem">
-    <img src="img/recepcao.png" alt="Hotel Villa do Sol">
-  </div>
 </div>
 
-<div class="bloco invertido">
-  <div class="imagem">
-    <img src="img/logo.png" alt="Hotel Villa do Sol">
-  </div>
+
+<section class="banner2">
+  <img src="img/area_lazer.png" alt="Vista externa do hotel">
+</section>
+
+<div class="bloco">
   <div class="texto">
     <p>
-      Mais do que um hotel, somos um refúgio de bem-estar e autenticidade.
-      Aqui, o tempo corre devagar, o som dos pássaros substitui o barulho da cidade, e cada pôr do sol revela um novo motivo para se encantar.
-      Com uma equipe acolhedora e serviços personalizados, o Villa do Sol celebra o equilíbrio entre o rústico e o sofisticado, o natural e o refinado — uma experiência única, moldada pela tranquilidade e pelo calor da hospitalidade de Gramado.
+      Cada detalhe do Hotel Villa do Sol foi pensado para proporcionar uma experiência única — do aroma suave das flores no jardim até o som tranquilo da natureza ao amanhecer. 
+      Aqui, o tempo desacelera, e o luxo se revela na simplicidade do conforto e na beleza da paisagem.
     </p>
   </div>
 </div>
