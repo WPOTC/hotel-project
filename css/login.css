@@ -189,13 +189,10 @@ small {
   margin-top: 5px;
 }
 
-/* FOOTER */
 footer {
-  margin-top: auto;
-  background-color: #16360B;
-  color: white;
-  text-align: center;
-  padding: 15px;
-  font-size: 14px;
-  width: 100%;
+    text-align: center;
+    padding: 20px;
+    background-color: #16360B;
+    color: white;
+    margin-top: 20px;
 }
