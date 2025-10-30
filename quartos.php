@@ -75,7 +75,7 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
         <h1>Quartos</h1>
 <?php
 if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
-    echo " <a href='cadastrarquartos.php'>Cadastrar Quarto</a>";
+    echo " <a href='View/quartos/CadastrarQuartos.php'>Cadastrar Quarto</a>";
 }
 ?>
        

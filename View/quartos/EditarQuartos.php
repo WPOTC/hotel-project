@@ -39,7 +39,7 @@ if (isset($_GET['id'])) {
             $descricao = $_POST['descricao'];
           
 
-           $QuartosController->editar( $nome, $ocupacao,  $id);
+           $QuartosController->editarQuartos( $nome, $ocupacao,  $id);
 
               header("Location: ../../index.php");
         }
