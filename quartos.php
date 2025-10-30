@@ -47,7 +47,7 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 
         <ul>
           <li><a href="index.php">INÍCIO</a></li>
-          <li><a href="quartos.php">QUARTOS</a></li>
+          <li><a href="quartos.php" class="quartos">QUARTOS</a></li>
           <li><a href="sobre.php">SOBRE NÓS</a></li>
 
         </ul>
@@ -59,7 +59,7 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
     if(isset($_SESSION['nome'])){
             echo "<a href = 'View/Usuario/exibirUsuario.php'>Imagem</a>" . "Seja bem-vindo(a), " . htmlspecialchars($_SESSION['nome']) . "!";
         }elseif(!isset($_SESSION['nome'])){
-            echo "<a href = 'View/Usuario/cadastrarUsuario.php'>Cadastre-se</a>";
+            echo "<a href = 'View/Usuario/cadastrarUsuario.php'class='cadastro'><img src='img/logo-cadastro.png'></a>";
          
         }
         ?>
@@ -85,8 +85,6 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 
         <div class="slider">
 
-            <h2>Suíte Presidencial</h2>
-
             <div class="slides">
 
                 <img src="img/suite-presidencial.jpg" alt="" class="active">
@@ -97,16 +95,16 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 
             <button class="prev">⟨</button>
             <button class="next">⟩</button>
+            
+            <h2>Suíte Presidencial</h2>
 
-            <h3>R$ 1.187,68</h3>
+            <p>R$ 1.187,68</p>
 
             <button type="submit" class="botao">Agendar</button>
 
         </div>
 
         <div class="slider">
-
-            <h2>Suíte Master</h2>
 
             <div class="slides">
 
@@ -118,8 +116,10 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 
             <button class="prev">⟨</button>
             <button class="next">⟩</button>
+            
+            <h2>Suíte Master</h2>
 
-            <h3>R$ 559,90</h3>
+            <p>R$ 559,90</p>
 
             <button type="submit" class="botao">Agendar</button>
 
@@ -129,9 +129,7 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 
     <div class="bloco2">
 
-        <div class="slider">
-
-            <h2>Suíte Premium </h2>
+        <div class="slider">  
 
             <div class="slides">
 
@@ -142,17 +140,17 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
             </div>
 
             <button class="prev">⟨</button>
-            <button class="next">⟩</button>
+            <button class="next">⟩</button> 
+            
+            <h2>Suíte Premium </h2>
 
-            <h3>R$ 570,00</h3>
+            <p>R$ 570,00</p>
 
             <button type="submit" class="botao">Agendar</button>
 
         </div>
 
         <div class="slider">
-
-            <h2>Suíte Júnior</h2>
 
             <div class="slides">
 
@@ -163,9 +161,11 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
             </div>
 
             <button class="prev">⟨</button>
-            <button class="next">⟩</button>
+            <button class="next">⟩</button>  
+            
+            <h2>Suíte Júnior</h2>
 
-            <h3>R$ 254,00</h3>
+            <p>R$ 254,00</p>
 
             <button type="submit" class="botao">Agendar</button>
 
@@ -177,8 +177,6 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 
         <div class="slider">
 
-            <h2>Suíte Spa</h2>
-
             <div class="slides">
 
                 <img src="img/master2.jpg" alt="" class="active">
@@ -188,17 +186,17 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
             </div>
 
             <button class="prev">⟨</button>
-            <button class="next">⟩</button>
+            <button class="next">⟩</button>   
+            
+            <h2>Suíte Spa</h2>
 
-            <h3>R$ 999,00</h3>
+            <p>R$ 999,00</p>
 
             <button type="submit" class="botao">Agendar</button>
 
         </div>
 
         <div class="slider">
-
-            <h2>Suíte econômica</h2>
 
             <div class="slides">
 
@@ -209,9 +207,11 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
             </div>
 
             <button class="prev">⟨</button>
-            <button class="next">⟩</button>
+            <button class="next">⟩</button>  
+            
+            <h2>Suíte econômica</h2>
 
-            <h3>R$ 400,00</h3>
+            <p>R$ 400,00</p>
 
             <button type="submit" class="botao">Agendar</button>
 
@@ -221,9 +221,7 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 
     <div class="bloco4">
 
-        <div class="slider">
-
-            <h2>Suíte Real</h2>
+        <div class="slider">    
 
             <div class="slides">
 
@@ -235,16 +233,16 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 
             <button class="prev">⟨</button>
             <button class="next">⟩</button>
+            
+            <h2>Suíte Real</h2>
 
-            <h3>R$ 390,00</h3>
+            <p>R$ 390,00</p>
 
             <button type="submit" class="botao">Agendar</button>
 
         </div>
 
-        <div class="slider">
-
-            <h2>Casa de campo</h2>
+        <div class="slider"> 
 
             <div class="slides">
 
@@ -255,9 +253,11 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
             </div>
 
             <button class="prev">⟨</button>
-            <button class="next">⟩</button>
+            <button class="next">⟩</button> 
+            
+            <h2>Casa de campo</h2>
 
-            <h3>R$ 1.500,00</h3>
+            <p>R$ 1.500,00</p>
 
             <button type="submit" class="botao">Agendar</button>
 
@@ -269,8 +269,6 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 
         <div class="slider">
 
-            <h2>Suíte elegante</h2>
-
             <div class="slides">
 
                 <img src="img/elegante2.png" alt="" class="active">
@@ -281,16 +279,16 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 
             <button class="prev">⟨</button>
             <button class="next">⟩</button>
+            
+            <h2>Suíte elegante</h2>
 
-            <h3>R$ 135,00</h3>
+            <p>R$ 135,00</p>
 
             <button type="submit" class="botao">Agendar</button>
 
         </div>
 
         <div class="slider">
-
-            <h2>Suíte mais mais</h2>
 
             <div class="slides">
 
@@ -301,9 +299,11 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
             </div>
 
             <button class="prev">⟨</button>
-            <button class="next">⟩</button>
+            <button class="next">⟩</button> 
+            
+            <h2>Suíte mais mais</h2>
 
-            <h3>R$ 24.000,00</h3>
+            <p>R$ 24.000,00</p>
 
             <button type="submit" class="botao">Agendar</button>
 
