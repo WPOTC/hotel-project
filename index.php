@@ -74,34 +74,6 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 
         <div class="slides">
           <img src="img/hotel_frente.png" class="active">
-          <img src="img/hotel1.png">
-        </div>
-
-        <button class="prev">⟨</button>
-        <button class="next">⟩</button>
-
-      </div>
-
-      <div class="texto">
-
-        <p>Respire fundo. Ouça o som dos pássaros e sinta o toque da brisa suave entre as árvores. Aqui, o tempo
-          desacelera e o luxo se revela em cada detalhe. Villa do Sol – o seu refúgio natural de elegância e paz.</p>
-
-        <p>Villa do Sol – Onde o luxo encontra a natureza. Descubra um refúgio exclusivo entre o verde e o dourado do
-          pôr do sol. Chalés de madeira, conforto cinco estrelas e uma experiência que brilha com a energia do paraíso.
-          Villa do Sol — viva o luxo em sua forma mais natural.</p>
-
-      </div>
-
-    </div>
-
-    <!-- Segundo slider -->
-    <div class="bloco2">
-
-      <div class="slider">
-
-        <div class="slides">
-          <img src="img/recepcao.png" class="active">
           <img src="img/area_lazer.png">
         </div>
 
@@ -112,13 +84,35 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 
       <div class="texto">
 
-        <p>Entre montanhas e jardins exuberantes, o Villa do Sol é um refúgio de elegância e tranquilidade.
-      Cada detalhe foi pensado para oferecer conforto, sofisticação e uma conexão genuína com a natureza.
-      Nossas suítes combinam design rústico e toques modernos, criando o equilíbrio perfeito entre aconchego e requinte.
-      Desfrute de jantares à luz de velas, piscinas cercadas por verde e momentos de puro relaxamento.
-      Aqui, o tempo desacelera e o silêncio se transforma em poesia.
-      Viva o luxo natural, onde cada amanhecer é um convite à paz.</p>
-     <p>Hotel Villa do Sol — seu refúgio entre o céu e a terra.</p>
+        <p>Respire fundo. Ouça o som dos pássaros e sinta o toque da brisa suave entre as árvores. Aqui, o tempo
+          desacelera e o luxo se revela em cada detalhe. </p>
+          
+          <p class="primeiro-texto">VILLA DO SOL | O SEU REFÚGIO NATURAL DE ELEGÂNCIA E PAZ.</p>
+
+      </div>
+
+    </div>
+
+    <!-- Segundo slider -->
+    <div class="bloco2">
+
+      <div class="slider">
+
+        <div class="slides"> 
+          <img src="img/hotel1.png" class="active">
+          <img src="img/recepcao.png">
+        </div>
+
+        <button class="prev">⟨</button>
+        <button class="next">⟩</button>
+
+      </div>
+
+      <div class="texto">
+
+        <p>Entre montanhas e jardins exuberantes, o Villa do Sol é um refúgio de elegância e tranquilidade.</p>
+
+     <p class="primeiro-texto">HOTEL VILLA DO SOL | SEU REFÚGIO ENTRE O CÉU E A TERRA.</p>
 
       </div>
 
