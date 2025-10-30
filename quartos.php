@@ -27,7 +27,7 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 
         <ul>
           <li><a href="index.php">INÍCIO</a></li>
-          <li><a href="quartos.php">QUARTOS</a></li>
+          <li><a href="quartos.php" class="quartos">QUARTOS</a></li>
           <li><a href="sobre.php">SOBRE NÓS</a></li>
           <li><a href="checkout.php">RESERVAS</a></li>
 
