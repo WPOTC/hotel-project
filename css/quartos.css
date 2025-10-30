@@ -21,7 +21,7 @@ body, html {
 
 /* NAVBAR */
 nav {
-  position: fixed;
+  
   top: 0;
   width: 100%;
   background-color: #16360B;
@@ -200,120 +200,9 @@ footer {
     margin-top: 20px;
 }
 
-.comeco h1{
-  color: #E9B150;
-  font-family: 'Titulo';
-  font-size: 80px;
-  margin-bottom: 5px;
-  text-shadow: 0.5px 0.5px 65px rgb(0, 0, 0);
-  text-align: center;
-  
-}
-
-@font-face {
-  font-family: 'Titulo';
-  src: url('../Font/FortalesiaScript_PERSONAL_USE_ONLY.otf');
-}
-
-/* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  color: white;
-}
-
-body, html {
-  height: 100%;
-  width: 100%;
-  overflow-x: hidden;
-}
-
-/* NAVBAR */
-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: #16360B;
-  display: flex;
-  justify-content: space-between;
+.comeco{
+  margin-top: 10px;
   align-items: center;
-  padding: 15px 50px;
-  z-index: 1000;
-  backdrop-filter: blur(8px);
-}
-
-.cadastro img {
-  width: 70px;
-  height: 70px;
-}
-
-.menu {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 60%;
-}
-
-.menulogo img {
-  height: 150px;
-  width: 150px;
-}
-
-.textos-nav {
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 2em;
-}
-
-.textos-nav h1 {
-  font-size: 50px;
-  letter-spacing: 2px;
-  font-weight: 500;
-  text-align: center;
-  font-family: 'Titulo';
-  color: #E9B150;
-  text-shadow: 0.5px 0.5px 65px rgb(0, 0, 0);
-}
-
-.textos-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-}
-
-.textos-nav a {
-  text-decoration: none;
-  color: rgb(255, 255, 255);
-  font-weight: 500;
-  transition: 0.3s;
-}
-
-.textos-nav a:hover {
-  color: #E9B150;
-}
-
-nav a[href*="quartos"] {
-  color: #E9B150;
-}
-
-/* SLIDER */
-.slider {
-  position: relative;
-  width: 300px;
-  height: 456px;
-  overflow: hidden;
-  margin: 20px;
-}
-
-.slider h2, h3 {
-  text-align: center;
-}
-
-.slider h2 {
   color: #16360B;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
