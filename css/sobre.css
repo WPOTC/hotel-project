@@ -32,8 +32,8 @@ nav {
   backdrop-filter: blur(8px);
 }
 
-nav a [href*="sobre.php"] {
-  color: #E9B150; /* tom dourado sofisticado */
+nav a[href *="sobre.php"] {
+  color: #E9B150;
 }
 
 .cadastro img{
