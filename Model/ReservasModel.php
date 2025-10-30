@@ -1,6 +1,6 @@
 <?php
 
-require_once "C:/Turma1/xampp/htdocs/mvc/Model/ReservasModel.php";
+require_once "C:/Turma1/xampp/htdocs/hotel-project/Model/ReservasModel.php";
 class ReservasModel {
     private $pdo;
 

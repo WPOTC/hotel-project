@@ -44,7 +44,9 @@ form{
   text-align: left;         
   margin: 50px auto; 
 }
-
+form label{
+    color: white;
+}
  
 nav {
   display: flex;
