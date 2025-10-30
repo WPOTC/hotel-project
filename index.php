@@ -33,7 +33,7 @@
             echo "Seja bem-vindo(a), " . htmlspecialchars($usuarios['nome']) . "!";
         }
         if(!isset($usuarios)){
-            echo "<a href = 'View/Usuario/cadastrarUsuario.php'>Cadastre-se</a>";
+            echo "<a href = 'View/Usuario/cadastrarUsuario.php' class='cadastro'><img src='img/logo-cadastro.png'></a>";
          
         }
         ?>
