@@ -11,7 +11,7 @@ body{
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #EED5B5;
+    background-color: white;
     animation: float 6s infinite alternate;
     
 }
@@ -35,7 +35,7 @@ nav h1{
 
 form{
      padding: 40px;
-  background-color: #74180D;
+  background-color: grey;
   width: 500px;             
   border-radius: 15px;
   display: flex;
@@ -117,7 +117,7 @@ input{
   padding: 8px;
   border: none;
   border-radius: 4px;
-   background-color: #DA6F6F; 
+
 }
 
 button {
