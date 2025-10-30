@@ -33,6 +33,10 @@ nav {
   backdrop-filter: blur(8px);
 }
 
+nav a[href *="index.php"] {
+  color: #E9B150;
+}
+
 .cadastro img{
   width: 70px;
   height: 70px;
