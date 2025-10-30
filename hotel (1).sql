@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 27/10/2025 às 12:15
+-- Tempo de geração: 30/10/2025 às 14:37
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -31,10 +31,19 @@ CREATE TABLE `cadastro` (
   `id` int(11) NOT NULL,
   `nome` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `telefone` varchar(255) NOT NULL,
-  `cpf` varchar(255) NOT NULL,
-  `senha` varchar(255) NOT NULL
+  `telefone` varchar(20) NOT NULL,
+  `cpf` varchar(14) NOT NULL,
+  `senha` varchar(255) NOT NULL,
+  `reserva` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `cadastro`
+--
+
+INSERT INTO `cadastro` (`id`, `nome`, `email`, `telefone`, `cpf`, `senha`, `reserva`) VALUES
+(1, 'João Augusto Mergulhão Rosa', 'gutomergr.s@gmail.com', '18996065487', '54471694880', 'guto29-11G', '0000-00-00 00:00:00'),
+(2, 'Villa do Sol', 'v1ll4s0l@gmail.com', '18999999999', '1234567890', 'Adm!n2025', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -44,23 +53,10 @@ CREATE TABLE `cadastro` (
 
 CREATE TABLE `quartos` (
   `id` int(11) NOT NULL,
-  `nome` varchar(255) NOT NULL,
-  `descricao` varchar(255) NOT NULL,
+  `nome_quarto` varchar(255) NOT NULL,
+  `descricao` text NOT NULL,
   `img` varchar(255) NOT NULL,
-  `valor` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `reserva`
---
-
-CREATE TABLE `reserva` (
-  `id` int(11) NOT NULL,
-  `data` varchar(255) NOT NULL,
-  `hospedes` varchar(255) NOT NULL,
-  `ocupacao` varchar(255) NOT NULL
+  `valor` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -71,18 +67,14 @@ CREATE TABLE `reserva` (
 -- Índices de tabela `cadastro`
 --
 ALTER TABLE `cadastro`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`),
+  ADD UNIQUE KEY `cpf` (`cpf`);
 
 --
 -- Índices de tabela `quartos`
 --
 ALTER TABLE `quartos`
-  ADD PRIMARY KEY (`id`);
-
---
--- Índices de tabela `reserva`
---
-ALTER TABLE `reserva`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -93,18 +85,12 @@ ALTER TABLE `reserva`
 -- AUTO_INCREMENT de tabela `cadastro`
 --
 ALTER TABLE `cadastro`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `quartos`
 --
 ALTER TABLE `quartos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `reserva`
---
-ALTER TABLE `reserva`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
