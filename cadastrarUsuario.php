@@ -44,7 +44,7 @@
     </section>
     <p class="footer"></p>
     <footer>
-        <p>© 2025 Hotel Villa do Sol . Todos os direitos reservados.
+        <p>© 2025 Hotel Villa do Sol . Todos os direitos reservados.-
             Número de contato: (11) 1234-5678. Email:villasol@gmail.com </p>
     </footer>
 
