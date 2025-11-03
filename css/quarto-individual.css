@@ -1,0 +1,179 @@
+@font-face {
+  font-family: 'Titulo';
+  src: url('../Font/FortalesiaScript_PERSONAL_USE_ONLY.otf');
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: white;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+
+}
+
+body p, h2, h3{
+    color: black;
+    text-align: center;
+}
+
+/* NAVBAR */
+nav {
+  
+  top: 0;
+  width: 100%;
+  background-color: #16360B;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+}
+
+nav a[href *="index.php"] {
+  color: #E9B150;
+}
+
+.usuario{
+  display: flex;
+  flex-direction: column;
+}
+
+.cadastro img{
+  width: 70px;
+  height: 70px;
+    display: flex;
+ margin-left: 90px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60%;
+}
+
+.menulogo img{
+   height: 150px;
+  width: 150px;
+}
+
+.textos-nav {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.textos-nav h1 {
+  font-size: 50px;
+  letter-spacing: 2px;
+  font-weight: 500;
+  text-align: center;
+  font-family: 'titulo';
+  color:  #E9B150;
+    text-shadow: 0.5px 0.5px 65px rgb(0, 0, 0)
+}
+
+.textos-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.textos-nav a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.textos-nav a:hover {
+  color: #E9B150 ; /* tom dourado sofisticado */
+}
+
+
+.slider {
+  position: relative;
+  width: 300px;
+  height: 456px;
+  overflow: hidden;
+  margin: 20px;
+  
+}
+
+.slider h2,h3{
+    text-align: center;
+}
+
+.slider h2{
+   color: #16360B;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   margin-top: 3px;
+}
+
+.slider p{
+  color: #000;
+  text-align: center;
+  margin-top: 3px;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+
+}
+
+.slides img {
+  width: 400px; /* mesma largura do slider */
+  height: 300px;
+  object-fit: cover;
+  
+}
+
+.prev, .next {
+  position: absolute;
+  top: 35%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.4);
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.prev {
+  left: 30px;
+}
+
+.next {
+  right: 30px;
+}
+
+.conteudo{
+    display: flex;
+    justify-content: center;
+}
+
+.texto-quarto{
+    margin-top: 15px;
+}
+
+.texto-quarto h3{
+    margin-left: -438px;
+}
