@@ -16,14 +16,14 @@
       <div class="textos-nav">
         <h1>Hotel Villa do Sol</h1>
         </div>
-
+     <a href="../../index.php"class="cadastro"><img src="../../img/logo-voltar.png"alt=""></a>
      
         </div>
   </nav>
 
-    <a href="../../index.php">Voltar</a>
+    
    
-    <div>
+    <div class="cadastrado">
 
     
 
@@ -36,10 +36,10 @@
         <input type="email" name="email" required><br><br>
 
         <label for="cpf">CPF: </label>
-        <input type="number" name="cpf" required><br><br>
+        <input type="text" name="cpf" required><br><br>
     
         <label for="telefone">Telefone: </label>
-        <input type="number" name="telefone" required><br><br>
+        <input type="text" name="telefone" required><br><br>
     
         <label for="senha">Senha: </label>
         <input type="password" name="senha" required><br><br>

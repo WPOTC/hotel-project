@@ -40,6 +40,8 @@ nav a[href *="index.php"] {
 .cadastro img{
   width: 70px;
   height: 70px;
+    display: flex;
+ margin-left: 90px;
 }
 
 .menu {
