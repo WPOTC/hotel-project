@@ -73,6 +73,61 @@ class UsuarioModel{
         return null;
     }
 }
+
+
+
+
+
+//parte da reserva de quartos
+
+public function reservar($reserva) {
+
+   $verificar = $this->verificarReservaExistente($reserva);
+        if ($verificar) {
+          return false;
+            
+        }else{
+        $sql = "INSERT INTO cadastro (reserva) VALUES (:reserva)";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([':reserva' => $reserva]);
+        return true;
+        }  
+
+    }
+
+
+
+
+
+
+
+
+public function exibirReserva($reserva){
+        $stmt = $this->pdo->query("SELECT *FROM cadastro WHERE reserva = $reserva");
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function checkout($reserva){
+        $sql = "DELETE from cadastro WHERE reserva = ?";
+        $stmt = $this->pdo->prepare($sql);
+        return $stmt->execute([$reserva]);
+    }
+
+    public function listarTodasReservas($reserva, $nome){
+        $stmt = $this->pdo->query("SELECT *FROM cadastro WHERE nome = $nome & reserva = $reserva");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function verificarReservaExistente($reserva) {
+        $sql = "SELECT COUNT(*) FROM cadastro WHERE reserva = :reserva";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':reserva', $reserva);
+        $stmt->execute();
+        $count = $stmt->fetchColumn();
+        return $count > 0;
+    }
+
 }
+
 
 ?>

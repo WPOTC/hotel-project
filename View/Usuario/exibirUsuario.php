@@ -66,6 +66,11 @@ echo "<h3>Senha:</h3> " . htmlspecialchars($usuario['senha']) ;
 
 echo "<br><br>";
 
+$usuario = $UsuarioController->exibirReserva($_SESSION['reserva']);
+echo "<h2>Suas Reservas: </h2>";
+echo $reservas['reserva'];
+
+
 
 echo "<button><a href='editarUsuario.php?id={$_SESSION['id']}'>Editar</a> </button>";
 echo "<button><a href='logout.php' onclick=\"return confirm('Tem certeza?')\">Sair da Conta</a></button>";

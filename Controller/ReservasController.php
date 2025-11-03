@@ -18,9 +18,8 @@ class ReservasController {
    return $Reservas;
    }
 
-   public function cadastrar(	$data,	$hospedes,	$ocupacao	
- ) {
-    return $this->ReservasModel->cadastrar($data, $hospedes, $ocupacao);
+   public function reservar($reserva ) {
+    return $this->ReservasModel->reservar($reserva);
    }
 
 
