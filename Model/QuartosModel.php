@@ -16,11 +16,11 @@ class QuartosModel {
 
 
 public function cadastrarQuartos($nome_quarto, $descricao, $valor) {
-    $sql = "INSERT INTO quartos (nome_quarto, descricao, valor) VALUES (:nome_quarto, :descricao, :valor)";
+    $sql = "INSERT INTO quartos (nome, descricao, valor) VALUES (:nome, :descricao, :valor)";
     $stmt = $this->pdo->prepare($sql);
 
     if ($stmt->execute([
-        ':nome_quarto' => $nome_quarto,
+        ':nome' => $nome_quarto,
         ':descricao' => $descricao,
         ':valor' => $valor
     ])) {
