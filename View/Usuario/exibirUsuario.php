@@ -3,7 +3,7 @@
 require_once "C:/Turma1/xampp/htdocs/hotel-project/DB/Database.php";
 require_once "C:/Turma1/xampp/htdocs/hotel-project/Controller/CadastroController.php";
 
-session_start();
+
 $UsuarioController = new UsuarioController($pdo);
 
 if(isset($_GET['id'])){
