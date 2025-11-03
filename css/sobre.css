@@ -39,6 +39,7 @@ nav a[href *="sobre.php"] {
 .cadastro img{
   width: 70px;
   height: 70px;
+  margin-left: 85px;
 }
 
 .menu {
@@ -131,10 +132,14 @@ nav a[href *="sobre.php"] {
 
 /* FOOTER */
 footer {
-  background: black;
+  background: #16360B;
   color: white;
   text-align: center;
   padding: 20px;
   font-size: 14px;
 }
 
+.usuario{
+  display: flex;
+  flex-direction: column;
+}

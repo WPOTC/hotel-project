@@ -36,13 +36,15 @@ nav {
 .cadastro img{
   width: 70px;
   height: 70px;
+  display: flex;
+ margin-left: 90px;
 }
 
 .menu {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 60%;
+  width: 65%;
 }
 
 .menulogo img{

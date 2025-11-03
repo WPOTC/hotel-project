@@ -26,7 +26,7 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
           <li><a href="index.php">INÍCIO</a></li>
           <li><a href="quartos.php">QUARTOS</a></li>
           <li><a href="sobre.php">SOBRE NÓS</a></li>
-          <li><a href="checkout.php">RESERVAS</a></li>
+          <li><a href="View/reservadas/listarReserva.php">RESERVAS</a></li>
 
         </ul>
       </div>
@@ -54,7 +54,7 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 
 
     if(isset($_SESSION['nome'])){
-            echo "<a href = 'View/Usuario/exibirUsuario.php'>Imagem</a>" . "Seja bem-vindo(a), " . htmlspecialchars($_SESSION['nome']) . "!";
+            echo "<div class='usuario'><a href = 'View/Usuario/exibirUsuario.php'class='cadastro'><img src='img/logo-cadastro-feito.png'></a>" . "Seja bem-vindo(a), " . htmlspecialchars($_SESSION['nome']) . "!</div>";
         }elseif(!isset($_SESSION['nome'])){
             echo "<a href = 'View/Usuario/cadastrarUsuario.php' class='cadastro'><img src='img/logo-cadastro.png'></a>";
          

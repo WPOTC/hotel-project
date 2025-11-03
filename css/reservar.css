@@ -10,13 +10,13 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #EED5B5;
+  background-color: white;
   animation: float 6s infinite alternate;
 }
 
 section {
   padding: 30px;
-  background-color: #74180D;
+  background-color: rgba(128, 128, 128, 0.438);
   width: 500px;
   border-radius: 15px;
   display: flex;
@@ -65,7 +65,7 @@ input {
   padding: 8px;
   border: none;
   border-radius: 4px;
-  background-color: #DA6F6F;
+  background-color: rgba(83, 83, 83, 0.315);
   color: white;
 }
 
@@ -75,7 +75,7 @@ button {
   border: none;
   border-radius: 4px;
   color: #74180D;
-  background-color: #EED5B5;
+  background-color: white;
   cursor: pointer;
   font-weight: 600;
 }

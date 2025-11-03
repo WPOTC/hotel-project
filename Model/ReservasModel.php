@@ -9,20 +9,18 @@ class ReservasModel {
     }
 
     public function listar() {
-        $stmt = $this->pdo->query("SELECT * FROM Reaservas");
+        $stmt = $this->pdo->query("SELECT * FROM cadastro");
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
 
-public function cadastrar($data, $hospedes, $ocupacao) {
-   $sql = "INSERT INTO Reservas (data, hospedes, 
-   ocupacao, ) VALUES (:data, :hospedes, :ocupacao)";
+public function reservar($reserva) {
+   $sql = "INSERT INTO cadastro (reserva) VALUES (:reserva)";
    $stmt = $this->pdo->prepare($sql);
    return $stmt->execute([
-    ':data' => $data,
-    ':hospedes' => $hospedes,
-    ':ocupacao' => $ocupacao
+    ':reserva' => $reserva
+    
    
 
     ]);

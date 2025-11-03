@@ -22,7 +22,7 @@ if(isset($_GET['id'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    <link rel="stylesheet" href="../../css/cadastrar.css">
+    <link rel="stylesheet" href="../../css/exibir.css">
 </head>
 <body>
 
@@ -36,53 +36,52 @@ if(isset($_GET['id'])){
         <h1>Hotel Villa do Sol</h1>
         </div>
 
-        <?php
-        if(isset($_SESSION['nome'])){
-            echo "<a href = 'View/Usuario/exibirUsuario.php'>Imagem</a>" . "Seja bem-vindo(a), " . htmlspecialchars($_SESSION['nome']) . "!";
-        }elseif(!isset($_SESSION['nome'])){
-            echo "<a href = 'View/Usuario/cadastrarUsuario.php'>Cadastre-se</a>";
-         
-        }
-        ?>
-
+ <a href="../../index.php" class="cadastro"><img src="../../img/logo-voltar.png" alt=""></a>
      
         </div>
   </nav>
 
-  <a href="../../index.php">Voltar</a>
+ 
+<h1 class="titulo-info">Suas informações</h1>
 
-  <h1>Suas informações:</h1>
+<div class="info-usuario">
+  <?php
+    $usuario = $UsuarioController->buscarUsuario($_SESSION['id']);
+  ?>
 
+  <table class="tabela-info">
+    <tr>
+      <th>Nome:</th>
+      <td><?= htmlspecialchars($usuario['nome']) ?></td>
+    </tr>
+    <tr>
+      <th>Email:</th>
+      <td><?= htmlspecialchars($usuario['email']) ?></td>
+    </tr>
+    <tr>
+      <th>CPF:</th>
+      <td><?= htmlspecialchars($usuario['cpf']) ?></td>
+    </tr>
+    <tr>
+      <th>Telefone:</th>
+      <td><?= htmlspecialchars($usuario['telefone']) ?></td>
+    </tr>
+    <tr>
+      <th>Senha:</th>
+      <td><?= htmlspecialchars($usuario['senha']) ?></td>
+    </tr>
+  </table>
 
-<?php
-
-$usuario = $UsuarioController->buscarUsuario($_SESSION['id']);
-echo "<h3>Nome:</h3> " . htmlspecialchars($usuario['nome']) ;
-echo "<h3>Email:</h3> " . htmlspecialchars($usuario['email']) ;
-echo "<h3>CPF:</h3> " . htmlspecialchars($usuario['cpf']) ;
-echo "<h3>Telefone:</h3> " . htmlspecialchars($usuario['telefone']) ;
-echo "<h3>Senha:</h3> " . htmlspecialchars($usuario['senha']) ;
-
-
-echo "<br><br>";
-
-
-echo "<button><a href='editarUsuario.php?id={$_SESSION['id']}'>Editar</a> </button>";
-echo "<button><a href='logout.php' onclick=\"return confirm('Tem certeza?')\">Sair da Conta</a></button>";
-
-
-echo "<button><a href='excluirUsuario.php' onclick=\"return confirm('Tem certeza? Após isso, você perderá todas as suas reservas')\">Deletar Conta</a></button>";
-?>
-
-    
+  <div class="botoes-usuario">
+    <a href="editarUsuario.php?id=<?= $_SESSION['id'] ?>" class="btn editar">Editar</a>
+    <a href="logout.php" class="btn sair" onclick="return confirm('Tem certeza?')">Sair da Conta</a>
+    <a href="excluirUsuario.php" class="btn deletar" onclick="return confirm('Tem certeza? Após isso, você perderá todas as suas reservas')">Deletar Conta</a>
+  </div>
+</div>
+    <footer>
+    <p>© 2025 Hotel Villa do Sol . Todos os direitos reservados.
+        Número de contato: (11) 1234-5678. Email:villasol@gmail.com 
+    </p></footer>
+  </div>
 </body>
 </html>
-
-<?php
-
-
-
-
-
-
-?>

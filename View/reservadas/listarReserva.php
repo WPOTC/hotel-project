@@ -29,7 +29,7 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
           <li><a href="index.php">INÍCIO</a></li>
           <li><a href="quartos.php">QUARTOS</a></li>
           <li><a href="sobre.php">SOBRE NÓS</a></li>
-          <li><a href="View/reservadas/listarReserva.php">RESERVAS</a></li>
+          <li><a href="checkout.php">RESERVAS</a></li>
 
         </ul>
       </div>
@@ -65,62 +65,36 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
         ?>
   </nav>
 
-  <div class="conteudo">
 
-    <!-- Primeiro slider -->
-    <div class="bloco1">
+<?php
 
-      <div class="slider">
 
-        <div class="slides">
-          <img src="img/hotel_frente.png" class="active">
-          <img src="img/area_lazer.png">
-        </div>
+   
 
-        <button class="prev">⟨</button>
-        <button class="next">⟩</button>
+       if(empty($Reserva)) {
+        echo "<p>Nenhuma reserva realizada.</p>";
+        return;
 
-      </div>
+       }
 
-      <div class="texto">
+        echo "<table border='1' cellpadding='5' cellspacing='0'>";
+        echo "<tr><td><a href= 'View/Reservas/cadastrar.php'>Cadastrar</a></td></tr>";
+        echo "<tr><th>hospedes</th><th>data</th></tr>";
 
-        <p>Respire fundo. Ouça o som dos pássaros e sinta o toque da brisa suave entre as árvores. Aqui, o tempo
-          desacelera e o luxo se revela em cada detalhe. </p>
-          
-          <p class="primeiro-texto">VILLA DO SOL | O SEU REFÚGIO NATURAL DE ELEGÂNCIA E PAZ.</p>
+        foreach($Reserva as $reserva) {
+            echo "<tr>";
+            echo "<td>{$Reservas['hospedes']}</td>";
+            echo "<td>{$Reservas['data']}</td>";
+            echo "<td>
+                 <a href= 'View/Reservas/deletar.php?reserva={$reserva}' onclick=\"return confirm('Tem certeza que deseja excluir essa reserva?')\">(Imagem de X)</a> 
+                 </td>" ;
+                 echo "</tr>";
+        }
+     echo "</table>";
 
-      </div>
+     ?>
 
-    </div>
-
-    <!-- Segundo slider -->
-    <div class="bloco2">
-
-      <div class="slider">
-
-        <div class="slides"> 
-          <img src="img/hotel1.png" class="active">
-          <img src="img/recepcao.png">
-        </div>
-
-        <button class="prev">⟨</button>
-        <button class="next">⟩</button>
-
-      </div>
-
-      <div class="texto">
-
-        <p>Entre montanhas e jardins exuberantes, o Villa do Sol é um refúgio de elegância e tranquilidade.</p>
-
-     <p class="primeiro-texto">HOTEL VILLA DO SOL | SEU REFÚGIO ENTRE O CÉU E A TERRA.</p>
-
-      </div>
-
-    </div>
-
-  </div>
-
-  <footer class="footer-simple" role="contentinfo">
+<footer class="footer-simple" role="contentinfo">
     <div class="container">
       <p>© 2025 Hotel Villa do Sol . Todos os direitos reservados.
         Número de contato: (11) 1234-5678. Email:villasol@gmail.com
@@ -151,3 +125,9 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 </body>
 
 </html>
+    
+        
+        
+               
+    
+
