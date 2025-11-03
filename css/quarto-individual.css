@@ -16,12 +16,12 @@ body, html {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
-  
+
 }
 
-body p{
-   color: #000;
-  text-align: center;
+body p, h2, h3{
+    color: black;
+    text-align: center;
 }
 
 /* NAVBAR */
@@ -38,7 +38,7 @@ nav {
   backdrop-filter: blur(8px);
 }
 
-nav a[href *="View/reservadas/listarReserva.php"] {
+nav a[href *="index.php"] {
   color: #E9B150;
 }
 
@@ -58,7 +58,7 @@ nav a[href *="View/reservadas/listarReserva.php"] {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: 60%;
 }
 
 .menulogo img{
@@ -101,20 +101,79 @@ nav a[href *="View/reservadas/listarReserva.php"] {
   color: #E9B150 ; /* tom dourado sofisticado */
 }
 
-.titulo{
-  margin-top: 50px;
+
+.slider {
+  position: relative;
+  width: 300px;
+  height: 456px;
+  overflow: hidden;
+  margin: 20px;
+  
 }
 
-footer{
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+.slider h2,h3{
+    text-align: center;
 }
 
-footer p{
-  background: #16360B;
-  color: white;
+.slider h2{
+   color: #16360B;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   margin-top: 3px;
+}
+
+.slider p{
+  color: #000;
   text-align: center;
-  padding: 20px;
-  font-size: 14px;
+  margin-top: 3px;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+
+}
+
+.slides img {
+  width: 400px; /* mesma largura do slider */
+  height: 300px;
+  object-fit: cover;
+  
+}
+
+.prev, .next {
+  position: absolute;
+  top: 35%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.4);
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.prev {
+  left: 30px;
+}
+
+.next {
+  right: 30px;
+}
+
+.conteudo{
+    display: flex;
+    justify-content: center;
+}
+
+.texto-quarto{
+    margin-top: 15px;
+}
+
+.texto-quarto h3{
+    margin-left: -438px;
 }
