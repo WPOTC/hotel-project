@@ -1,0 +1,175 @@
+@font-face {
+  font-family: 'Titulo';
+  src: url('../Font/FortalesiaScript_PERSONAL_USE_ONLY.otf');
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: white;
+}
+
+/* NAVBAR */
+nav {
+  
+  top: 0;
+  width: 100%;
+  background-color: #16360B;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
+}
+
+.menulogo img{
+   height: 150px;
+  width: 150px;
+}
+
+.textos-nav {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.textos-nav h1 {
+  font-size: 50px;
+  letter-spacing: 2px;
+  font-weight: 500;
+  text-align: center;
+  font-family: 'titulo';
+  color:  #E9B150;
+    text-shadow: 0.5px 0.5px 65px rgb(0, 0, 0)
+}
+
+.textos-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.textos-nav a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.textos-nav a:hover {
+  color: #E9B150 ; /* tom dourado sofisticado */
+}
+
+.cadastro img{
+  width: 50px;
+  height: 50px;
+}
+
+
+a {
+  color: #16360B;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  color: #E9B150;
+  text-decoration: underline;
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #16360B;
+    color: white;
+    margin-top: 20px;
+}
+
+
+
+.titulo-info {
+  text-align: center;
+  color: #16360B; 
+  font-family: 'Titulo', cursive;
+  margin-top: 40px;
+  font-size: 2.3rem;
+}
+
+.info-usuario {
+  max-width: 700px;
+  margin: 40px auto;
+  background-color: #fffaf3;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.tabela-info {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+.tabela-info th {
+  text-align: left;
+  color: #E9B150; 
+  font-weight: 600;
+  width: 25%;
+  padding: 10px 0;
+}
+
+.tabela-info td {
+  color: #333;
+  padding: 10px 0;
+  font-family: 'Inter', sans-serif;
+  border-bottom: 1px solid #e5d1a6;
+}
+
+.botoes-usuario {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: 0.3s;
+  font-family: 'Inter', sans-serif;
+}
+
+.btn.editar {
+  background-color: #16360B;
+  color: white;
+}
+
+.btn.sair {
+  background-color: #16360B;
+  color: white;
+}
+
+.btn.deletar {
+  background-color: #16360B;
+  color: white;
+}
+
+.btn:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
