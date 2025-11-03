@@ -1,7 +1,7 @@
 <?php
 
 
-require_once "C:/Turma1/xampp/htdocs/mvc/Model/QuartosModel.php";
+require_once "C:/Turma1/xampp/htdocs/hotel-project/Model/QuartosModel.php";
 
 class QuartosController {  
   
@@ -12,49 +12,48 @@ class QuartosController {
    }
 
 
-   public function listar(){
-    $Quartos = $this->QuartosModel->listar();
+   public function listarQuartos(){
+    $Quartos = $this->QuartosModel->listarQuartos();
    include 'C:/Turma1/xampp/htdocs/mvc/View/quartos/ListarQuartos.php';
    return $Quartos;
    }
 
-   public function Cadastrar(	$nome,	$descricao,	$imagens
- ) { $resultado = false;
+   public function cadastrarQuartos($nome_quarto, $descricao, $imagens, $valor) {
+    $resultado = false;
 
-    $idQuartos = $this->QuartosModel->Cadastrar($nome, $descricao, $imagens);
+    $idQuartos = $this->QuartosModel->cadastrarQuartos($nome_quarto, $descricao, $valor);
 
     if ($idQuartos) {
-        // Processar upload das imagens
-        $pasta = "C:/Turma1/xampp/htdocs/divineshop/uploads/" ;
+        $pasta = "C:/Turma1/xampp/htdocs/divineshop/uploads/";
         if (!is_dir($pasta)) {
             mkdir($pasta, 0777, true);
         }
 
         foreach ($imagens['tmp_name'] as $key => $tmp_name) {
-            $nomeOriginal = $imagens['name'][$key];
-            $extensao = pathinfo($nomeOriginal, PATHINFO_EXTENSION);
-            $novoNome = uniqid("img_") . "." . $extensao;
-            $caminhoFinal = $pasta . $novoNome;
+            if ($tmp_name) {
+                $nomeOriginal = $imagens['name'][$key];
+                $extensao = pathinfo($nomeOriginal, PATHINFO_EXTENSION);
+                $novoNome = uniqid("img_") . "." . $extensao;
+                $caminhoFinal = $pasta . $novoNome;
 
-            if (move_uploaded_file($tmp_name, $caminhoFinal)) {
-                // Salvar caminho da imagem no banco de dados
-               $caminhoRelativo = "uploads/" . $novoNome;
-               $this->QuartosModel->salvarImagem($idQuartos, $caminhoRelativo);
-               $resultado = true;
+                if (move_uploaded_file($tmp_name, $caminhoFinal)) {
+                    $caminhoRelativo = "uploads/" . $novoNome;
+                    $this->QuartosModel->salvarImagemQuarto($idQuartos, $caminhoRelativo);
+                }
             }
         }
-   
-   }
 
-   $_SESSION['mensagem'] =  "Quarto cadastrado com sucesso!" ;
+        $_SESSION['mensagem'] = "Quarto cadastrado com sucesso!";
+        $resultado = true;
+    } else {
+        $_SESSION['mensagem'] = "Erro ao cadastrar quarto.";
+        $resultado = false;
+    }
 
-   $_SESSION['mensagem'] = "Erro ao cadastrar quarto.";
-    
     return $resultado;
 }
-
-public function editar ($nome,	$descricao,	 $id){
-   return $this->QuartosModel->editar($nome, $descricao, 
+public function editarQuartos($nome,	$descricao,	 $id){
+   return $this->QuartosModel->editarQuartos($nome, $descricao, 
    $id);
 }
 

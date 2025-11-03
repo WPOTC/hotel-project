@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Villa do Sol</title>
-    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/cadastrar.css">
 </head>
 <body>
       <nav>
@@ -16,18 +16,19 @@
       <div class="textos-nav">
         <h1>Hotel Villa do Sol</h1>
         </div>
-
+     <a href="../../index.php"class="cadastro"><img src="../../img/logo-voltar.png"alt=""></a>
      
         </div>
   </nav>
 
-    <a href="../../index.php">Voltar</a>
+    
    
-    <div>
+    <div class="cadastrado">
 
-    <h1>Cadastre-se</h1>
+     <h1>Cadastre-se</h1>
 
        <form method="post">
+       
         <label for="nome">Nome: </label>
         <input type="text" name="nome" required><br><br>
 
@@ -35,19 +36,21 @@
         <input type="email" name="email" required><br><br>
 
         <label for="cpf">CPF: </label>
-        <input type="number" name="cpf" required><br><br>
+        <input type="text" name="cpf" required><br><br>
     
         <label for="telefone">Telefone: </label>
-        <input type="number" name="telefone" required><br><br>
+        <input type="text" name="telefone" required><br><br>
     
         <label for="senha">Senha: </label>
         <input type="password" name="senha" required><br><br>
 
         <input type="submit" value="Cadastrar">
-    </form>
+    
+    <p>Já possuí uma conta? Faça 
+      <a href="loginUsuario.php">Login</a></p>
+    
+      </form>
 
-    <p>Já possuí uma conta? Faça </p>
-    <a href="loginUsuario.php">Login</a>
     </div>
 
 <footer class="footer-simple" role="contentinfo">
@@ -81,11 +84,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
   
  $cadastro = $UsuarioController -> cadastrarUsuario($nome,$email,$cpf,$telefone,$senha);
+
   if($cadastro){
             $UsuarioController->loginUsuario($email,$senha);
             header('Location: ../../index.php');
         }else{
-            echo "Email já cadastrado!";
+            echo "<script>alert('Email já cadastrado!');</script>";
         }
 
   

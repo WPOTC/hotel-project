@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Villa do Sol</title>
-    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/login.css">
 </head>
 <body>
       <nav>
@@ -17,12 +17,12 @@
         <h1>Hotel Villa do Sol</h1>
         </div>
 
-        <a href="../../index.php">Voltar</a>
+        <a href="../../index.php" class="cadastro"><img src="../../img/logo-voltar.png" alt=""></a>
      
         </div>
   </nav>
    
-    <div>
+    <div class="login">
 
     <h1>Login</h1>
 
