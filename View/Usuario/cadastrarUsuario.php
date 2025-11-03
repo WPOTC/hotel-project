@@ -25,10 +25,10 @@
    
     <div class="cadastrado">
 
-    
+     <h1>Cadastre-se</h1>
 
        <form method="post">
-        <p>Cadastre-se</p>
+       
         <label for="nome">Nome: </label>
         <input type="text" name="nome" required><br><br>
 
@@ -46,7 +46,8 @@
 
         <input type="submit" value="Cadastrar">
     
-    <p>Já possuí uma conta? Faça <a href="loginUsuario.php">Login</a></p>
+    <p>Já possuí uma conta? Faça 
+      <a href="loginUsuario.php">Login</a></p>
     
       </form>
 

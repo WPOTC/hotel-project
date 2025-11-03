@@ -37,6 +37,11 @@ nav a[href *="index.php"] {
   color: #E9B150;
 }
 
+.usuario{
+  display: flex;
+  flex-direction: column;
+}
+
 .cadastro img{
   width: 70px;
   height: 70px;

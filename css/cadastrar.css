@@ -108,6 +108,8 @@ nav a[href *="quartos"]{
 
 .cadastrado p {
     color: #4a4949;
+    display: flex;
+    flex-direction: column;
 }
 
 /* FORMULÁRIO */
