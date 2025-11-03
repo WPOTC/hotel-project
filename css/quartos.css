@@ -21,7 +21,7 @@ body, html {
 
 /* NAVBAR */
 nav {
-  position: fixed;
+  
   top: 0;
   width: 100%;
   background-color: #16360B;
@@ -36,6 +36,8 @@ nav {
 .cadastro img{
   width: 70px;
   height: 70px;
+  display: flex;
+ margin-left: 90px;
 }
 
 .menu {
@@ -200,13 +202,9 @@ footer {
     margin-top: 20px;
 }
 
-.comeco h1{
-  color: #E9B150;
-  font-family: 'Titulo';
-  font-size: 80px;
-  margin-bottom: 5px;
-  text-shadow: 0.5px 0.5px 65px rgb(0, 0, 0);
+.comeco{
+  margin-top: 10px;
+  align-items: center;
   text-align: center;
-  
+  color: #16360B;
 }
-

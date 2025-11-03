@@ -1,0 +1,198 @@
+@font-face {
+  font-family: 'Titulo';
+  src: url('../Font/FortalesiaScript_PERSONAL_USE_ONLY.otf');
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: white;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  
+}
+
+/* NAVBAR */
+nav {
+  
+  top: 0;
+  width: 100%;
+  background-color: #16360B;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+}
+
+.cadastro img{
+  width: 50px;
+  height: 50px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
+}
+
+.menulogo img{
+   height: 150px;
+  width: 150px;
+}
+
+.textos-nav {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.textos-nav h1 {
+  font-size: 50px;
+  letter-spacing: 2px;
+  font-weight: 500;
+  text-align: center;
+  font-family: 'titulo';
+  color:  #E9B150;
+    text-shadow: 0.5px 0.5px 65px rgb(0, 0, 0)
+}
+
+.textos-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.textos-nav a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.textos-nav a:hover {
+  color: #E9B150 ; /* tom dourado sofisticado */
+}
+
+nav a[href *="quartos"]{
+  color: #E9B150;
+}
+
+.login {
+ margin-top: 10px;
+ margin-bottom: 10px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  margin-left: 37%;
+
+}
+
+.login h1 {
+  font-size: 2.5em;
+  color: #16360B;
+  font-family: 'Titulo';
+  margin-bottom: 20px;
+}
+
+.login p {
+    color: #4a4949;
+}
+
+/* FORMULÁRIO */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+label {
+  text-align: left;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-bottom: 2px solid #000000;
+  background-color: #e0e0e0;
+  font-size: 16px;
+  transition: border 0.3s;
+  color: black;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #E9B150;
+  outline: none;
+  background-color: #fff;
+}
+
+/* Botão */
+input[type="submit"] {
+  width: 100%;
+  background-color: #000;
+  color: white;
+  border: none;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+  background-color: #E9B150;
+}
+
+/* Links e texto */
+p {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+a {
+  color: #16360B;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  color: #E9B150;
+  text-decoration: underline;
+}
+
+/* Campos obrigatórios */
+small {
+  color: red;
+  font-size: 12px;
+  display: block;
+  margin-top: 5px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #16360B;
+    color: white;
+    margin-top: 20px;
+}

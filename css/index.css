@@ -177,3 +177,135 @@ footer {
   padding: 20px;
   font-size: 14px;
 }
+
+/* ========================= */
+/*  ESTILOS PARA TELAS MENORES */
+/* ========================= */
+
+/* Tablets (até 1024px) */
+@media (max-width: 1024px) {
+  nav {
+    padding: 10px 30px;
+  }
+
+  .menulogo img {
+    height: 100px;
+    width: 100px;
+  }
+
+  .textos-nav h1 {
+    font-size: 36px;
+  }
+
+  .textos-nav ul {
+    gap: 20px;
+  }
+
+  .texto {
+    max-width: 600px;
+    font-size: 16px;
+    padding: 20px;
+  }
+
+  .prev, .next {
+    font-size: 30px;
+    padding: 8px;
+  }
+}
+
+/* Celulares (até 768px) */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    padding: 10px 20px;
+    gap: 10px;
+  }
+
+  .menu {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .menulogo img {
+    height: 80px;
+    width: 80px;
+  }
+
+  .textos-nav {
+    gap: 1em;
+  }
+
+  .textos-nav h1 {
+    font-size: 28px;
+  }
+
+  .textos-nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .textos-nav a {
+    font-size: 16px;
+  }
+
+  .conteudo {
+    margin-top: 180px;
+  }
+
+  .bloco1, .bloco2 {
+    height: 80vh;
+  }
+
+  .texto {
+    max-width: 90%;
+    font-size: 14px;
+    padding: 15px;
+  }
+
+  .prev, .next {
+    font-size: 24px;
+    padding: 6px;
+    border-radius: 12px;
+  }
+}
+
+/* Celulares muito pequenos (até 480px) */
+@media (max-width: 480px) {
+  nav {
+    padding: 8px 10px;
+  }
+
+  .menulogo img {
+    height: 60px;
+    width: 60px;
+  }
+
+  .textos-nav h1 {
+    font-size: 22px;
+  }
+
+  .textos-nav ul {
+    gap: 10px;
+  }
+
+  .textos-nav a {
+    font-size: 14px;
+  }
+
+  .texto {
+    max-width: 95%;
+    font-size: 13px;
+    padding: 10px;
+    line-height: 1.5;
+  }
+
+  .prev, .next {
+    font-size: 20px;
+    padding: 4px;
+  }
+
+  footer {
+    font-size: 12px;
+    padding: 15px;
+  }
+}

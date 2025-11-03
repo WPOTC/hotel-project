@@ -1,6 +1,6 @@
 <?php
 
-require_once "C:/Turma1/xampp/htdocs/mvc/Model/QuartosModel.php";
+require_once "C:/Turma1/xampp/htdocs/hotel-project/Model/QuartosModel.php";
 class QuartosModel {
     private $pdo;
 
@@ -8,25 +8,27 @@ class QuartosModel {
         $this->pdo = $pdo;
     }
 
-    public function listar() {
-        $stmt = $this->pdo->query("SELECT * FROM Quastos");
+    public function listarQuartos() {
+        $stmt = $this->pdo->query("SELECT * FROM quartos");
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
 
-public function cadastrar($nome, $descricao, $imagens) {
-   $sql = "INSERT INTO Quartos (data, nome,	descricao, 
-   imagens, ) VALUES (:nome, :descricao, :imagens)";
-   $stmt = $this->pdo->prepare($sql);
-   return $stmt->execute([
-    ':nome' => $nome,
-    ':descricao' => $descricao,
-    ':imagens' => $imagens
-   
+public function cadastrarQuartos($nome_quarto, $descricao, $valor) {
+    $sql = "INSERT INTO quartos (nome_quarto, descricao, valor) VALUES (:nome_quarto, :descricao, :valor)";
+    $stmt = $this->pdo->prepare($sql);
 
-    ]);
-
+    if ($stmt->execute([
+        ':nome_quarto' => $nome_quarto,
+        ':descricao' => $descricao,
+        ':valor' => $valor
+    ])) {
+        // Retorna o ID do quarto recém-criado
+        return $this->pdo->lastInsertId();
+    } else {
+        return false;
+    }
 }
 
 
@@ -35,7 +37,7 @@ public function buscarQuartos($id){
   return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
-public function editar($nome, $descricao, $id) {
+public function editarQuartos($nome, $descricao, $valor, $id) {
   $sql = "UPDATE Quartos SET nome=?, descricao=?,  WHERE id=?";
   $stmt = $this->pdo->prepare($sql);
   return $stmt->execute([$nome, $descricao, 
@@ -51,10 +53,10 @@ public function deletarQuartos($id) {
    return $stmt->execute([$id]);
   }
 
-  public function salvarImagem($Quartos_id, $caminho) {
-    $sql = "INSERT INTO Quartos_Imagens (Quartos_id, caminho_imagem) VALUES (?, ?)";
+  public function salvarImagemQuarto($Quartos_id, $caminho) {
+    $sql = "INSERT INTO quartos_imagens (quartos_id, caminho_imagem) VALUES (?, ?)";
     $stmt = $this->pdo->prepare($sql);
-    return $stmt->execute([ $Quartos_id, $caminho]);
+    return $stmt->execute([$Quartos_id, $caminho]);
   }
 
 }

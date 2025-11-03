@@ -83,11 +83,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
   
  $cadastro = $UsuarioController -> cadastrarUsuario($nome,$email,$cpf,$telefone,$senha);
+
   if($cadastro){
             $UsuarioController->loginUsuario($email,$senha);
             header('Location: ../../index.php');
         }else{
-            echo "Email já cadastrado!";
+            echo "<script>alert('Email já cadastrado!');</script>";
         }
 
   
