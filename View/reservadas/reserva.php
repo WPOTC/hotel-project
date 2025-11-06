@@ -10,13 +10,14 @@
 <?php
 session_start();
 ?>
+
 <body>
-  
-<?php
+
+  <?php
 
 
-if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
-   echo '<nav>
+  if (isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com') {
+    echo '<nav>
     <div class="menu">
 
       <div class="menulogo">
@@ -35,8 +36,8 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
         </ul>
       </div>
     </div>';
-}else{
-  echo '<nav>
+  } else {
+    echo '<nav>
     <div class="menu">
 
       <div class="menulogo">
@@ -54,64 +55,57 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
         </ul>
       </div>
     </div>';
-}
+  }
 
 
-    if(isset($_SESSION['nome'])){
-            echo "<div class='usuario'><a href = 'View/Usuario/exibirUsuario.php'class='cadastro'><img src='../../img/logo-cadastro-feito.png'></a>" . "Seja bem-vindo(a),  " . htmlspecialchars($_SESSION['nome']) . "!</div>";
-        }elseif(!isset($_SESSION['nome'])){
-            echo "<a href = 'View/Usuario/cadastrarUsuario.php' class='cadastro'><img src='../../img/logo-cadastro.png'></a>";
+  if (isset($_SESSION['nome'])) {
+    echo "<div class='usuario'><a href = 'View/Usuario/exibirUsuario.php'class='cadastro'><img src='../../img/logo-cadastro-feito.png'></a>" . "Seja bem-vindo(a),  " . htmlspecialchars($_SESSION['nome']) . "!</div>";
+  } elseif (!isset($_SESSION['nome'])) {
+    echo "<a href = 'View/Usuario/cadastrarUsuario.php' class='cadastro'><img src='../../img/logo-cadastro.png'></a>";
 
-        }
-        ?>
-        
+  }
+  ?>
+
   </nav>
-   <section>
-      <header>
+  <section>
+     <header>
         <img src="../../img/logo.png" alt="">
         <h1 class="cortitulo">Faça sua reserva</h1><br>
       </header>
-      <form>
-
-        Quantos hospedes viram: <input type="number" name="Quantidade" min="1" max="4" step="2" required><br>
-
-        Data de entrada: <input type="date" name="Data de entrada" required><br>
-
-        <p class="cortitulo">Data de saída:</p> <input type="date" name="Data de saída" required><br>
-        <input type="submit" value="Reservar">
-
-
-      </form>
-  </div>
+    <form method="POST">
+      <label>Previsão de Entrada:</label>
+      <input type="datetime-local" name="datetime" required>
+      <input type="submit" value="reservar">
+    </form>
   </section>
-<footer class="footer-simple" role="contentinfo">
+  <footer class="footer-simple" role="contentinfo">
     <div class="container">
       <p>© 2025 Hotel Villa do Sol . Todos os direitos reservados.
         Número de contato: (11) 1234-5678. Email:villasol@gmail.com
       </p>
     </div>
   </footer>
-<?php
-require_once "C:/Turma1/xampp/htdocs/hotel-project/Controller/ReservasController.php";
-require_once "C:/Turma1/xampp/htdocs/hotel-project/DB/Database.php";
+  <?php
+  require_once "C:/Turma1/xampp/htdocs/hotel-project/Controller/ReservasController.php";
+  require_once "C:/Turma1/xampp/htdocs/hotel-project/DB/Database.php";
 
-$ReservasController = new ReservasController($pdo);
+  $ReservasController = new ReservasController($pdo);
 
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
+  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-  $reserva = $_POST['datetime'];
+    $reserva = $_POST['datetime'];
 
 
-  
- 
 
-  
- $reservar = $UsuarioController -> reservar($reserva);
-  if($reservar){
-            $UsuarioController->loginUsuario($email,$senha);
-            header('Location: ../../index.php');
-        }else{
-            echo "Email já cadastrado!";
-        }
+
+
+
+    $reservar = $UsuarioController->reservar($reserva);
+    if ($reservar) {
+      $UsuarioController->loginUsuario($email, $senha);
+      header('Location: ../../index.php');
+    } else {
+      echo "Email já cadastrado!";
     }
-?>
+  }
+  ?>
