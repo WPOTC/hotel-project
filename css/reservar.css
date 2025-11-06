@@ -2,15 +2,16 @@
   font-family: 'Titulo';
   src: url('../Font/FortalesiaScript_PERSONAL_USE_ONLY.otf');
 }
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
-/* Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  color: white;
+  font-family: 'Varela Round', sans-serif;
+  color: rgb(0, 0, 0);
 }
+
 
 body, html {
   height: 100%;
@@ -19,15 +20,87 @@ body, html {
   
 }
 
+
 body p{
    color: #000;
   text-align: center;
 }
 
-/* NAVBAR */
+
+section {
+  padding: 30px;
+  background-color: #adabab36;
+  width: 500px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+  text-align: center;
+  margin: 30px auto;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+
+section img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+ 
+}
+
+label {
+  text-align: left;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+input[type="datetime-local"]{
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-bottom: 2px solid #000000;
+  background-color: #e0e0e0;
+  font-size: 16px;
+  transition: border 0.3s;
+  color: black;
+}
+
+input[type="datetime-local"]
+{
+  border-color: #000000;
+  outline: none;
+  background-color: #e0e0e0;
+}
+
+/* Botão */
+input[type="submit"] {
+  width: 100%;
+  background-color: #000;
+  color: white;
+  border: none;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
 nav {
-  
-  top: 0;
+
   width: 100%;
   background-color: #16360B;
   display: flex;
@@ -38,14 +111,12 @@ nav {
   backdrop-filter: blur(8px);
 }
 
-nav a[href *="View/reservadas/listarReserva.php"] {
+
+nav a[href *="index.php"] {
   color: #E9B150;
 }
 
-.usuario{
-  display: flex;
-  flex-direction: column;
-}
+
 
 .cadastro img{
   width: 70px;
@@ -54,17 +125,20 @@ nav a[href *="View/reservadas/listarReserva.php"] {
  margin-left: 90px;
 }
 
+
 .menu {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: 61%;
 }
+
 
 .menulogo img{
    height: 150px;
   width: 150px;
 }
+
 
 .textos-nav {
   text-align: center;
@@ -72,6 +146,7 @@ nav a[href *="View/reservadas/listarReserva.php"] {
   flex-direction: column;
   gap: 2em;
 }
+
 
 .textos-nav h1 {
   font-size: 50px;
@@ -83,12 +158,14 @@ nav a[href *="View/reservadas/listarReserva.php"] {
     text-shadow: 0.5px 0.5px 65px rgb(0, 0, 0)
 }
 
+
 .textos-nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
   gap: 30px;
 }
+
 
 .textos-nav a {
   text-decoration: none;
@@ -97,19 +174,23 @@ nav a[href *="View/reservadas/listarReserva.php"] {
   transition: 0.3s;
 }
 
+
 .textos-nav a:hover {
   color: #E9B150 ; /* tom dourado sofisticado */
 }
 
+
 .titulo{
   margin-top: 50px;
 }
+
 
 footer{
   position: fixed;
   bottom: 0;
   width: 100%;
 }
+
 
 footer p{
   background: #16360B;
@@ -118,3 +199,4 @@ footer p{
   padding: 20px;
   font-size: 14px;
 }
+
