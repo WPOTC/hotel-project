@@ -55,7 +55,7 @@
 
     <div class="texto-quarto">
   
-        <h3>R$ 1.187,68</h3>
+        <h3>R$ 1.187,00</h3>
 
 
         <p>
