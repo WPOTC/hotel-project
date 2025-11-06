@@ -5,12 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reserva</title>
-  <link rel="stylesheet" href="../css/reservar.css">
+  <link rel="stylesheet" href="../../css/reservar.css">
 </head>
 <?php
 session_start();
 ?>
 <body>
+  
 <?php
 
 
@@ -19,7 +20,7 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
     <div class="menu">
 
       <div class="menulogo">
-        <img src="img/logo-2.png" alt="">
+        <img src="../../img/logo-cadastro.png" alt="img">
       </div>
 
       <div class="textos-nav">
@@ -39,7 +40,7 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
     <div class="menu">
 
       <div class="menulogo">
-        <img src="img/logo-2.png" alt="">
+        <img src="../../img/logo-2.png" alt="">
       </div>
 
       <div class="textos-nav">
@@ -57,13 +58,32 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 
 
     if(isset($_SESSION['nome'])){
-            echo "<div class='usuario'><a href = 'View/Usuario/exibirUsuario.php'class='cadastro'><img src='img/logo-cadastro-feito.png'></a>" . "Seja bem-vindo(a),  " . htmlspecialchars($_SESSION['nome']) . "!</div>";
+            echo "<div class='usuario'><a href = 'View/Usuario/exibirUsuario.php'class='cadastro'><img src='../../img/logo-cadastro-feito.png'></a>" . "Seja bem-vindo(a),  " . htmlspecialchars($_SESSION['nome']) . "!</div>";
         }elseif(!isset($_SESSION['nome'])){
-            echo "<a href = 'View/Usuario/cadastrarUsuario.php' class='cadastro'><img src='img/logo-cadastro.png'></a>";
+            echo "<a href = 'View/Usuario/cadastrarUsuario.php' class='cadastro'><img src='../../img/logo-cadastro.png'></a>";
 
         }
         ?>
+        
   </nav>
+   <section>
+      <header>
+        <img src="../../img/logo.png" alt="">
+        <h1 class="cortitulo">Faça sua reserva</h1><br>
+      </header>
+      <form>
+
+        Quantos hospedes viram: <input type="number" name="Quantidade" min="1" max="4" step="2" required><br>
+
+        Data de entrada: <input type="date" name="Data de entrada" required><br>
+
+        <p class="cortitulo">Data de saída:</p> <input type="date" name="Data de saída" required><br>
+        <input type="submit" value="Reservar">
+
+
+      </form>
+  </div>
+  </section>
 <footer class="footer-simple" role="contentinfo">
     <div class="container">
       <p>© 2025 Hotel Villa do Sol . Todos os direitos reservados.
