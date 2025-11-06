@@ -15,7 +15,7 @@ class QuartosModel {
     }
 
 
-public function cadastrarQuartos($nome_quarto, $descricao, $valor) {
+public function cadastrarQuartos($nome_quarto, $descricao, $valor ) {
     $sql = "INSERT INTO quartos (nome_quarto, descricao, valor) VALUES (:nome_quarto, :descricao, :valor)";
     $stmt = $this->pdo->prepare($sql);
 

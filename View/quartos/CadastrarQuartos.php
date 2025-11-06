@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nome_quarto = $_POST['nome'] ?? '';
     $descricao = $_POST['descricao'] ?? '';
     $valor = $_POST['valor'] ?? '';
-    $imagens = $_FILES['imagens'] ?? null;
+    $imagens = $_FILES['imagens'] ;
 
     // Cria o diretório de uploads (se não existir)
     $diretorioImagens = "C:/Turma1/xampp/htdocs/hotel-project/uploads/quartos/";
