@@ -105,6 +105,8 @@ HTML;
         <p><b>Valor:</b> R\$ <?php echo \$valor; ?></p>
         <h3>Imagens:</h3>
 <?php echo \$imagens; ?>
+
+<button><a href='../View/reservadas/reserva.php'>Agendar</a></button>
 <br>
 <a href="../index.php">⬅ Voltar à lista</a>
     </div>
