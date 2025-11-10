@@ -188,6 +188,7 @@ nav a[href *="quartos.php"] {
 
 .product-container h1{
   font-family: 'nome-quarto';
+  color: #16360B;
 }
 
 .left-box {
@@ -198,7 +199,7 @@ nav a[href *="quartos.php"] {
 .titulo-valor{
    font-size: 36px;
     font-weight: bold;
-    color: #0c3b18;
+    color: #16360B;
     margin-bottom: 20px;
   margin-left:80px;
   margin-top: 65px;
@@ -209,7 +210,9 @@ nav a[href *="quartos.php"] {
   border: #16360B solid 10px;
   border-radius: 10px;
   margin-top: 100px;
-  margin-left: 200px;
+  margin-left: 150px;
+  min-width: 200px;
+  min-height: 20px;
 }
 
 .titulo-valor a:hover{
@@ -225,6 +228,7 @@ nav a[href *="quartos.php"] {
 
 .titulo-valor h3{
   margin-left: -260px;
+  color: #16360B;
 }
 .cont{
   display: flex;

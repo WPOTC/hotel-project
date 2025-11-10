@@ -70,6 +70,9 @@ HTML;
         img {
             display: block;
             height: auto;
+            height: 50px;
+             width: 50px;
+             margin: 5px;
         }
     </style>
     <link rel="stylesheet" href="../css/quarto-individual.css">
@@ -99,7 +102,9 @@ HTML;
 
     </nav>
     
-    <a href="../index.php">⬅ Voltar à lista</a>
+    <div class="voltar">
+    <a href="../index.php" ><img src="../img/logo-voltar.png"></a>
+    </div>
 
     <div class="product-container">
 
