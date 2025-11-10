@@ -93,25 +93,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Move as imagens para o diretório
-    $imagensSalvas = [];
-    if ($imagens && isset($imagens['tmp_name'])) {
-        foreach ($imagens['tmp_name'] as $index => $tmpName) {
-            if (!empty($tmpName)) {
-                $nomeArquivo = basename($imagens['name'][$index]);
-                $caminhoDestino = $diretorioImagens . $nomeArquivo;
-                if (move_uploaded_file($tmpName, $caminhoDestino)) {
-                    $imagensSalvas[] = "uploads/quartos/" . $nomeArquivo; // caminho relativo
-                }
-            }
-        }
-    }
+    //$imagensSalvas = [];
+    //if ($imagens && isset($imagens['tmp_name'])) {
+    //    foreach ($imagens['tmp_name'] as $index => $tmpName) {
+    //        if (!empty($tmpName)) {
+    //            $nomeArquivo = basename($imagens['name'][$index]);
+    //            $caminhoDestino = $diretorioImagens . $nomeArquivo;
+    //            if (move_uploaded_file($tmpName, $caminhoDestino)) {
+    //                $imagensSalvas[] = "uploads/quartos/" . $nomeArquivo; // caminho relativo
+    //            }
+    //        }
+    //    }
+    //  }
 
     
     // Se cadastrou o quarto, salva as imagens associadas
     // if ($resultado && !empty($imagensSalvas)) {
-    //     foreach ($imagensSalvas as $img) {
-    //         $QuartosController->salvarImagemQuarto($resultado, $img);
-    //     }
+      //   foreach ($imagensSalvas as $img) {
+        //     $QuartosController->salvarImagemQuarto($resultado, $img);
+        // }
     // }
     // Cadastra no banco
     $resultado = $QuartosController->cadastrarQuartos($nome_quarto, $descricao, $imagens, $valor);

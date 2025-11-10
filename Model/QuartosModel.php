@@ -13,6 +13,19 @@ class QuartosModel {
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    
+    public function listarQuartosComImagens() {
+        $stmt = $this->pdo->query("SELECT 
+                q.id,
+                q.nome_quarto,
+                q.valor,
+                qi.caminho_imagem
+            FROM quartos q
+            INNER JOIN quartos_imagens qi ON q.id = qi.quartos_id
+        ");
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 
 
 public function cadastrarQuartos($nome_quarto, $descricao, $valor ) {

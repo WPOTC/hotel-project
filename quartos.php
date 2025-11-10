@@ -1,3 +1,13 @@
+<?php
+require_once "C:/Turma1/xampp/htdocs/hotel-project/DB/Database.php";
+require_once "C:/Turma1/xampp/htdocs/hotel-project/Controller/QuartosController.php";
+
+$QuartosController = new QuartosController($pdo);
+
+$Quartos = $QuartosController->listarQuartosComImagens();
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -79,6 +89,8 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 ?>
        
     </div>
+
+<!-- 
 
     <div class="bloco1">
 
@@ -308,7 +320,7 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 
         </div>
 
-    </div>
+    </div> -->
 
     <div class="container">
         <footer role="contentinfo">
