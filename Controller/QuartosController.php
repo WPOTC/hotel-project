@@ -17,7 +17,14 @@ class QuartosController
     public function listarQuartos()
     {
         $Quartos = $this->QuartosModel->listarQuartos();
-        include 'C:/Turma1/xampp/htdocs/mvc/View/quartos/ListarQuartos.php';
+        include 'C:/Turma1/xampp/htdocs/hotel-project/View/quartos/ListarQuartos.php';
+        return $Quartos;
+    }
+    
+    public function listarQuartosComImagens()
+    {
+        $Quartos = $this->QuartosModel->listarQuartosComImagens();
+        include 'C:/Turma1/xampp/htdocs/hotel-project/View/quartos/ListarQuartos.php';
         return $Quartos;
     }
 
@@ -31,7 +38,7 @@ class QuartosController
         if ($idQuartos) {
 
             // 2️⃣ Define a pasta para uploads das imagens
-            $pastaUploads = "C:/Turma1/xampp/htdocs/divineshop/uploads/";
+            $pastaUploads = "C:/Turma1/xampp/htdocs/hotel-project/uploads/quartos/";
             if (!is_dir($pastaUploads)) {
                 mkdir($pastaUploads, 0777, true);
             }
@@ -46,7 +53,7 @@ class QuartosController
                     $caminhoFinal = $pastaUploads . $novoNome;
 
                     if (move_uploaded_file($tmp_name, $caminhoFinal)) {
-                        $caminhoRelativo = "uploads/" . $novoNome;
+                        $caminhoRelativo = $novoNome;
                         $this->QuartosModel->salvarImagemQuarto($idQuartos, $caminhoRelativo);
                         $imagensSalvas[] = $caminhoRelativo;
                     }

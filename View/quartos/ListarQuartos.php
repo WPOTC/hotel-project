@@ -1,31 +1,41 @@
 <?php
 
+//require_once "C:/Turma1/xampp/htdocs/hotel-project/DB/Database.php";
+//require_once "C:/Turma1/xampp/htdocs/hotel-project/Controller/QuartosController.php";
 
-   
 
-       if(empty($Quartos)) {
-        echo "<p>Nenhuma Reserva realizada.</p>";
-        echo "<a href= 'View/Reservas/cadastrar.php'>Cadastrar</a>";
-        return;
+// Cria o controlador
+//$QuartosController = new QuartosController($pdo);
 
-       }
+// Chama o método que lista os quartos
+//$Quartos = $QuartosController->listarQuartos();
 
-        echo "<table border='1' cellpadding='5' cellspacing='0'>";
-        echo "<tr><td><a href= 'View/Quartos/cadastrar.php'>Cadastrar</a></td></tr>";
-        echo "<tr><th>ID</th><th>nome</th><th>ocupacao</th><th>imagens</th></tr>";
+// Percorre e exibe os quartos
+//foreach ($Quartos as $quarto) {
+//    echo $quarto['id'] . "<br>";
+//    echo $quarto['nome_quarto'] . "<br>";
+//    echo $quarto['valor'] . "<br><br>";
+//}
 
-        foreach($Quartos as $quartos) {
-            $id = $Quartos['id'];
-            echo "<tr>";
-            echo "<td>{$id}</td>";
-            echo "<td>{$Quartos['nome']}</td>";
-            echo "<td>{$Quartos['ocupacao']}</td>";
-              echo "<td>{$Quartos['imagens']}</td>";
-            echo "<td>
-                 <a href= 'View/Quartos/editar.php?id={$id}'>Editar</a> | 
-                 <a href= 'View/Quartos/deletar.php?id={$id}' onclick=\"return confirm('Tem ceretza que deseja excluir esse quarto?')\">Deletar</a> 
-                 </td>" ;
-                 echo "</tr>";
-        }
-     echo "</table>";
-    
+
+
+
+//require_once "C:/Turma1/xampp/htdocs/hotel-project/Controller/QuartosController.php";
+//$QuartosControllerController = new QuartosController($pdo);
+
+foreach ($Quartos as $quarto) {
+  $id = $quarto['id'];
+  echo "<img style='height: 200px;' src='uploads/quartos/".$quarto['caminho_imagem'] . "'><br>";
+  echo $quarto['nome_quarto'] . "<br";
+  echo $quarto['valor'] . "<br>";
+}
+
+//foreach($Quartos as $quartos) {
+//    $id = $Quartos['id'];
+//    echo "<tr>";
+//    echo "<td>{$id}</td>";
+//    echo "<td>{$Quartos['nome']}</td>";
+//   echo "<td>{$Quartos['ocupacao']}</td>";
+//      echo "<td>{$Quartos['imagens']}</td>";
+//         echo "</tr>";
+//  }
