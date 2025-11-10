@@ -87,52 +87,15 @@ class UsuarioModel {
         }
         return null;
     }
+}
 
-    // Reservar quarto
-    public function reservar($reserva) {
-        if ($this->verificarReservaExistente($reserva)) {
-            return false;
-        }
 
-        $sql = "INSERT INTO cadastro (reserva) VALUES (:reserva)";
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->bindParam(':reserva', $reserva);
-        return $stmt->execute();
-    }
 
-    // Exibir reserva
-    public function exibirReserva($reserva) {
-        $sql = "SELECT * FROM cadastro WHERE reserva = :reserva";
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->bindParam(':reserva', $reserva);
-        $stmt->execute();
-        return $stmt->fetch(PDO::FETCH_ASSOC);
-    }
 
-    // Fazer checkout (remover reserva)
-    public function checkout($reserva) {
-        $sql = "DELETE FROM cadastro WHERE reserva = ?";
-        $stmt = $this->pdo->prepare($sql);
-        return $stmt->execute([$reserva]);
-    }
 
-    // Listar todas as reservas
-    public function listarReserva($nome) {
-        $sql = "SELECT * FROM cadastro WHERE nome = :nome";
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->bindParam(':nome', $nome);
-        $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
 
-    // Verificar se reserva já existe
-    public function verificarReservaExistente($reserva) {
-        $sql = "SELECT COUNT(*) FROM cadastro WHERE reserva = :reserva";
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->bindParam(':reserva', $reserva);
-        $stmt->execute();
-        return $stmt->fetchColumn() > 0;
-    }
+
+
 }
 
 ?>

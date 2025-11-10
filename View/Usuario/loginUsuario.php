@@ -67,8 +67,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
  
 
 
-  $UsuarioController -> loginUsuario($email,$senha);
+  if($UsuarioController -> loginUsuario($email,$senha) == NULL){
 
-  header('Location: ../../index.php');
+    echo "<script>alert('Login ou senha incorretos!');</script>";
+  }else{
+    header('Location: ../../index.php');}
 }
+
 ?>

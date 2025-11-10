@@ -26,12 +26,12 @@
 
     <section>
       <header>
-        <img src="img/recepcao.png" alt="">
+        <img src="../../img/logo.png" alt="">
         <h1 class="cortitulo">Faça sua reserva</h1><br>
       </header>
       <form>
 
-        Quantos hospedes viream: <input type="number" name="Quantidade" min="1" max="4" step="2" required><br>
+        Quantos hospedes viram: <input type="number" name="Quantidade" min="1" max="4" step="2" required><br>
 
         Data de entrada: <input type="date" name="Data de entrada" required><br>
 

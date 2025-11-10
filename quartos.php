@@ -1,3 +1,13 @@
+<?php
+require_once "C:/Turma1/xampp/htdocs/hotel-project/DB/Database.php";
+require_once "C:/Turma1/xampp/htdocs/hotel-project/Controller/QuartosController.php";
+
+$QuartosController = new QuartosController($pdo);
+
+$Quartos = $QuartosController->listarQuartosComImagens();
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -74,11 +84,13 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
         
 <?php
 if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
-    echo " <a href='View/quartos/CadastrarQuartos.php' class='comeco'>Cadastrar Quarto</a>";
+    echo " <a href='View/Quartos/CadastrarQuartos.php' class='comeco'>Cadastrar Quarto</a>";
 }
 ?>
        
     </div>
+
+<!-- 
 
     <div class="bloco1">
 
@@ -99,7 +111,7 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 
             <p>R$ 1.187,68</p>
 
-            <button type="submit" class="botao">Agendar</button>
+           <a href="quartos/quarto1.php"> <button type="submit" class="botao">Agendar</button></a>
 
         </div>
 
@@ -120,7 +132,7 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 
             <p>R$ 559,90</p>
 
-            <button type="submit" class="botao">Agendar</button>
+           <a href="quartos/quarto2.php"> <button type="submit" class="botao">Agendar</button></a>
 
         </div>
 
@@ -145,7 +157,7 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 
             <p>R$ 570,00</p>
 
-            <button type="submit" class="botao">Agendar</button>
+            <a href="quartos/quarto3.php"><button type="submit" class="botao">Agendar</button></a>
 
         </div>
 
@@ -166,7 +178,7 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 
             <p>R$ 254,00</p>
 
-            <button type="submit" class="botao">Agendar</button>
+            <a href="quartos/quarto4.php"><button type="submit" class="botao">Agendar</button></a>
 
         </div>
 
@@ -191,7 +203,7 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 
             <p>R$ 999,00</p>
 
-            <button type="submit" class="botao">Agendar</button>
+            <a href="quartos/quarto5.php"><button type="submit" class="botao">Agendar</button></a>
 
         </div>
 
@@ -212,7 +224,7 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 
             <p>R$ 400,00</p>
 
-            <button type="submit" class="botao">Agendar</button>
+            <a href="quartos/quarto6"><button type="submit" class="botao">Agendar</button></a>
 
         </div>
 
@@ -237,7 +249,7 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 
             <p>R$ 390,00</p>
 
-            <button type="submit" class="botao">Agendar</button>
+           <a href="quartos/quarto7.php"><button type="submit" class="botao">Agendar</button></a>
 
         </div>
 
@@ -258,7 +270,7 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 
             <p>R$ 1.500,00</p>
 
-            <button type="submit" class="botao">Agendar</button>
+            <a href="quartos/quarto8.php"><button type="submit" class="botao">Agendar</button></a>
 
         </div>
 
@@ -283,7 +295,7 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 
             <p>R$ 135,00</p>
 
-            <button type="submit" class="botao">Agendar</button>
+            <a href="quartos/quarto9.php"><button type="submit" class="botao">Agendar</button></a>
 
         </div>
 
@@ -304,11 +316,11 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 
             <p>R$ 24.000,00</p>
 
-            <button type="submit" class="botao">Agendar</button>
+           <a href="quartos/quarto10.php"> <button type="submit" class="botao">Agendar</button></a>
 
         </div>
 
-    </div>
+    </div> -->
 
     <div class="container">
         <footer role="contentinfo">

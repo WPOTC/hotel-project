@@ -8,7 +8,7 @@ class ReservasController {
     private $ReservasModel;
 
    public function __construct($pdo) {
-      $this->ReservasModel = new ReservasController($pdo);
+      $this->ReservasModel = new ReservasModel($pdo);
    }
 
 

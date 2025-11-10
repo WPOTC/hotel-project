@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once "C:/Turma1/xampp/htdocs/hotel-project/Model/CadastroModel.php";  
 
 class UsuarioController{
@@ -46,29 +46,7 @@ class UsuarioController{
 
 
 
-
-    //parte da reserva de quartos
-
-    public function reservar($reserva ) {
-    $reservar = $this->usuarioModel->reservar($reserva);
-    return $reservar;
-   }
-
-   public function exibirReserva($reserva){
-        $reserva = $this->usuarioModel->exibirReserva($reserva);
-        return $reserva;
-    }
-
-    public function listarReserva($nome){
-        $reservas = $this->usuarioModel->listarReserva($nome);
-        include_once "C:/Turma1/xampp/htdocs/hotel-project/View/reservadas/listarReserva.php";
-        return $reservas;
-    }
-
-    public function checkout($reserva){
-        $CHECKOUT = $this->usuarioModel->checkout($reserva);
-        return $CHECKOUT;
-    }
+    
 }
 
 ?>

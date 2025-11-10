@@ -1,0 +1,264 @@
+@font-face {
+  font-family: 'Titulo';
+  src: url('../Font/FortalesiaScript_PERSONAL_USE_ONLY.otf');
+}
+
+@font-face {
+  font-family: 'nome-quarto';
+  src: url('../Font/MAOZE.ttf');
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: black;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  margin: auto;
+}
+
+body p, h2, h3{
+    color: black;
+    text-align: center;
+}
+
+/* NAVBAR */
+nav {
+  
+  top: 0;
+  width: 100%;
+  background-color: #16360B;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+}
+
+nav a[href *="quartos.php"] {
+  color: #E9B150;
+}
+
+.usuario{
+  display: flex;
+  flex-direction: column;
+}
+
+.cadastro img{
+  width: 70px;
+  height: 70px;
+    display: flex;
+ margin-left: 90px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60%;
+}
+
+.menulogo img{
+   height: 150px;
+  width: 150px;
+}
+
+.textos-nav {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.textos-nav h1 {
+  font-size: 50px;
+  letter-spacing: 2px;
+  font-weight: 500;
+  text-align: center;
+  font-family: 'titulo';
+  color:  #E9B150;
+    text-shadow: 0.5px 0.5px 65px rgb(0, 0, 0)
+}
+
+.textos-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.textos-nav a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.textos-nav a:hover {
+  color: #E9B150 ; /* tom dourado sofisticado */
+}
+
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 550px;
+  overflow: hidden;
+  margin: 20px;
+  border-radius: 12px;
+}
+
+.slider h2,h3{
+    text-align: center;
+}
+
+.slider h2{
+   color: #16360B;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   margin-top: 3px;
+}
+
+.slider p{
+  color: #000;
+  text-align: center;
+  margin-top: 3px;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+  height: 100%;
+}
+
+.slides img {
+  width: 600px; /* mesma largura do slider */
+  height: 600px;
+  
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.4);
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 15px;
+  transition: 0.3s;
+  color: white;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.prev {
+  left: 30px;
+}
+
+.next {
+  right: 30px;
+}
+
+.product-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 70px;
+    width: 90%;
+    max-width: 1400px;
+    margin: 95px;
+    margin-top: 30px;
+    padding-bottom: 60px;
+    flex-direction: column;
+   
+    border-radius: 10px;
+}
+
+.product-container h1{
+  font-family: 'nome-quarto';
+  color: #16360B;
+}
+
+.left-box {
+    flex: 1;
+    max-width: 600px;
+}
+
+.titulo-valor{
+   font-size: 36px;
+    font-weight: bold;
+    color: #16360B;
+    margin-bottom: 20px;
+  margin-left:80px;
+  margin-top: 65px;
+}
+
+.titulo-valor button{
+  background-color: #16360B;
+  border: #16360B solid 10px;
+  border-radius: 5px;
+  margin-top: 100px;
+  margin-left: 150px;
+  min-width: 200px;
+  min-height: 20px;
+}
+
+.titulo-valor a:hover{
+  color: #E9B150;
+}
+
+.titulo-valor a{
+  color: white;
+  font-size: 15px;
+  text-decoration: none;
+ transition: all 0.1s linear;
+}
+
+.titulo-valor h3{
+  margin-left: -260px;
+  color: #16360B;
+}
+.cont{
+  display: flex;
+}
+
+.descricao{
+ margin: 15px;
+  margin-top: -30px;
+  text-align: left;
+   background-color: rgba(238, 232, 232, 0.768);
+  box-shadow: 0 -1.5px #16360B;
+  border-end-end-radius: 10px;
+  border-end-start-radius: 10px;
+  min-width:  650px;
+  min-height: 300px;
+  padding: 10px;
+  
+}
+
+.descricao p, .descricao h3{
+  text-align: left;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #16360B;
+    margin-top: 20px;
+}
+
+footer p{
+  color: white;
+}
