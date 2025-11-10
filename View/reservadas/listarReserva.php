@@ -1,3 +1,11 @@
+<?php
+require_once "C:/Turma1/xampp/htdocs/hotel-project/Controller/CadastroController.php";
+require_once "C:/Turma1/xampp/htdocs/hotel-project/DB/Database.php";
+
+$UsuarioController = new UsuarioController($pdo);
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -69,7 +77,8 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 <?php
 
 
-   
+$Reserva = $UsuarioController->listarReserva($_SESSION['nome']);
+
 
        if(empty($Reserva)) {
         echo "<p>Nenhuma reserva realizada.</p>";
@@ -83,8 +92,8 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 
         foreach($Reserva as $reserva) {
             echo "<tr>";
-            echo "<td>{$Reservas['hospedes']}</td>";
-            echo "<td>{$Reservas['data']}</td>";
+            echo "<td>{$reserva['hospedes']}</td>";
+            echo "<td>{$reserva['data']}</td>";
             echo "<td>
                  <a href= 'View/Reservas/deletar.php?reserva={$reserva}' onclick=\"return confirm('Tem certeza que deseja excluir essa reserva?')\">(Imagem de X)</a> 
                  </td>" ;

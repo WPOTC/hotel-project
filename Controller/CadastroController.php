@@ -59,10 +59,10 @@ class UsuarioController{
         return $reserva;
     }
 
-    public function listarTodasReservas(){
-        $reservas = $this->usuarioModel->listarTodasReservas();
-        include_once "C:/Turma1/xampp/htdocs/hotel-project/View/Usuario/listarReserva.php";
-        return;
+    public function listarReserva($nome){
+        $reservas = $this->usuarioModel->listarReserva($nome);
+        include_once "C:/Turma1/xampp/htdocs/hotel-project/View/reservadas/listarReserva.php";
+        return $reservas;
     }
 
     public function checkout($reserva){
