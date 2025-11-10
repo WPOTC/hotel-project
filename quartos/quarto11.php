@@ -102,9 +102,7 @@ HTML;
 
     </nav>
     
-    <div class="voltar">
     <a href="../index.php" ><img src="../img/logo-voltar.png"></a>
-    </div>
 
     <div class="product-container">
 

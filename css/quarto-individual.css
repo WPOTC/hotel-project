@@ -208,7 +208,7 @@ nav a[href *="quartos.php"] {
 .titulo-valor button{
   background-color: #16360B;
   border: #16360B solid 10px;
-  border-radius: 10px;
+  border-radius: 5px;
   margin-top: 100px;
   margin-left: 150px;
   min-width: 200px;
