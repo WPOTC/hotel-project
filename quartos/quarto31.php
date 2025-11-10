@@ -1,28 +1,13 @@
 <?php
-$titulo = "Suíte Real";
-$descricao = "mbiente extremamente espaçoso e luxuoso.
-            Cama king size com roupa de cama de altíssima qualidade.
-            Banheiro privativo com banheira de hidromassagem, duchas separadas e amenities de luxo.
-            Sala de estar ampla e elegante com móveis sofisticados.
-            Sala de jantar privativa.
-            TV de tela plana grande com canais a cabo e sistema de som premium.
-            Ar-condicionado com controle individual.
-            Wi-Fi de alta velocidade gratuito.
-            Varanda ou terraço privativo com vista panorâmica (quando disponível).
-            Mini bar completo e adega de vinhos.
-            Cofre digital para objetos de valor.
-            Área de trabalho ampla com iluminação especial.
-            Serviço de quarto 24 horas e concierge personalizado.
-            Decoração refinada com detalhes em materiais nobres (madeira, mármore, etc.).
-            Amenidades exclusivas de spa e beleza.
-            Sistema de iluminação ambiente ajustável.
-            Serviço de limpeza e arrumação várias vezes ao dia.
+$titulo = "segundo teste";
+$descricao = "uv21ugv2hbbhi2
+21h21ugvvug2
 
 
-";
-$valor = "390,00";
+21bjo12ihb211";
+$valor = "2222";
 $imagens = <<<'HTML'
-<img src='../uploads/quartos/banheiro-real.png' alt='Suíte Real' style='width:200px; margin:10px; border-radius:8px;'><br><img src='../uploads/quartos/real1.png' alt='Suíte Real' style='width:200px; margin:10px; border-radius:8px;'><br><img src='../uploads/quartos/real2.png' alt='Suíte Real' style='width:200px; margin:10px; border-radius:8px;'><br>
+<img src='../uploads/quartos/cinnanhe-removebg-preview.png' alt='segundo teste' style='width:200px; margin:10px; border-radius:8px;'><br><img src='../uploads/quartos/Gemini_Generated_Image_8wnr5g8wnr5g8wnr.png' alt='segundo teste' style='width:200px; margin:10px; border-radius:8px;'><br><img src='../uploads/quartos/Gemini_Generated_Image_fqj2yofqj2yofqj2.png' alt='segundo teste' style='width:200px; margin:10px; border-radius:8px;'><br>
 HTML;
 ?>
 <!DOCTYPE html>
@@ -35,18 +20,81 @@ HTML;
         .container { background: white; padding: 20px; border-radius: 8px; width: 600px; }
         img { display: block; max-width: 100%; height: auto; }
     </style>
+    <link rel="stylesheet" href="../css/quarto-individual.css">
 </head>
-<body>
-    <div class="container">
-        <h1><?php echo $titulo; ?></h1>
-        <p><?php echo $descricao; ?></p>
-        <p><b>Valor:</b> R$ <?php echo $valor; ?></p>
-        <h3>Imagens:</h3>
-<?php echo $imagens; ?>
+<script>
+        document.querySelectorAll('.slider').forEach(slider => {
+            const slidesContainer = slider.querySelector('.slides');
+            const slides = slidesContainer.querySelectorAll('img');
+            const next = slider.querySelector('.next');
+            const prev = slider.querySelector('.prev');
 
-<button><a href='../View/reservadas/reserva.php'>Agendar</a></button>
-<br>
-<a href="../index.php">⬅ Voltar à lista</a>
+            let index = 0;
+
+            function showSlide(i) {
+                index = (i + slides.length) % slides.length;
+                slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+            }
+
+            next.addEventListener('click', () => showSlide(index + 1));
+            prev.addEventListener('click', () => showSlide(index - 1));
+        });
+    </script>
+<body>
+     <nav>
+        <div class="menulogo">
+            <img src="../img/logo-2.png" alt="Logo Hotel Villa do Sol">
+        </div>
+        <div class="textos-nav">
+            <h1>Hotel Villa do Sol</h1>
+            <ul>
+                <li><a href="../index.php">INÍCIO</a></li>
+                <li><a href="../quartos.php">QUARTOS</a></li>
+                <li><a href="../sobre.php">SOBRE NÓS</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="voltar">
+        <a href="../index.php"><img src="../img/logo-voltar.png" alt="Voltar"></a>
     </div>
+
+    <div class="product-container">
+
+        <div class="cont">
+            <div class="left-box">
+                <!-- SLIDER DE IMAGENS -->
+                <div class="slider">
+                    <div class="slides">
+                        <?php echo $imagens;?>
+                    </div>
+                    <button class="prev">❮</button>
+                    <button class="next">❯</button>
+                </div>
+            </div>
+
+            <div class="titulo-valor">
+                <h1><?php echo $titulo; ?></h1>
+                <h3>R$ <?php echo $valor;?></h3>
+                <button><a href="../View/reservadas/reserva.php">Agendar</a></button>
+            </div>
+        </div>
+
+        <div class="descricao">
+            <h3>Descrição:</h3>
+            <p><?php echo $descricao; ?></p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2025 Hotel Villa do Sol. Todos os direitos reservados.  
+            Contato: (11) 1234-5678 | Email: villasol@gmail.com
+        </p>
+    </footer>
+
+    
+
 </body>
+
 </html>

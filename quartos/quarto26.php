@@ -1,24 +1,15 @@
 <?php
-$titulo = "Suíte Spa";
-$descricao = "Ambiente espaçoso e elegante.
-            Cama king size com roupa de cama de alta qualidade.
-            Banheiro privativo com amenities de luxo.
-            TV de tela plana com canais a cabo e streaming.
-            Ar-condicionado com controle individual.
-            Wi-Fi de alta velocidade gratuito.
-            Área de estar confortável com poltronas ou sofá.
-            Mini bar abastecido.
-            Cofre digital para objetos de valor.
-            Varanda ou janela panorâmica com vista privilegiada (quando aplicável).
-            Serviço de quarto 24 horas.
-            Máquina de café expresso ou chaleira elétrica.
-            Mesa de trabalho com iluminação adequada.
-            Decoração sofisticada e iluminação ambiente ajustável.
-            Serviço de limpeza diário.
-";
-$valor = "570,00";
+$titulo = "Villa do Sol bonita";
+$descricao = "gugtupiapassa
+as
+s
+a
+asasasuttfsaftuasas
+a
+ssaassa";
+$valor = "211221122121";
 $imagens = <<<'HTML'
-<img src='../uploads/quartos/banheiro-premium.jpg' alt='Suíte Spa' style='width:200px; margin:10px; border-radius:8px;'><br><img src='../uploads/quartos/suite-premium.jpg' alt='Suíte Spa' style='width:200px; margin:10px; border-radius:8px;'><br><img src='../uploads/quartos/suite-premium2.jpg' alt='Suíte Spa' style='width:200px; margin:10px; border-radius:8px;'><br>
+<img src='../uploads/quartos/D_665846-MLB89019362916_082025-O.jpg' alt='Villa do Sol bonita' style='width:200px; margin:10px; border-radius:8px;'><br><img src='../uploads/quartos/cinnanhe-removebg-preview.png' alt='Villa do Sol bonita' style='width:200px; margin:10px; border-radius:8px;'><br><img src='../uploads/quartos/Gemini_Generated_Image_8wnr5g8wnr5g8wnr.png' alt='Villa do Sol bonita' style='width:200px; margin:10px; border-radius:8px;'><br>
 HTML;
 ?>
 <!DOCTYPE html>
@@ -33,16 +24,77 @@ HTML;
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1><?php echo $titulo; ?></h1>
-        <p><?php echo $descricao; ?></p>
-        <p><b>Valor:</b> R$ <?php echo $valor; ?></p>
-        <h3>Imagens:</h3>
-<?php echo $imagens; ?>
+     <nav>
+        <div class="menulogo">
+            <img src="../img/logo-2.png" alt="Logo Hotel Villa do Sol">
+        </div>
+        <div class="textos-nav">
+            <h1>Hotel Villa do Sol</h1>
+            <ul>
+                <li><a href="../index.php">INÍCIO</a></li>
+                <li><a href="../quartos.php">QUARTOS</a></li>
+                <li><a href="../sobre.php">SOBRE NÓS</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<button><a href='../View/reservadas/reserva.php'>Agendar</a></button>
-<br>
-<a href="../index.php">⬅ Voltar à lista</a>
+    <div class="voltar">
+        <a href="../index.php"><img src="../img/logo-voltar.png" alt="Voltar"></a>
     </div>
+
+    <div class="product-container">
+
+        <div class="cont">
+            <div class="left-box">
+                <!-- SLIDER DE IMAGENS -->
+                <div class="slider">
+                    <div class="slides">
+                        <?php echo $imagens;?>
+                    </div>
+                    <button class="prev">❮</button>
+                    <button class="next">❯</button>
+                </div>
+            </div>
+
+            <div class="titulo-valor">
+                <h1><?php echo $titulo; ?></h1>
+                <h3>R$ <?php echo $valor;?></h3>
+                <button><a href="../View/reservadas/reserva.php">Agendar</a></button>
+            </div>
+        </div>
+
+        <div class="descricao">
+            <h3>Descrição:</h3>
+            <p>$descricao</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2025 Hotel Villa do Sol. Todos os direitos reservados.  
+            Contato: (11) 1234-5678 | Email: villasol@gmail.com
+        </p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.slider').forEach(slider => {
+            const slidesContainer = slider.querySelector('.slides');
+            const slides = slidesContainer.querySelectorAll('img');
+            const next = slider.querySelector('.next');
+            const prev = slider.querySelector('.prev');
+
+            let index = 0;
+
+            function showSlide(i) {
+                index = (i + slides.length) % slides.length;
+                slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+            }
+
+            next.addEventListener('click', () => showSlide(index + 1));
+            prev.addEventListener('click', () => showSlide(index - 1));
+        });
+    </script>
+
 </body>
+
 </html>

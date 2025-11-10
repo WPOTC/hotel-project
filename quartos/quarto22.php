@@ -1,9 +1,9 @@
 <?php
-$titulo = "teste professor";
-$descricao = "11111";
-$valor = "11111111111111";
+$titulo = "João Augusto Mergulhão Rosa";
+$descricao = "99ny989879787217n7127121221121221";
+$valor = "2500,00";
 $imagens = <<<'HTML'
-<img src='../uploads/quartos/area_lazer.png' alt='teste professor' style='width:200px; margin:10px; border-radius:8px;'><br><img src='../uploads/quartos/banheiro-casa-de-campo - Copia.jpg' alt='teste professor' style='width:200px; margin:10px; border-radius:8px;'><br>
+<img src='../uploads/quartos/anaMA.png' alt='João Augusto Mergulhão Rosa' style='width:200px; margin:10px; border-radius:8px;'><br><img src='../uploads/quartos/D_665846-MLB89019362916_082025-O.jpg' alt='João Augusto Mergulhão Rosa' style='width:200px; margin:10px; border-radius:8px;'><br><img src='../uploads/quartos/cinnanhe-removebg-preview.png' alt='João Augusto Mergulhão Rosa' style='width:200px; margin:10px; border-radius:8px;'><br>
 HTML;
 ?>
 <!DOCTYPE html>

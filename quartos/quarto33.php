@@ -1,23 +1,14 @@
 <?php
-$titulo = "Suíte elegante";
-$descricao = " Ambiente sofisticado e refinado.
-            Cama king size ou queen size com roupa de cama premium.
-            Banheiro privativo com acabamento em mármore e amenities de alta qualidade.
-            TV de tela plana com canais a cabo e sistema de som ambiente.
-            Ar-condicionado com controle individual.
-            Wi-Fi de alta velocidade gratuito.
-            Área de estar com poltronas confortáveis e mesa de centro.
-            Iluminação suave e decorativa para ambiente acolhedor.
-            Cofre digital para pertences pessoais.
-            Mini bar bem abastecido.
-            Mesa de trabalho elegante com boa iluminação.
-            Decoração clássica e atemporal com detalhes em madeira ou tecido sofisticado.
-            Serviço de limpeza diário.
-            Serviço de quarto 24 horas disponível.
-";
-$valor = "135,00";
+$titulo = "cartao";
+$descricao = "2222
+
+22222
+
+
+2222";
+$valor = "2.500,00";
 $imagens = <<<'HTML'
-<img src='../uploads/quartos/banheiro-elegante.png' alt='Suíte elegante' style='width:200px; margin:10px; border-radius:8px;'><br><img src='../uploads/quartos/elegante.png' alt='Suíte elegante' style='width:200px; margin:10px; border-radius:8px;'><br><img src='../uploads/quartos/elegante2.png' alt='Suíte elegante' style='width:200px; margin:10px; border-radius:8px;'><br>
+<img src='../uploads/quartos/anaMA.png' alt='cartao' style='width:200px; margin:10px; border-radius:8px;'><br><img src='../uploads/quartos/cinnanhe-removebg-preview.png' alt='cartao' style='width:200px; margin:10px; border-radius:8px;'><br><img src='../uploads/quartos/IMG-20250815-WA0207.jpg' alt='cartao' style='width:200px; margin:10px; border-radius:8px;'><br>
 HTML;
 ?>
 <!DOCTYPE html>
@@ -30,18 +21,82 @@ HTML;
         .container { background: white; padding: 20px; border-radius: 8px; width: 600px; }
         img { display: block; max-width: 100%; height: auto; }
     </style>
+    <link rel="stylesheet" href="../css/quarto-individual.css">
 </head>
-<body>
-    <div class="container">
-        <h1><?php echo $titulo; ?></h1>
-        <p><?php echo $descricao; ?></p>
-        <p><b>Valor:</b> R$ <?php echo $valor; ?></p>
-        <h3>Imagens:</h3>
-<?php echo $imagens; ?>
+<script>
+        document.querySelectorAll('.slider').forEach(slider => {
+            const slidesContainer = slider.querySelector('.slides');
+            const slides = slidesContainer.querySelectorAll('img');
+            const next = slider.querySelector('.next');
+            const prev = slider.querySelector('.prev');
 
-<button><a href='../View/reservadas/reserva.php'>Agendar</a></button>
-<br>
-<a href="../index.php">⬅ Voltar à lista</a>
+            let index = 0;
+
+            function showSlide(i) {
+                index = (i + slides.length) % slides.length;
+                slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+            }
+
+            next.addEventListener('click', () => showSlide(index + 1));
+            prev.addEventListener('click', () => showSlide(index - 1));
+        });
+
+    </script>
+<body>
+     <nav>
+        <div class="menulogo">
+            <img src="../img/logo-2.png" alt="Logo Hotel Villa do Sol">
+        </div>
+        <div class="textos-nav">
+            <h1>Hotel Villa do Sol</h1>
+            <ul>
+                <li><a href="../index.php">INÍCIO</a></li>
+                <li><a href="../quartos.php">QUARTOS</a></li>
+                <li><a href="../sobre.php">SOBRE NÓS</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="voltar">
+        <a href="../index.php"><img src="../img/logo-voltar.png" alt="Voltar"></a>
     </div>
+
+    <div class="product-container">
+
+        <div class="cont">
+            <div class="left-box">
+                <!-- SLIDER DE IMAGENS -->
+                <div class="slider">
+                    <div class="slides">
+                        <?php echo $imagens;?>
+                    </div>
+                    <button class="prev">❮</button>
+                    <button class="next">❯</button>
+                </div>
+            </div>
+
+            <div class="titulo-valor">
+                <h1><?php echo $titulo; ?></h1>
+                <h3>R$ <?php echo $valor;?></h3>
+                <button><a href="../View/reservadas/reserva.php">Agendar</a></button>
+            </div>
+        </div>
+
+        <div class="descricao">
+            <h3>Descrição:</h3>
+            <p><?php echo $descricao; ?></p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2025 Hotel Villa do Sol. Todos os direitos reservados.  
+            Contato: (11) 1234-5678 | Email: villasol@gmail.com
+        </p>
+    </footer>
+
+    
+
 </body>
+
 </html>

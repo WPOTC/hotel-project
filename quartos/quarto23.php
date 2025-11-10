@@ -1,9 +1,18 @@
 <?php
-$titulo = "Suíte Spa";
-$descricao = "11111";
-$valor = "1111111111111";
+$titulo = "quarto 05";
+$descricao = "uasbhsaugvfycsacytsa8yvs
+asonibsabusa
+as
+sa
+as
+
+sa
+sa
+sa
+s";
+$valor = "2500.00.9282";
 $imagens = <<<'HTML'
-<img src='../uploads/quartos/area_lazer.png' alt='Suíte Spa' style='width:200px; margin:10px; border-radius:8px;'><br><img src='../uploads/quartos/banheiro-mais-mais.png' alt='Suíte Spa' style='width:200px; margin:10px; border-radius:8px;'><br>
+<img src='../uploads/quartos/D_665846-MLB89019362916_082025-O.jpg' alt='quarto 05' style='width:200px; margin:10px; border-radius:8px;'><br><img src='../uploads/quartos/cinnanhe-removebg-preview.png' alt='quarto 05' style='width:200px; margin:10px; border-radius:8px;'><br><img src='../uploads/quartos/Gemini_Generated_Image_8wnr5g8wnr5g8wnr.png' alt='quarto 05' style='width:200px; margin:10px; border-radius:8px;'><br>
 HTML;
 ?>
 <!DOCTYPE html>

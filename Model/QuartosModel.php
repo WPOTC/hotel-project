@@ -72,4 +72,57 @@ public function deletarQuartos($id) {
     return $stmt->execute([$Quartos_id, $caminho]);
   }
 
+
+
+//parte da reserva
+
+
+
+  public function reservar($reserva) {
+
+   $verificar = $this->verificarReservaExistente($reserva);
+        if ($verificar) {
+          return false;
+            
+        }else{
+        $sql = "INSERT INTO quartos (reserva) VALUES (:reserva)";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([':reserva' => $reserva]);
+        return true;
+        }  
+
+    }
+
+
+
+
+
+
+
+
+public function exibirReserva($reserva){
+        $stmt = $this->pdo->query("SELECT *FROM quartos WHERE reserva = $reserva");
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function checkout($reserva){
+        $sql = "DELETE from quartos WHERE reserva = ?";
+        $stmt = $this->pdo->prepare($sql);
+        return $stmt->execute([$reserva]);
+    }
+
+    public function listarTodasReservas($reserva, $nome_quarto){
+        $stmt = $this->pdo->query("SELECT *FROM quartos WHERE nome_quarto = $nome_quarto & reserva = $reserva");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function verificarReservaExistente($reserva) {
+        $sql = "SELECT COUNT(*) FROM quartos WHERE reserva = :reserva";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':reserva', $reserva);
+        $stmt->execute();
+        $count = $stmt->fetchColumn();
+        return $count > 0;
+    }
+
 }
