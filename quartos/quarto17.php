@@ -18,7 +18,7 @@ $descricao = "Ambiente extremamente espaçoso e luxuoso.
             Sistema de iluminação ambiente ajustável.
             Serviço de limpeza e arrumação várias vezes ao dia.
 ";
-$valor = "390,00";
+$valor = "3.500,00";
 $imagens = <<<'HTML'
 <img src='../uploads/quartos/banheiro-real.png' alt='Suíte Real' style='width:200px; margin:10px; border-radius:8px;'><br><img src='../uploads/quartos/real1.png' alt='Suíte Real' style='width:200px; margin:10px; border-radius:8px;'><br><img src='../uploads/quartos/real2.png' alt='Suíte Real' style='width:200px; margin:10px; border-radius:8px;'><br>
 HTML;

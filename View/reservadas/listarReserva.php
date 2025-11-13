@@ -16,22 +16,26 @@ $UsuarioController = new UsuarioController($pdo);
   <link rel="stylesheet" href="../../css/reservar.css">
 </head>
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
+}
 ?>
+
+
 <body>
 
-<footer>
-    
-      <p>© 2025 Hotel Villa do Sol . Todos os direitos reservados.
-        Número de contato: (11) 1234-5678. Email:villasol@gmail.com
-      </p>
-    
+  <footer>
+
+    <p>© 2025 Hotel Villa do Sol . Todos os direitos reservados.
+      Número de contato: (11) 1234-5678. Email:villasol@gmail.com
+    </p>
+
   </footer>
-<?php
+  <?php
 
 
-if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
-   echo '<nav>
+  if (isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com') {
+    echo '<nav>
     <div class="menu">
 
       <div class="menulogo">
@@ -50,17 +54,17 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
         </ul>
       </div>';
 
- if(isset($_SESSION['nome'])){
-            echo "<div class='usuario'><a href = '../Usuario/exibir' class='cadastro'><img src='../../img/logo-cadastro-feito.png'></a>Seja bem-vindo(a),"; 
-            echo $_SESSION['nome'] . "!</div>";
-        }elseif(!isset($_SESSION['nome'])){
-            echo "<a href = 'View/Usuario/cadastrarUsuario.php' class='cadastro'><img src='img/logo-cadastro.png'></a>";
+    if (isset($_SESSION['nome'])) {
+      echo "<div class='usuario'><a href = '../Usuario/exibir' class='cadastro'><img src='../../img/logo-cadastro-feito.png'></a>Seja bem-vindo(a),";
+      echo $_SESSION['nome'] . "!</div>";
+    } elseif (!isset($_SESSION['nome'])) {
+      echo "<a href = 'View/Usuario/cadastrarUsuario.php' class='cadastro'><img src='img/logo-cadastro.png'></a>";
 
-        }
+    }
 
     echo '</div></nav>';
-}else{
-  echo '<nav>
+  } else {
+    echo '<nav>
     <div class="menu">
 
       <div class="menulogo">
@@ -78,30 +82,30 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
         </ul>
       </div>
     </div></nav>';
-}
+  }
 
-       if(empty($Reserva)) {
-        echo "<div class='titulo'><p>Nenhuma reserva realizada.</p></div>";
-        return;
+  if (empty($Reserva)) {
+    echo "<div class='titulo'><p>Nenhuma reserva realizada.</p></div>";
+    return;
 
-       }
+  }
 
-        echo "<div class=''><table border='1' cellpadding='5' cellspacing='0'>";
-        echo "<tr><td><a href= 'View/Reservas/cadastrar.php'>Cadastrar</a></td></tr>";
-        echo "<tr><th>hospedes</th><th>data</th></tr></div>";
+  echo "<div class=''><table border='1' cellpadding='5' cellspacing='0'>";
+  echo "<tr><td><a href= 'View/Reservas/cadastrar.php'>Cadastrar</a></td></tr>";
+  echo "<tr><th>hospedes</th><th>data</th></tr></div>";
 
-        foreach($Reserva as $reserva) {
-            echo "<tr>";
-            echo "<td>{$reserva['hospedes']}</td>";
-            echo "<td>{$reserva['data']}</td>";
-            echo "<td>
+  foreach ($Reserva as $reserva) {
+    echo "<tr>";
+    echo "<td>{$reserva['hospedes']}</td>";
+    echo "<td>{$reserva['data']}</td>";
+    echo "<td>
                  <a href= 'View/Reservas/deletar.php?reserva={$reserva}' onclick=\"return confirm('Tem certeza que deseja excluir essa reserva?')\">(Imagem de X)</a> 
-                 </td>" ;
-                 echo "</tr>";
-        }
-     echo "</table>";
+                 </td>";
+    echo "</tr>";
+  }
+  echo "</table>";
 
-     ?>
+  ?>
 
 
 
@@ -128,9 +132,3 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 </body>
 
 </html>
-    
-        
-        
-               
-    
-

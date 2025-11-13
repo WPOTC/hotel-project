@@ -16,7 +16,7 @@ $descricao = "Ambiente ultra espaçoso e exclusivo.
             Sistema de iluminação inteligente com diversas opções de ambiente.
             Amenidades exclusivas de spa e cuidados pessoais.
             Segurança reforçada e privacidade total.";
-$valor = "2.400,00";
+$valor = "3.400,00";
 $imagens = <<<'HTML'
 <img src='../uploads/quartos/banheiro-mais-mais.png' alt='Suíte mais mais' style='width:200px; margin:10px; border-radius:8px;'><br><img src='../uploads/quartos/mais-mais1.png' alt='Suíte mais mais' style='width:200px; margin:10px; border-radius:8px;'><br><img src='../uploads/quartos/mais-mais2.png' alt='Suíte mais mais' style='width:200px; margin:10px; border-radius:8px;'><br>
 HTML;

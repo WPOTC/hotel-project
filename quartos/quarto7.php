@@ -7,7 +7,7 @@
 </head>
 <body>
     <h2>Suíte Real</h2>
-    <h3>R$ 390,00</h3>
+    <h3>R$ 3.500,00</h3>
 
     <ul>
         <ol>

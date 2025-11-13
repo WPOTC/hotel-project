@@ -13,7 +13,7 @@ $descricao = "Ambiente rústico, acolhedor e espaçoso.
             Espaços para lazer: churrasqueira, rede, piscina (quando aplicável).
             Decoração simples, rústica e aconchegante.
 ";
-$valor = "1.500,00";
+$valor = "1.800,00";
 $imagens = <<<'HTML'
 <img src='../uploads/quartos/banheiro-casa-de-campo.jpg' alt='Casa de campo' style='width:200px; margin:10px; border-radius:8px;'><br><img src='../uploads/quartos/casa-de-campo.jpg' alt='Casa de campo' style='width:200px; margin:10px; border-radius:8px;'><br><img src='../uploads/quartos/casa-de-campo2.jpg' alt='Casa de campo' style='width:200px; margin:10px; border-radius:8px;'><br>
 HTML;
