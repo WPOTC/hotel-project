@@ -89,10 +89,56 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 ?>
        
     </div>
+<?php
+// 1️⃣ Agrupa quartos com base no ID
+$quartosAgrupados = [];
 
-<!-- 
+foreach ($Quartos as $quarto) {
+    $id = $quarto['id'];
 
-    <div class="bloco1">
+    if (!isset($quartosAgrupados[$id])) {
+        $quartosAgrupados[$id] = [
+            'id' => $quarto['id'],
+            'nome_quarto' => $quarto['nome_quarto'],
+            'valor' => $quarto['valor'],
+            'imagens' => []
+        ];
+    }
+
+    $quartosAgrupados[$id]['imagens'][] = $quarto['caminho_imagem'];
+}
+?>
+
+<!-- 2️⃣ Container geral dos quartos -->
+<div class="quartos-container">
+
+    <?php foreach ($quartosAgrupados as $quarto): ?>
+        <div class='bloco1'>
+            <div class='slider'>
+                <div class='slides'>
+                    <?php foreach ($quarto['imagens'] as $img): ?>
+                        <img src='uploads/quartos/<?php echo $img; ?>' alt='<?php echo htmlspecialchars($quarto['nome_quarto']); ?>'>
+                    <?php endforeach; ?>
+                </div>
+
+                <button class='prev'>⟨</button>
+                <button class='next'>⟩</button>
+
+                <div class="info">
+                    <h2><?php echo htmlspecialchars($quarto['nome_quarto']); ?></h2>
+                    <p>R$ <?php echo number_format($quarto['valor'], 2, ',', '.'); ?></p>
+                    <a href='quartos/quarto<?php echo $quarto['id']; ?>.php'>
+                        <button type='submit' class='botao'>Agendar</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    <?php endforeach; ?>
+
+</div>
+
+
+    <!-- <div class="bloco1">
 
         <div class="slider">
 
@@ -320,7 +366,7 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 
         </div>
 
-    </div> -->
+    </div>  -->
 
     <div class="container">
         <footer role="contentinfo">
