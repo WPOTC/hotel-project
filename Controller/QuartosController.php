@@ -220,6 +220,34 @@ PHP;
         return $Quartos;
     }
 
+
+
+
+
+
+
+
+    public function reservar($reserva ) {
+    $reservar = $this->QuartosModel->reservar($reserva);
+    return $reservar;
+   }
+
+   public function exibirReserva($reserva){
+        $reserva = $this->QuartosModel->exibirReserva($reserva);
+        return $reserva;
+    }
+
+    public function listarTodasReservas(){
+        $reservas = $this->QuartosModel->listarTodasReservas();
+        include_once "C:/Turma1/xampp/htdocs/hotel-project/View/quarto/listarReserva.php";
+        return;
+    }
+
+    public function checkout($reserva){
+        $CHECKOUT = $this->QuartosModel->checkout($reserva);
+        return $CHECKOUT;
+    }
+
 }
 
 
@@ -228,3 +256,4 @@ PHP;
 
 
 
+?>

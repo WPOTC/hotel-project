@@ -1,133 +1,119 @@
 <?php
 
-class UsuarioModel{
+class UsuarioModel {
     private $pdo;
 
     public function __construct(PDO $pdo) {
         $this->pdo = $pdo;
     }
 
+    // Buscar todos os usuários
     public function buscarTodosUsuarios() {
         $stmt = $this->pdo->query("SELECT * FROM cadastro");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function buscarUsuario($id){
-        $stmt = $this->pdo->query("SELECT *FROM cadastro WHERE id = $id");
+    // Buscar um usuário pelo ID
+    public function buscarUsuario($id) {
+        $sql = "SELECT * FROM cadastro WHERE id = :id";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
-    
 
-    public function cadastrarUsuario($nome , $email , $cpf , $telefone , $senha){
-        $verifica = $this->verificarEmailExistente($email);
-        if ($verifica) {
-          return false;
-            
-        }else{
-        $sql = "INSERT INTO cadastro (nome, email, cpf, telefone, senha) VALUES (:nome, :email, :cpf, :telefone, :senha)";
+    // Cadastrar novo usuário
+    public function cadastrarUsuario($nome, $email, $cpf, $telefone, $senha) {
+        if ($this->verificarEmailExistente($email)) {
+            return false; // Já existe o email
+        }
+
+        $sql = "INSERT INTO cadastro (nome, email, cpf, telefone, senha) 
+                VALUES (:nome, :email, :cpf, :telefone, :senha)";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute([':nome' => $nome, ':email' => $email, ':cpf' => $cpf, ':telefone' => $telefone, ':senha' => $senha]);
+        $stmt->execute([
+            ':nome' => $nome,
+            ':email' => $email,
+            ':cpf' => $cpf,
+            ':telefone' => $telefone,
+            ':senha' => $senha
+        ]);
         return true;
-        }  
-
     }
 
+    // Verificar se o email já está cadastrado
     public function verificarEmailExistente($email) {
         $sql = "SELECT COUNT(*) FROM cadastro WHERE email = :email";
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':email', $email);
         $stmt->execute();
-        $count = $stmt->fetchColumn();
-        return $count > 0;
+        return $stmt->fetchColumn() > 0;
     }
 
-    public function editarUsuario($nome, $email,  $cpf, $telefone, $senha, $id){
-        $sql = "UPDATE cadastro SET nome=? , email=? , cpf=? , telefone=? , senha=? WHERE id = ?";
+    // Editar usuário
+    public function editarUsuario($nome, $email, $cpf, $telefone, $senha, $id) {
+        $sql = "UPDATE cadastro 
+                SET nome = ?, email = ?, cpf = ?, telefone = ?, senha = ? 
+                WHERE id = ?";
         $stmt = $this->pdo->prepare($sql);
         return $stmt->execute([$nome, $email, $cpf, $telefone, $senha, $id]);
     }
 
-    public function deletarUsuario($id){
-        $sql = "DELETE from cadastro WHERE id = ?";
+    // Deletar usuário
+    public function deletarUsuario($id) {
+        $sql = "DELETE FROM cadastro WHERE id = ?";
         $stmt = $this->pdo->prepare($sql);
         return $stmt->execute([$id]);
     }
 
+    // Login do usuário
     public function loginUsuario($email, $senha) {
-    $sql = "SELECT * FROM cadastro WHERE email = :email AND senha = :senha";
-    $stmt = $this->pdo->prepare($sql);
-    $stmt->bindParam(':email', $email);
-    $stmt->bindParam(':senha', $senha);
-    $stmt->execute();
+        $sql = "SELECT * FROM cadastro WHERE email = :email AND senha = :senha";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':senha', $senha);
+        $stmt->execute();
 
-    $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+        $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if ($usuario) {
-        session_start();
-        $_SESSION['nome'] = $usuario['nome'];
-        $_SESSION['email'] = $usuario['email'];
-        $_SESSION['id'] = $usuario['id'];
-
-        return $usuario;
-    } else {
+        if ($usuario) {
+            if (session_status() === PHP_SESSION_NONE) {
+                session_start();
+            }
+            $_SESSION['nome'] = $usuario['nome'];
+            $_SESSION['email'] = $usuario['email'];
+            $_SESSION['id'] = $usuario['id'];
+            return $usuario;
+        }
         return null;
     }
 }
+// 1. Simulação dos dados da nova reserva
+$tipo_quarto = 'Luxo';
+$valor_diaria = 250.00; // Novo parâmetro para o preço
 
+// 2. Chamada da função para registrar a reserva (Supondo que $usuarioModel é uma instância da classe)
+$reserva_ok = $usuarioModel->reservar($tipo_quarto, $valor_diaria);
 
+if ($reserva_ok) {
+    // 3. Chamada da função para buscar e exibir os dados (incluindo o preço)
+    $dados_reserva = $usuarioModel->exibirReserva($tipo_quarto);
 
-
-
-//parte da reserva de quartos
-
-public function reservar($reserva) {
-
-   $verificar = $this->verificarReservaExistente($reserva);
-        if ($verificar) {
-          return false;
-            
-        }else{
-        $sql = "INSERT INTO cadastro (reserva) VALUES (:reserva)";
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->execute([':reserva' => $reserva]);
-        return true;
-        }  
-
+    if ($dados_reserva) {
+        echo "✅ Reserva de Quarto **" . $dados_reserva['reserva'] . "** realizada com sucesso!";
+        echo "<br>💰 O preço da sua reserva é: **R$ " . number_format($dados_reserva['preco'], 2, ',', '.') . "**";
+        // Você pode acessar todas as colunas, como $dados_reserva['id'], etc.
     }
-
-
-
-
-
-
-
-
-public function exibirReserva($reserva){
-        $stmt = $this->pdo->query("SELECT *FROM cadastro WHERE reserva = $reserva");
-        return $stmt->fetch(PDO::FETCH_ASSOC);
-    }
-
-    public function checkout($reserva){
-        $sql = "DELETE from cadastro WHERE reserva = ?";
-        $stmt = $this->pdo->prepare($sql);
-        return $stmt->execute([$reserva]);
-    }
-
-    public function listarTodasReservas($reserva, $nome){
-        $stmt = $this->pdo->query("SELECT *FROM cadastro WHERE nome = $nome & reserva = $reserva");
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
-
-    public function verificarReservaExistente($reserva) {
-        $sql = "SELECT COUNT(*) FROM cadastro WHERE reserva = :reserva";
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->bindParam(':reserva', $reserva);
-        $stmt->execute();
-        $count = $stmt->fetchColumn();
-        return $count > 0;
-    }
-
+} else {
+    echo "❌ Não foi possível realizar a reserva. Talvez ela já exista.";
 }
+
+
+
+
+
+
+
 
 
 ?>

@@ -46,29 +46,7 @@ class UsuarioController{
 
 
 
-
-    //parte da reserva de quartos
-
-    public function reservar($reserva ) {
-    $reservar = $this->usuarioModel->reservar($reserva);
-    return $reservar;
-   }
-
-   public function exibirReserva($reserva){
-        $reserva = $this->usuarioModel->exibirReserva($reserva);
-        return $reserva;
-    }
-
-    public function listarTodasReservas(){
-        $reservas = $this->usuarioModel->listarTodasReservas();
-        include_once "C:/Turma1/xampp/htdocs/hotel-project/View/Usuario/listarReserva.php";
-        return;
-    }
-
-    public function checkout($reserva){
-        $CHECKOUT = $this->usuarioModel->checkout($reserva);
-        return $CHECKOUT;
-    }
+    
 }
 
 ?>
