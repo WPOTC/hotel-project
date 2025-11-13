@@ -1,4 +1,5 @@
 <?php
+session_start();
 $titulo = "SUÍTE PREMIUM";
 $descricao = "Ambiente espaçoso e elegante. <br>
             Cama king size com roupa de cama de alta qualidade. <br>
@@ -90,7 +91,7 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
     <div class="menu">
 
       <div class="menulogo">
-        <img src="img/logo-2.png" alt="">
+        <img src="../img/logo-2.png" alt="">
       </div>
 
       <div class="textos-nav">

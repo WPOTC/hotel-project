@@ -1,4 +1,5 @@
 <?php
+session_start();
 $titulo = "SUÍTE MASTER";
 $descricao = " Tamanho: geralmente entre 40 m² e 60 m².<br>
             Ambientes: quarto com cama queen ou king size, sala de estar, varanda e banheiro privativo.<br>
@@ -86,7 +87,7 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
     <div class="menu">
 
       <div class="menulogo">
-        <img src="img/logo-2.png" alt="">
+        <img src="../img/logo-2.png" alt="">
       </div>
 
       <div class="textos-nav">

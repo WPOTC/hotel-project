@@ -1,4 +1,5 @@
 <?php
+session_start();
 $titulo = "CASA DE CAMPO";
 $descricao = "Ambiente rústico, acolhedor e espaçoso.<br>
             Construção em madeira, pedra ou materiais naturais.<br>
@@ -86,7 +87,7 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
     <div class="menu">
 
       <div class="menulogo">
-        <img src="img/logo-2.png" alt="">
+        <img src="../img/logo-2.png" alt="">
       </div>
 
       <div class="textos-nav">
