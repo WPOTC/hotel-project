@@ -50,7 +50,7 @@ $imagens = <<<'HTML'
     </script>
 HTML;
 ?>
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -75,15 +75,85 @@ HTML;
 </head>
 
 <body>
-    <div class="container">
-        <button><a href="../View/reservadas/reserva/php">Editar</a></button>
-        <h1><?php echo $titulo; ?></h1>
-        <p><?php echo $descricao; ?></p>
-        <p><b>Valor:</b> R$ <?php echo $valor; ?></p>
-        <h3>Imagens:</h3>
-<?php echo $imagens; ?>
-<br>
-<a href="../index.php">⬅ Voltar à lista</a>
+
+    <?php
+
+if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
+   echo '<nav>
+    <div class="menu">
+
+      <div class="menulogo">
+        <img src="img/logo-2.png" alt="">
+      </div>
+
+      <div class="textos-nav">
+        <h1>Hotel Villa do Sol</h1>
+
+        <ul>
+          <li><a href="../index.php">INÍCIO</a></li>
+          <li><a href="../quartos.php" class="quartos">QUARTOS</a></li>
+          <li><a href="../sobre.php">SOBRE NÓS</a></li>
+          <li><a href="../View/reservadas/listarReserva.php">RESERVAS</a></li>
+
+        </ul>
+      </div>
+    </div>';
+}else{
+  echo '<nav>
+    <div class="menu">
+
+      <div class="menulogo">
+        <img src="../img/logo-2.png" alt="">
+      </div>
+
+      <div class="textos-nav">
+        <h1>Hotel Villa do Sol</h1>
+
+        <ul>
+          <li><a href="../index.php">INÍCIO</a></li>
+          <li><a href="../quartos.php" class="quartos">QUARTOS</a></li>
+          <li><a href="../sobre.php">SOBRE NÓS</a></li>
+
+        </ul>
+      </div>
+    </div>';
+}
+
+
+    if(isset($_SESSION['nome'])){
+            echo "<a href = '../View/Usuario/exibirUsuario.php' class='cadastro'><img src='../img/logo-cadastro-feito.png'</a>" . "Seja bem-vindo(a), " . htmlspecialchars($_SESSION['nome']) . "!";
+        }elseif(!isset($_SESSION['nome'])){
+            echo "<a href = '../View/Usuario/cadastrarUsuario.php'class='cadastro'><img src='../img/logo-cadastro.png'></a>";
+         
+        }
+        ?>
+  </nav>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    
+    <a href="../quartos.php" ><img src="../img/logo-voltar.png"></a>
+
+    <div class="product-container">
+
+     <div class="cont">
+
+        <div class="left-box">
+            <?php echo $imagens; ?>
+        </div>
+
+        <div class="titulo-valor">
+            <button><a href="../View/quartos/EditarQuartos.php?id=11">Editar</a></button>
+            <h1><?php echo $titulo; ?></h1>
+
+            <h3> R$ <?php echo $valor; ?></h3>
+
+            <button><a href="../View/reservadas/reserva/php">Agendar</a></button>
+        </div>
+    
     </div>
 
         <div class="descricao">
