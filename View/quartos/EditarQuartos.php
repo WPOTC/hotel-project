@@ -1,7 +1,9 @@
 <?php
 
-require_once "C:/Turma1/xampp/htdocs/mvc/DB/Database.php";
-require_once  "C:/Turma1/xampp/htdocs/mvc/Controller/QuartosController.php";
+require_once "C:/Turma1/xampp/htdocs/hotel-project/DB/Database.php";
+require_once  "C:/Turma1/xampp/htdocs/hotel-project/Controller/QuartosController.php";
+
+
 
 $QuartosController = new QuartosController($pdo);
 
@@ -20,10 +22,10 @@ if (isset($_GET['id'])) {
 <body>
     <form method="post">
       <label for="nome">Nome:</label>
-      <input type="text" name="nome" value="<?=$Reservas['nome']?>" required> <br>
+      <input type="text" name="nome" value="<?=$Quartos['nome_quarto']?>" required> <br>
 
         <label for="text">Descrição:</label>
-        <input type="text" name="text" value="<?=$Reservas['descrição'];?>" required> <br>
+        <input type="text" name="text" value="<?=$Quartos['descricao'];?>" required> <br>
 
         <input type="submit" >
         </form>
@@ -31,7 +33,7 @@ if (isset($_GET['id'])) {
     </html>
         <?php
         }else{
-            header ("Location: listar.php");
+            header ("Location: ListarQuartos.php");
         }
 
         if($_SERVER['REQUEST_METHOD'] === 'POST'){

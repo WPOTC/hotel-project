@@ -31,7 +31,6 @@ $imagens = <<<'HTML'
 
     <button class="prev">⟨</button>
     <button class="next">⟩</button>
-
 </div>
 <script>
         document.querySelectorAll('.slider').forEach(slider => {
@@ -150,6 +149,7 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
         </div>
 
         <div class="titulo-valor">
+            <button><a href="../View/quartos/EditarQuartos.php?id=11">Editar</a></button>
             <h1><?php echo $titulo; ?></h1>
 
             <h3> R$ <?php echo $valor; ?></h3>

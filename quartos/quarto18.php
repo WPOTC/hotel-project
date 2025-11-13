@@ -75,6 +75,7 @@ HTML;
 </head>
 
 <body>
+<<<<<<< HEAD
 
     <?php
 
@@ -153,6 +154,17 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
             <button><a href="../View/reservadas/reserva/php">Agendar</a></button>
         </div>
     
+=======
+    <div class="container">
+        <button><a href="../View/reservadas/reserva/php">Editar</a></button>
+        <h1><?php echo $titulo; ?></h1>
+        <p><?php echo $descricao; ?></p>
+        <p><b>Valor:</b> R$ <?php echo $valor; ?></p>
+        <h3>Imagens:</h3>
+<?php echo $imagens; ?>
+<br>
+<a href="../index.php">⬅ Voltar à lista</a>
+>>>>>>> 38acf115fc12bc9a16ee94b904d981e16dd651be
     </div>
 
         <div class="descricao">
