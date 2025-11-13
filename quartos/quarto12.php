@@ -13,7 +13,7 @@ $descricao = " Tamanho: geralmente entre 40 m² e 60 m².
 ";
 $valor = "3.500,00";
 $imagens = <<<'HTML'
-div class='slider'>
+
     <div class='slides'>
         <div class='slide'>
 
@@ -75,86 +75,6 @@ HTML;
 </head>
 
 <body>
-<<<<<<< HEAD
-
-    <?php
-
-if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
-   echo '<nav>
-    <div class="menu">
-
-      <div class="menulogo">
-        <img src="img/logo-2.png" alt="">
-      </div>
-
-      <div class="textos-nav">
-        <h1>Hotel Villa do Sol</h1>
-
-        <ul>
-          <li><a href="../index.php">INÍCIO</a></li>
-          <li><a href="../quartos.php" class="quartos">QUARTOS</a></li>
-          <li><a href="../sobre.php">SOBRE NÓS</a></li>
-          <li><a href="../View/reservadas/listarReserva.php">RESERVAS</a></li>
-
-        </ul>
-      </div>
-    </div>';
-}else{
-  echo '<nav>
-    <div class="menu">
-
-      <div class="menulogo">
-        <img src="../img/logo-2.png" alt="">
-      </div>
-
-      <div class="textos-nav">
-        <h1>Hotel Villa do Sol</h1>
-
-        <ul>
-          <li><a href="../index.php">INÍCIO</a></li>
-          <li><a href="../quartos.php" class="quartos">QUARTOS</a></li>
-          <li><a href="../sobre.php">SOBRE NÓS</a></li>
-
-        </ul>
-      </div>
-    </div>';
-}
-
-
-    if(isset($_SESSION['nome'])){
-            echo "<a href = '../View/Usuario/exibirUsuario.php' class='cadastro'><img src='../img/logo-cadastro-feito.png'</a>" . "Seja bem-vindo(a), " . htmlspecialchars($_SESSION['nome']) . "!";
-        }elseif(!isset($_SESSION['nome'])){
-            echo "<a href = '../View/Usuario/cadastrarUsuario.php'class='cadastro'><img src='../img/logo-cadastro.png'></a>";
-         
-        }
-        ?>
-  </nav>
-
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    
-    <a href="../quartos.php" ><img src="../img/logo-voltar.png"></a>
-
-    <div class="product-container">
-
-     <div class="cont">
-
-        <div class="left-box">
-            <?php echo $imagens; ?>
-        </div>
-
-        <div class="titulo-valor">
-            <h1><?php echo $titulo; ?></h1>
-
-            <h3> R$ <?php echo $valor; ?></h3>
-
-            <button><a href="../View/reservadas/reserva/php">Agendar</a></button>
-        </div>
-    
-=======
     <div class="container">
         <button><a href="../View/reservadas/reserva/php">Editar</a></button>
         <h1><?php echo $titulo; ?></h1>
@@ -164,7 +84,6 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 <?php echo $imagens; ?>
 <br>
 <a href="../index.php">⬅ Voltar à lista</a>
->>>>>>> 38acf115fc12bc9a16ee94b904d981e16dd651be
     </div>
 
         <div class="descricao">
