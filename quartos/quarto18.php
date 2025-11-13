@@ -1,28 +1,31 @@
 <?php
-$titulo = "Casa de campo";
-$descricao = "Ambiente rústico, acolhedor e espaçoso.
-            Construção em madeira, pedra ou materiais naturais.
-            Várias suítes com camas queen ou king size.
-            Banheiros privativos com amenidades básicas a sofisticadas.
-            Sala de estar ampla com lareira ou fogão a lenha.
-            Cozinha equipada para uso completo (fogão, geladeira, micro-ondas, utensílios).
-            Área externa com jardim, varanda e espaço para churrasco.
-            Wi-Fi disponível.
-            Área de jantar interna e externa.
-            Vista para natureza, montanhas ou campo aberto.
-            Espaços para lazer: churrasqueira, rede, piscina (quando aplicável).
-            Decoração simples, rústica e aconchegante.
+$titulo = "CASA DE CAMPO";
+$descricao = "Ambiente rústico, acolhedor e espaçoso.<br>
+            Construção em madeira, pedra ou materiais naturais.<br>
+            Várias suítes com camas queen ou king size.<br>
+            Banheiros privativos com amenidades básicas a sofisticadas.<br>
+            Sala de estar ampla com lareira ou fogão a lenha.<br>
+            Cozinha equipada para uso completo (fogão, geladeira, micro-ondas, utensílios).<br>
+            Área externa com jardim, varanda e espaço para churrasco.<br>
+            Wi-Fi disponível.<br>
+            Área de jantar interna e externa.<br>
+            Vista para natureza, montanhas ou campo aberto.<br>
+            Espaços para lazer: churrasqueira, rede, piscina (quando aplicável).<br>
+            Decoração simples, rústica e aconchegante.<br>
 ";
 $valor = "1.800,00";
 $imagens = <<<'HTML'
 <div class='slider'>
     <div class='slides'>    
 
-<img src='../uploads/quartos/banheiro-casa-de-campo.jpg' alt='Casa de campo' style='width:200px; margin:10px; border-radius:8px;'><br>
+<img src='../uploads/quartos/casa-de-campo.jpg' alt='Casa de campo' 
+style=' margin:0px; border-radius:8px;'><br>
 
-<img src='../uploads/quartos/casa-de-campo.jpg' alt='Casa de campo' style='width:200px; margin:10px; border-radius:8px;'><br>
+<img src='../uploads/quartos/casa-de-campo2.jpg' alt='Casa de campo' 
+style=' margin:0px; border-radius:8px;'><br>
 
-<img src='../uploads/quartos/casa-de-campo2.jpg' alt='Casa de campo' style='width:200px; margin:10px; border-radius:8px;'><br>
+<img src='../uploads/quartos/banheiro-casa-de-campo.jpg' alt='Casa de campo' 
+style=' margin:0px; border-radius:8px;'><br>
    </div>
 
     <button class="prev">⟨</button>
@@ -75,17 +78,6 @@ HTML;
 </head>
 
 <body>
-<<<<<<< HEAD
-    <div class="container">
-        <button><a href="../View/reservadas/reserva/php?id=18">Editar</a></button>
-        <h1><?php echo $titulo; ?></h1>
-        <p><?php echo $descricao; ?></p>
-        <p><b>Valor:</b> R$ <?php echo $valor; ?></p>
-        <h3>Imagens:</h3>
-<?php echo $imagens; ?>
-<br>
-<a href="../index.php">⬅ Voltar à lista</a>
-=======
 
     <?php
 
@@ -161,10 +153,14 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 
             <h3> R$ <?php echo $valor; ?></h3>
 
+             <div class="botoes">
+
             <button><a href="../View/reservadas/reserva/php">Agendar</a></button>
+            
+            <button><a href="../View/quartos/EditarQuartos.php?id=11">Editar</a></button>
+            </div>
         </div>
-    
->>>>>>> b5a5c7b8d5dc7135323fe74c2bbccf3531571ff4
+
     </div>
 
         <div class="descricao">

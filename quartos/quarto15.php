@@ -1,31 +1,34 @@
 <?php
-$titulo = "Suíte Spa";
-$descricao = "Ambiente amplo e relaxante.
-            Cama king size com roupa de cama premium.
-            Banheiro privativo com banheira de hidromassagem ou jacuzzi.
-            Área exclusiva para tratamentos de spa dentro da suíte.
-            Sauna ou steam room privativo (em algumas unidades).
-            Amenidades de spa de alta qualidade (óleos essenciais, sais de banho, velas aromáticas).
-            TV de tela plana com canais a cabo e streaming.
-            Ar-condicionado com controle individual.
-            Wi-Fi de alta velocidade gratuito.
-            Área de estar confortável com sofá ou poltronas.
-            Mini bar com opções saudáveis e refrescantes.
-            Máquina de café expresso ou chaleira elétrica.
-            Serviço de quarto 24 horas.
-            Decoração zen com iluminação suave e elementos naturais.
-            Serviço de massagens e tratamentos disponíveis sob demanda.
-            Varanda ou janela com vista relaxante (quando aplicável).";
+$titulo = "SUÍTE SPA";
+$descricao = "Ambiente amplo e relaxante.<br>
+            Cama king size com roupa de cama premium.<br>
+            Banheiro privativo com banheira de hidromassagem ou jacuzzi.<br>
+            Área exclusiva para tratamentos de spa dentro da suíte.<br>
+            Sauna ou steam room privativo (em algumas unidades).<br>
+            Amenidades de spa de alta qualidade (óleos essenciais, sais de banho, velas aromáticas).<br>
+            TV de tela plana com canais a cabo e streaming.<br>
+            Ar-condicionado com controle individual.<br>
+            Wi-Fi de alta velocidade gratuito.<br>
+            Área de estar confortável com sofá ou poltronas.<br>
+            Mini bar com opções saudáveis e refrescantes.<br>
+            Máquina de café expresso ou chaleira elétrica.<br>
+            Serviço de quarto 24 horas.<br>
+            Decoração zen com iluminação suave e elementos naturais.<br>
+            Serviço de massagens e tratamentos disponíveis sob demanda.<br>
+            Varanda ou janela com vista relaxante (quando aplicável).<br>";
 $valor = "1.000,00";
 $imagens = <<<'HTML'
 <div class='slider'>
     <div class='slides'>
 
-<img src='../uploads/quartos/banheiro-spa.jpg' alt='Suíte Spa' style='width:200px; margin:10px; border-radius:8px;'><br>
+<img src='../uploads/quartos/master2.jpg' alt='Suíte Spa' 
+style=' margin:0px; border-radius:8px;'><br>
 
-<img src='../uploads/quartos/master2.jpg' alt='Suíte Spa' style='width:200px; margin:10px; border-radius:8px;'><br>
+<img src='../uploads/quartos/spa2.jpg' alt='Suíte Spa' 
+style=' margin:0px; border-radius:8px;'><br>
 
-<img src='../uploads/quartos/spa2.jpg' alt='Suíte Spa' style='width:200px; margin:10px; border-radius:8px;'><br>
+<img src='../uploads/quartos/banheiro-spa.jpg' alt='Suíte Spa' 
+style=' margin:0px; border-radius:8px;'><br>
 
    </div>
 
@@ -79,17 +82,6 @@ HTML;
 </head>
 
 <body>
-<<<<<<< HEAD
-    <div class="container">
-        <button><a href="../View/reservadas/reserva/php?id=15">Editar</a></button>
-        <h1><?php echo $titulo; ?></h1>
-        <p><?php echo $descricao; ?></p>
-        <p><b>Valor:</b> R$ <?php echo $valor; ?></p>
-        <h3>Imagens:</h3>
-<?php echo $imagens; ?>
-<br>
-<a href="../index.php">⬅ Voltar à lista</a>
-=======
 
     <?php
 
@@ -165,10 +157,14 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 
             <h3> R$ <?php echo $valor; ?></h3>
 
+            <div class="botoes">
+
             <button><a href="../View/reservadas/reserva/php">Agendar</a></button>
+            
+            <button><a href="../View/quartos/EditarQuartos.php?id=11">Editar</a></button>
+            </div>
         </div>
     
->>>>>>> b5a5c7b8d5dc7135323fe74c2bbccf3531571ff4
     </div>
 
         <div class="descricao">

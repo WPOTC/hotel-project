@@ -1,27 +1,30 @@
 <?php
-$titulo = "Suíte Júnior";
-$descricao = "Ambiente confortável e funcional.
-            Cama queen size ou king size.
-            Banheiro privativo com amenities essenciais.
-            TV de tela plana com canais a cabo.
-            Ar-condicionado com controle individual.
-            Wi-Fi gratuito de alta velocidade.
-            Área de estar integrada ao quarto (sofá ou poltrona).
-            Mesa de trabalho compacta.
-            Cofre digital para pertences pessoais.
-            Decoração moderna e aconchegante.
-            Serviço de limpeza diário.
-            Chá e café disponíveis no quarto.";
+$titulo = "SUÍTE JUNÍOR";
+$descricao = "Ambiente confortável e funcional.<br>
+            Cama queen size ou king size.<br>
+            Banheiro privativo com amenities essenciais.<br>
+            TV de tela plana com canais a cabo.<br>
+            Ar-condicionado com controle individual.<br>
+            Wi-Fi gratuito de alta velocidade.<br>
+            Área de estar integrada ao quarto (sofá ou poltrona).<br>
+            Mesa de trabalho compacta.<br>
+            Cofre digital para pertences pessoais.<br>
+            Decoração moderna e aconchegante.<br>
+            Serviço de limpeza diário.<br>
+            Chá e café disponíveis no quarto.<br>";
 $valor = "550,00";
 $imagens = <<<'HTML'
 <div class='slider'>
     <div class='slides'>
 
-<img src='../uploads/quartos/banheiro-junior.jpg' alt='Suíte Júnior' style='width:200px; margin:10px; border-radius:8px;'><br>
+<img src='../uploads/quartos/junior1.png' alt='Suíte Júnior'
+ style=' margin:10px; border-radius:8px;'><br>
 
-<img src='../uploads/quartos/junior1.png' alt='Suíte Júnior' style='width:200px; margin:10px; border-radius:8px;'><br>
+<img src='../uploads/quartos/junior2.png' alt='Suíte Júnior' 
+style=' margin:10px; border-radius:8px;'><br>
 
-<img src='../uploads/quartos/junior2.png' alt='Suíte Júnior' style='width:200px; margin:10px; border-radius:8px;'><br>
+<img src='../uploads/quartos/banheiro-junior.jpg' alt='Suíte Júnior'
+ style=' margin:10px; border-radius:8px;'><br>
    </div>
 
     <button class="prev">⟨</button>
@@ -74,17 +77,6 @@ HTML;
 </head>
 
 <body>
-<<<<<<< HEAD
-    <div class="container">
-        <button><a href="../View/reservadas/reserva/php?id=14">Editar</a></button>
-        <h1><?php echo $titulo; ?></h1>
-        <p><?php echo $descricao; ?></p>
-        <p><b>Valor:</b> R$ <?php echo $valor; ?></p>
-        <h3>Imagens:</h3>
-<?php echo $imagens; ?>
-<br>
-<a href="../index.php">⬅ Voltar à lista</a>
-=======
 
     <?php
 
@@ -160,10 +152,15 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 
             <h3> R$ <?php echo $valor; ?></h3>
 
+            <div class="botoes">
+
             <button><a href="../View/reservadas/reserva/php">Agendar</a></button>
+            
+            <button><a href="../View/quartos/EditarQuartos.php?id=11">Editar</a></button>
+            </div>
+
         </div>
     
->>>>>>> b5a5c7b8d5dc7135323fe74c2bbccf3531571ff4
     </div>
 
         <div class="descricao">
