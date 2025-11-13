@@ -88,25 +88,7 @@ class UsuarioModel {
         return null;
     }
 }
-// 1. Simulação dos dados da nova reserva
-$tipo_quarto = 'Luxo';
-$valor_diaria = 250.00; // Novo parâmetro para o preço
 
-// 2. Chamada da função para registrar a reserva (Supondo que $usuarioModel é uma instância da classe)
-$reserva_ok = $usuarioModel->reservar($tipo_quarto, $valor_diaria);
-
-if ($reserva_ok) {
-    // 3. Chamada da função para buscar e exibir os dados (incluindo o preço)
-    $dados_reserva = $usuarioModel->exibirReserva($tipo_quarto);
-
-    if ($dados_reserva) {
-        echo "✅ Reserva de Quarto **" . $dados_reserva['reserva'] . "** realizada com sucesso!";
-        echo "<br>💰 O preço da sua reserva é: **R$ " . number_format($dados_reserva['preco'], 2, ',', '.') . "**";
-        // Você pode acessar todas as colunas, como $dados_reserva['id'], etc.
-    }
-} else {
-    echo "❌ Não foi possível realizar a reserva. Talvez ela já exista.";
-}
 
 
 

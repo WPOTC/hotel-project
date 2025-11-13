@@ -48,8 +48,7 @@ class UsuarioModel{
         // Retorna a linha da reserva, que agora inclui a coluna 'preco'
         $dados_reserva = $stmt->fetch(PDO::FETCH_ASSOC);
         
-        // Se a reserva for encontrada, retorna os dados.
-        // O código que chamar esta função pode então exibir: $dados_reserva['preco']
+       
         return $dados_reserva;
     }
 
@@ -77,5 +76,5 @@ class UsuarioModel{
     }
 
 }
-// ...
+
 ?>
