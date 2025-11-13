@@ -100,8 +100,8 @@ session_start();
 
 
 
-    $reservar = $UsuarioController->reservar($reserva);
-    if ($reservar) {
+    $reservar = $UsuarioController->reservas($reserva);
+    if ($reservas) {
       $UsuarioController->loginUsuario($email, $senha);
       header('Location: ../../index.php');
     } else {

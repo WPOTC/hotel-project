@@ -222,7 +222,7 @@ foreach ($Quartos as $quarto) {
             
             <h2>Suíte Júnior</h2>
 
-            <p>R$ 254,00</p>
+            <p>R$ 454,00</p>
 
             <a href="quartos/quarto4.php"><button type="submit" class="botao">Agendar</button></a>
 
@@ -339,7 +339,7 @@ foreach ($Quartos as $quarto) {
             
             <h2>Suíte elegante</h2>
 
-            <p>R$ 135,00</p>
+            <p>R$ 535,00</p>
 
             <a href="quartos/quarto9.php"><button type="submit" class="botao">Agendar</button></a>
 
@@ -360,7 +360,7 @@ foreach ($Quartos as $quarto) {
             
             <h2>Suíte mais mais</h2>
 
-            <p>R$ 24.000,00</p>
+            <p>R$ 2.400,00</p>
 
            <a href="quartos/quarto10.php"> <button type="submit" class="botao">Agendar</button></a>
 
