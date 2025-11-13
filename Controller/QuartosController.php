@@ -30,84 +30,58 @@ class QuartosController
         return $Quartos;
     }
 
-    public function cadastrarQuartos($nome_quarto, $descricao, $imagens, $valor)
-    {
-        $resultado = false;
+  public function cadastrarQuartos($nome_quarto, $descricao, $imagens, $valor)
+{
+    $resultado = false;
 
-        // 1️⃣ Cadastra no banco
-        $idQuartos = $this->QuartosModel->cadastrarQuartos($nome_quarto, $descricao, $valor);
+    // 1️⃣ Cadastra o quarto no banco
+    $idQuartos = $this->QuartosModel->cadastrarQuartos($nome_quarto, $descricao, $valor);
 
-        if ($idQuartos) {
+    if ($idQuartos) {
 
-            // 2️⃣ Define a pasta para uploads das imagens
-            $pastaUploads = "C:/Turma1/xampp/htdocs/hotel-project/uploads/quartos/";
-            if (!is_dir($pastaUploads)) {
-                mkdir($pastaUploads, 0777, true);
-            }
+        // 2️⃣ Define pasta de upload
+        $pastaUploads = "C:/Turma1/xampp/htdocs/hotel-project/uploads/quartos/";
+        if (!is_dir($pastaUploads)) {
+            mkdir($pastaUploads, 0777, true);
+        }
 
-            // 3️⃣ Salva as imagens
-            $imagensSalvas = [];
-            foreach ($imagens['tmp_name'] as $key => $tmp_name) {
-                if ($tmp_name) {
-                    $nomeOriginal = $imagens['name'][$key];
-                    $extensao = pathinfo($nomeOriginal, PATHINFO_EXTENSION);
-                    $novoNome = uniqid("img_") . "." . $extensao;
-                    $caminhoFinal = $pastaUploads . $novoNome;
+        // 3️⃣ Salva imagens com nomes únicos
+        $imagensSalvas = [];
+        foreach ($imagens['tmp_name'] as $key => $tmp_name) {
+            if ($tmp_name) {
+                $extensao = pathinfo($imagens['name'][$key], PATHINFO_EXTENSION);
+                $novoNome = uniqid("img_") . "." . $extensao;
+                $caminhoFinal = $pastaUploads . $novoNome;
 
-                    if (move_uploaded_file($tmp_name, $caminhoFinal)) {
-                        $caminhoRelativo = $novoNome;
-                        $this->QuartosModel->salvarImagemQuarto($idQuartos, $caminhoRelativo);
-                        $imagensSalvas[] = $caminhoRelativo;
-                    }
+                if (move_uploaded_file($tmp_name, $caminhoFinal)) {
+                    $this->QuartosModel->salvarImagemQuarto($idQuartos, $novoNome);
+                    $imagensSalvas[] = $novoNome;
                 }
             }
+        }
 
-            // 4️⃣ Cria o arquivo físico (quarto1.php, quarto2.php, etc.)
-            $pastaQuartos = "C:/Turma1/xampp/htdocs/hotel-project/quartos/";
-            if (!is_dir($pastaQuartos)) {
-                mkdir($pastaQuartos, 0777, true);
-            }
+        // 4️⃣ Cria o arquivo do quarto (quarto1.php, quarto2.php, etc.)
+        $pastaQuartos = "C:/Turma1/xampp/htdocs/hotel-project/quartos/";
+        if (!is_dir($pastaQuartos)) {
+            mkdir($pastaQuartos, 0777, true);
+        }
 
-            // Descobre o número sequencial do novo arquivo
-            $arquivosExistentes = glob($pastaQuartos . "quarto*.php");
-            $numero = count($arquivosExistentes) + 1;
-            $novoArquivo = $pastaQuartos . "quarto{$numero}.php";
+        $arquivosExistentes = glob($pastaQuartos . "quarto*.php");
+        $numero = count($arquivosExistentes) + 1;
+        $novoArquivo = $pastaQuartos . "quarto{$numero}.php";
 
-            // Gera o conteúdo do novo arquivo
-            $nomeEscapado = addslashes($nome_quarto);
-            $descricaoEscapada = addslashes($descricao);
-            $valorEscapado = addslashes($valor);
+        // 5️⃣ Cria o HTML das imagens (como no modelo da suíte presidencial)
+        $htmlImagens = "<div class='slider'>
+    <div class='slides'>\n";
+        foreach ($imagensSalvas as $img) {
+            $htmlImagens .= "<img src='../uploads/quartos/{$img}' alt='{$nome_quarto}' 
+ style=' margin:0px; border-radius:8px;'><br>\n";
+        }
+        $htmlImagens .= "    </div>
 
-            // Cria HTML com as imagens adicionadas
-            $htmlImagens = "";
-            foreach ($imagens['name'] as $img) {
-                $htmlImagens .= "<img src='../uploads/quartos/{$img}' alt='{$nomeEscapado}' style='width:200px; margin:10px; border-radius:8px;'><br>";
-            }
-
-            //$htmlImagensEscapado = addslashes($htmlImagens);
-
-
-            $conteudo = <<<PHP
-<?php
-\$titulo = "{$nomeEscapado}";
-\$descricao = "{$descricaoEscapada}";
-\$valor = "{$valorEscapado}";
-\$imagens = <<<'HTML'
-{$htmlImagens}
-HTML;
-?>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title><?php echo \$titulo; ?></title>
-    <style>
-        body { font-family: Arial; margin: 40px; background: #f9f9f9; }
-        .container { background: white; padding: 20px; border-radius: 8px; width: 600px; }
-        img { display: block; max-width: 100%; height: auto; }
-    </style>
-    <link rel="stylesheet" href="../css/quarto-individual.css">
-</head>
+    <button class=\"prev\">⟨</button>
+    <button class=\"next\">⟩</button>
+</div>
 <script>
         document.querySelectorAll('.slider').forEach(slider => {
             const slidesContainer = slider.querySelector('.slides');
@@ -118,88 +92,152 @@ HTML;
             let index = 0;
 
             function showSlide(i) {
-                index = (i +  slides.length) % slides.length;
-                slidesContainer.style.transform = `translateX(-{index * 100}%)`;
+                index = (i + slides.length) % slides.length;
+                slidesContainer.style.transform = `translateX(-\${index * 100}%)`;
             }
 
             next.addEventListener('click', () => showSlide(index + 1));
             prev.addEventListener('click', () => showSlide(index - 1));
         });
+</script>";
 
-    </script>
+        // 6️⃣ Gera o conteúdo completo com o mesmo layout da Suíte Presidencial
+        $conteudo = <<<PHP
+<?php
+\$titulo = "{$nome_quarto}";
+\$descricao = "{$descricao}";
+\$valor = "{$valor}";
+\$imagens = <<<'HTML'
+{$htmlImagens}
+HTML;
+?>
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title><?php echo \$titulo; ?></title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 40px;
+            background: #f9f9f9;
+        }
+
+        img {
+            display: block;
+            height: auto;
+            height: 50px;
+            width: 50px;
+            margin: 5px;
+        }
+    </style>
+    <link rel="stylesheet" href="../css/quarto-individual.css">
+</head>
+
 <body>
-     <nav>
-        <div class="menulogo">
-            <img src="../img/logo-2.png" alt="Logo Hotel Villa do Sol">
-        </div>
-        <div class="textos-nav">
+
+    <?php
+    session_start();
+
+    if(isset(\$_SESSION['email']) && \$_SESSION['email'] == 'v1ll4s0l@gmail.com'){
+       echo '<nav>
+        <div class="menu">
+
+          <div class="menulogo">
+            <img src="../img/logo-2.png" alt="">
+          </div>
+
+          <div class="textos-nav">
+            <h1>Hotel Villa do Sol</h1>
+
+            <ul>
+              <li><a href="../index.php">INÍCIO</a></li>
+              <li><a href="../quartos.php" class="quartos">QUARTOS</a></li>
+              <li><a href="../sobre.php">SOBRE NÓS</a></li>
+              <li><a href="../View/reservadas/listarReserva.php">RESERVAS</a></li>
+            </ul>
+          </div>
+        </div>';
+    } else {
+      echo '<nav>
+        <div class="menu">
+          <div class="menulogo">
+            <img src="../img/logo-2.png" alt="">
+          </div>
+          <div class="textos-nav">
             <h1>Hotel Villa do Sol</h1>
             <ul>
-                <li><a href="../index.php">INÍCIO</a></li>
-                <li><a href="../quartos.php">QUARTOS</a></li>
-                <li><a href="../sobre.php">SOBRE NÓS</a></li>
+              <li><a href="../index.php">INÍCIO</a></li>
+              <li><a href="../quartos.php" class="quartos">QUARTOS</a></li>
+              <li><a href="../sobre.php">SOBRE NÓS</a></li>
             </ul>
-        </div>
-    </nav>
+          </div>
+        </div>';
+    }
 
-    <div class="voltar">
-        <a href="../index.php"><img src="../img/logo-voltar.png" alt="Voltar"></a>
-    </div>
+    if(isset(\$_SESSION['nome'])){
+        echo "<a href='../View/Usuario/exibirUsuario.php' class='cadastro'><img src='../img/logo-cadastro-feito.png'></a> Seja bem-vindo(a), " . htmlspecialchars(\$_SESSION['nome']) . "!";
+    } else {
+        echo "<a href='../View/Usuario/cadastrarUsuario.php' class='cadastro'><img src='../img/logo-cadastro.png'></a>";
+    }
+    ?>
+  </nav>
+
+    <a href="../quartos.php"><img src="../img/logo-voltar.png"></a>
 
     <div class="product-container">
 
-        <div class="cont">
-            <div class="left-box">
-                <!-- SLIDER DE IMAGENS -->
-                <div class="slider">
-                    <div class="slides">
-                        <?php echo \$imagens;?>
-                    </div>
-                    <button class="prev">❮</button>
-                    <button class="next">❯</button>
-                </div>
-            </div>
+     <div class="cont">
 
-            <div class="titulo-valor">
-                <h1><?php echo \$titulo; ?></h1>
-                <h3>R$ <?php echo \$valor;?></h3>
-                <button><a href="../View/reservadas/reserva.php">Agendar</a></button>
-            </div>
+        <div class="left-box">
+            <?php echo \$imagens; ?>
         </div>
+
+        <div class="titulo-valor">
+            <button><a href="../View/quartos/EditarQuartos.php?id={$idQuartos}">Editar</a></button>
+            <h1><?php echo \$titulo; ?></h1>
+
+            <h3> R$ <?php echo \$valor; ?></h3>
+
+            <button><a href="../View/reservadas/reserva.php">Agendar</a></button>
+        </div>
+
+    </div>
 
         <div class="descricao">
-            <h3>Descrição:</h3>
+
+        <h3>Descrição: </h3>
             <p><?php echo \$descricao; ?></p>
         </div>
+        <br>
 
     </div>
 
     <footer>
-        <p>© 2025 Hotel Villa do Sol. Todos os direitos reservados.  
-            Contato: (11) 1234-5678 | Email: villasol@gmail.com
+        <p>© 2025 Hotel Villa do Sol. Todos os direitos reservados.
+            Número de contato: (11) 1234-5678. Email: villasol@gmail.com
         </p>
     </footer>
-
-    
-
 </body>
 
 </html>
 PHP;
 
-            // Salva o arquivo físico
-            file_put_contents($novoArquivo, $conteudo);
 
-            $_SESSION['mensagem'] = "✅ Quarto cadastrado e arquivo 'quarto{$numero}.php' criado com sucesso!";
-            $resultado = true;
+        // 7️⃣ Salva o arquivo
+        file_put_contents($novoArquivo, $conteudo);
 
-        } else {
-            $_SESSION['mensagem'] = "❌ Erro ao cadastrar quarto.";
-            $resultado = false;
-        }
-
-        return $resultado;
+        $_SESSION['mensagem'] = "✅ Quarto cadastrado e arquivo 'quarto{$numero}.php' criado com sucesso!";
+        $resultado = true;
+    } else {
+        $_SESSION['mensagem'] = "❌ Erro ao cadastrar quarto.";
+        $resultado = false;
     }
+
+    return $resultado;
+}
+
 
     public function editarQuartos($nome, $descricao, $valor, $id)
     {

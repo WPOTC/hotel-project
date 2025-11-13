@@ -76,6 +76,7 @@ nav a[href *="quartos.php"] {
   display: flex;
   flex-direction: column;
   gap: 2em;
+  color: white;
 }
 
 .textos-nav h1 {
@@ -209,10 +210,14 @@ nav a[href *="quartos.php"] {
   background-color: #16360B;
   border: #16360B solid 10px;
   border-radius: 5px;
-  margin-top: 100px;
+  margin-top: 40px;
   margin-left: 150px;
   min-width: 200px;
   min-height: 20px;
+}
+
+.botoes{
+  margin-top: 100px;
 }
 
 .titulo-valor a:hover{
