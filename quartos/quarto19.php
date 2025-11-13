@@ -14,7 +14,7 @@ $descricao = "Ambiente sofisticado e refinado.
             Decoração clássica e atemporal com detalhes em madeira ou tecido sofisticado.
             Serviço de limpeza diário.
             Serviço de quarto 24 horas disponível.";
-$valor = "135,00";
+$valor = "535,00";
 $imagens = <<<'HTML'
 <img src='../uploads/quartos/banheiro-elegante.png' alt='Suíte elegante' style='width:200px; margin:10px; border-radius:8px;'><br><img src='../uploads/quartos/elegante.png' alt='Suíte elegante' style='width:200px; margin:10px; border-radius:8px;'><br><img src='../uploads/quartos/elegante2.png' alt='Suíte elegante' style='width:200px; margin:10px; border-radius:8px;'><br>
 HTML;
