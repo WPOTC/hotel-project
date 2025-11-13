@@ -89,10 +89,56 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 ?>
        
     </div>
+<?php
+// 1️⃣ Agrupa quartos com base no ID
+$quartosAgrupados = [];
 
-<!-- 
+foreach ($Quartos as $quarto) {
+    $id = $quarto['id'];
 
-    <div class="bloco1">
+    if (!isset($quartosAgrupados[$id])) {
+        $quartosAgrupados[$id] = [
+            'id' => $quarto['id'],
+            'nome_quarto' => $quarto['nome_quarto'],
+            'valor' => $quarto['valor'],
+            'imagens' => []
+        ];
+    }
+
+    $quartosAgrupados[$id]['imagens'][] = $quarto['caminho_imagem'];
+}
+?>
+
+<!-- 2️⃣ Container geral dos quartos -->
+<div class="quartos-container">
+
+    <?php foreach ($quartosAgrupados as $quarto): ?>
+        <div class='bloco1'>
+            <div class='slider'>
+                <div class='slides'>
+                    <?php foreach ($quarto['imagens'] as $img): ?>
+                        <img src='uploads/quartos/<?php echo $img; ?>' alt='<?php echo htmlspecialchars($quarto['nome_quarto']); ?>'>
+                    <?php endforeach; ?>
+                </div>
+
+                <button class='prev'>⟨</button>
+                <button class='next'>⟩</button>
+
+                <div class="info">
+                    <h2><?php echo htmlspecialchars($quarto['nome_quarto']); ?></h2>
+                    <p>R$ <?php echo number_format($quarto['valor'], 2, ',', '.'); ?></p>
+                    <a href='quartos/quarto<?php echo $quarto['id']; ?>.php'>
+                        <button type='submit' class='botao'>Agendar</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    <?php endforeach; ?>
+
+</div>
+
+
+    <!-- <div class="bloco1">
 
         <div class="slider">
 
@@ -109,7 +155,7 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
             
             <h2>Suíte Presidencial</h2>
 
-            <p>R$ 1.187,68</p>
+            <p>R$ 3.000,00</p>
 
            <a href="quartos/quarto1.php"> <button type="submit" class="botao">Agendar</button></a>
 
@@ -130,7 +176,7 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
             
             <h2>Suíte Master</h2>
 
-            <p>R$ 559,90</p>
+            <p>R$ 3.500,00</p>
 
            <a href="quartos/quarto2.php"> <button type="submit" class="botao">Agendar</button></a>
 
@@ -155,7 +201,7 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
             
             <h2>Suíte Premium </h2>
 
-            <p>R$ 570,00</p>
+            <p>R$ 990,00</p>
 
             <a href="quartos/quarto3.php"><button type="submit" class="botao">Agendar</button></a>
 
@@ -176,7 +222,7 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
             
             <h2>Suíte Júnior</h2>
 
-            <p>R$ 454,00</p>
+            <p>R$ 550,00</p>
 
             <a href="quartos/quarto4.php"><button type="submit" class="botao">Agendar</button></a>
 
@@ -201,7 +247,7 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
             
             <h2>Suíte Spa</h2>
 
-            <p>R$ 999,00</p>
+            <p>R$ 1.000,00</p>
 
             <a href="quartos/quarto5.php"><button type="submit" class="botao">Agendar</button></a>
 
@@ -222,7 +268,7 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
             
             <h2>Suíte econômica</h2>
 
-            <p>R$ 400,00</p>
+            <p>R$ 500,00</p>
 
             <a href="quartos/quarto6"><button type="submit" class="botao">Agendar</button></a>
 
@@ -247,7 +293,7 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
             
             <h2>Suíte Real</h2>
 
-            <p>R$ 390,00</p>
+            <p>R$ 3.500,00</p>
 
            <a href="quartos/quarto7.php"><button type="submit" class="botao">Agendar</button></a>
 
@@ -268,7 +314,7 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
             
             <h2>Casa de campo</h2>
 
-            <p>R$ 1.500,00</p>
+            <p>R$ 1.800,00</p>
 
             <a href="quartos/quarto8.php"><button type="submit" class="botao">Agendar</button></a>
 
@@ -293,7 +339,7 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
             
             <h2>Suíte elegante</h2>
 
-            <p>R$ 535,00</p>
+            <p>R$ 1.900,00</p>
 
             <a href="quartos/quarto9.php"><button type="submit" class="botao">Agendar</button></a>
 
@@ -314,13 +360,13 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
             
             <h2>Suíte mais mais</h2>
 
-            <p>R$ 2.400,00</p>
+            <p>R$ 3.400,00</p>
 
            <a href="quartos/quarto10.php"> <button type="submit" class="botao">Agendar</button></a>
 
         </div>
 
-    </div> -->
+    </div>  -->
 
     <div class="container">
         <footer role="contentinfo">

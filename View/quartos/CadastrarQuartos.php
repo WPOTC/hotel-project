@@ -28,13 +28,14 @@
         }
         input[type="submit"] {
             margin-top: 15px;
-            background-color: #007bff;
+            background-color: #16360B;
             color: white;
             border: none;
             cursor: pointer;
         }
         input[type="submit"]:hover {
-            background-color: #0056b3;
+            background-color: #E9B150;
+            transition: 0.03s;
         }
         .mensagem {
             margin-top: 20px;
@@ -44,9 +45,15 @@
             color: #256029;
             border-radius: 5px;
         }
+
+        a{
+            color:  #16360B;
+        }
     </style>
 </head>
 <body>
+
+<a href="../../quartos.php">⬅ Voltar</a>
 
     <h1>Cadastro de Quartos</h1>
 

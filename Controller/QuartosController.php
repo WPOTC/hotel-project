@@ -1,12 +1,14 @@
 <?php
 
-
+require_once "C:/Turma1/xampp/htdocs/hotel-project/DB/Database.php";
 require_once "C:/Turma1/xampp/htdocs/hotel-project/Model/QuartosModel.php";
 
+global $pdo;
 class QuartosController
 {
 
     private $QuartosModel;
+
 
     public function __construct($pdo)
     {
@@ -24,7 +26,7 @@ class QuartosController
     public function listarQuartosComImagens()
     {
         $Quartos = $this->QuartosModel->listarQuartosComImagens();
-        include 'C:/Turma1/xampp/htdocs/hotel-project/View/quartos/ListarQuartos.php';
+        // include 'C:/Turma1/xampp/htdocs/hotel-project/View/quartos/ListarQuartos.php';
         return $Quartos;
     }
 

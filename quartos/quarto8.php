@@ -7,7 +7,7 @@
 </head>
 <body>
     <h2>Casa de campo</h2>
-    <h3>R$ 1.500,00</h3>
+    <h3>R$ 1.800,00</h3>
 
     <ul>
         <ol>

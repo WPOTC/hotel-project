@@ -7,7 +7,7 @@
 </head>
 <body>
     <h2>Suíte mais mais</h2>
-    <h3>R$ 24.000,00</h3>
+    <h3>R$ 3.400,00</h3>
 
     <ul>
         <ol>
