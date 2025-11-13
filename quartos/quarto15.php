@@ -34,7 +34,7 @@ HTML;
 </head>
 <body>
     <div class="container">
-        <button><a href="../View/reservadas/reserva/php">Editar</a></button>
+        <button><a href="../View/reservadas/reserva/php?id=15">Editar</a></button>
         <h1><?php echo $titulo; ?></h1>
         <p><?php echo $descricao; ?></p>
         <p><b>Valor:</b> R$ <?php echo $valor; ?></p>

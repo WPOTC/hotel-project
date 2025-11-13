@@ -19,6 +19,7 @@ class QuartosModel {
                 q.id,
                 q.nome_quarto,
                 q.valor,
+                q.descricao,
                 qi.caminho_imagem
             FROM quartos q
             INNER JOIN quartos_imagens qi ON q.id = qi.quartos_id
@@ -51,13 +52,11 @@ public function buscarQuartos($id){
 }
 
 public function editarQuartos($nome, $descricao, $valor, $id) {
-  $sql = "UPDATE Quartos SET nome=?, descricao=?,  WHERE id=?";
-  $stmt = $this->pdo->prepare($sql);
-  return $stmt->execute([$nome, $descricao, 
-   $id]);
-
-    
-
+    $sql = "UPDATE quartos 
+            SET nome_quarto = ?, descricao = ?, valor = ? 
+            WHERE id = ?";
+    $stmt = $this->pdo->prepare($sql);
+    return $stmt->execute([$nome, $descricao, $valor, $id]);
 }
 
 public function deletarQuartos($id) {

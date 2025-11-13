@@ -19,7 +19,7 @@ class QuartosController
     public function listarQuartos()
     {
         $Quartos = $this->QuartosModel->listarQuartos();
-        include 'C:/Turma1/xampp/htdocs/hotel-project/View/quartos/ListarQuartos.php';
+        //include 'C:/Turma1/xampp/htdocs/hotel-project/View/quartos/ListarQuartos.php';
         return $Quartos;
     }
     
@@ -201,15 +201,15 @@ PHP;
         return $resultado;
     }
 
-    public function editarQuartos($nome, $descricao, $valor, $id)
-    {
-        return $this->QuartosModel->editarQuartos(
-            $nome,
-            $descricao,
-            $valor,
-            $id
-        );
-    }
+        public function editarQuartos($nome, $descricao, $valor, $id)
+        {
+            return $this->QuartosModel->editarQuartos(
+                $nome,
+                $descricao,
+                $valor,
+                $id
+            );
+        }
 
     public function buscarQuartos($id)
     {

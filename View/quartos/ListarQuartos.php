@@ -7,11 +7,8 @@ global $pdo;
 
 
 
-// Cria o controlador
-//$QuartosController = new QuartosController($pdo);
-
-// Chama o método que lista os quartos
-//$Quartos = $QuartosController->listarQuartos();
+$QuartosController = new QuartosController($pdo);
+$Quartos = $QuartosController->listarQuartosComImagens();
 
 // Percorre e exibe os quartos
 //foreach ($Quartos as $quarto) {
@@ -28,6 +25,10 @@ global $pdo;
 
 foreach ($Quartos as $quarto) {
   $id = $quarto['id'];
+
+  echo $quarto['nome_quarto'] . "<br";
+  echo $quarto['valor'] . "<br>";
+  echo $quarto['descricao'] . "<br>";
 
   echo "<div class='bloco1'>
 
@@ -54,8 +55,7 @@ foreach ($Quartos as $quarto) {
 
 
   //echo "<img style='height: 200px;' src='uploads/quartos/".$quarto['caminho_imagem'] . "'><br>";
-  echo $quarto['nome_quarto'] . "<br";
-  echo $quarto['valor'] . "<br>";
+
 }
 
 //foreach($Quartos as $quartos) {
