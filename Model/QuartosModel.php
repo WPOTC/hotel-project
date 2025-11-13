@@ -1,9 +1,9 @@
 <?php
 
-require_once "C:/Turma1/xampp/htdocs/hotel-project/Model/QuartosModel.php";
+require_once "C:/Turma1/xampp/htdocs/hotel-project/DB/Database.php";
 class QuartosModel {
     private $pdo;
-
+    
     public function __construct($pdo) {
         $this->pdo = $pdo;
     }

@@ -13,7 +13,7 @@ $descricao = "Acomodação mais luxuosa e exclusiva do hotel. <br>
             Serviços VIP e acesso a lounges exclusivos.<br>
             Projetada para máximo conforto, privacidade e sofisticação.<br>
             Ideal para ocasiões especiais e hóspedes que buscam experiência premium.<br>";
-$valor = "1.187,00";
+$valor = "3.000,00";
 $imagens = <<<'HTML'
 <div class='slider'>
     <div class='slides'>

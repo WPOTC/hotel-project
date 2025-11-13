@@ -125,7 +125,7 @@ nav a[href *="quartos"]{
   width: 400px; /* mesma largura do slider */
   height: 300px;
   object-fit: cover;
-  
+  border-radius: 15px;
 }
 
 .prev, .next {
@@ -186,13 +186,7 @@ nav a[href *="quartos"]{
 
 }
 
-.botao{
-    margin-left: 120px;
-    background-color: #16360B;
-    border: 5px solid #16360B ;
-    border-radius: 5px;
-    margin-top: 5px;
-}
+
 
 footer {
     text-align: center;
@@ -207,4 +201,68 @@ footer {
   align-items: center;
   text-align: center;
   color: #16360B;
+}
+
+
+.quartos-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+  gap: 30px; /* espaço entre os blocos */
+  width: 90%;
+  margin: 50px auto;
+}
+
+.bloco1 {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  height: 500px;
+}
+
+.bloco1:hover {
+  transform: translateY(-1px);
+}
+
+.slider {
+  position: relative;
+  overflow: hidden;
+}
+
+.slides img:first-child {
+  display: block;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.info {
+  text-align: center;
+  padding: 15px;
+}
+
+.info h2 {
+  font-size: 1.3em;
+  margin-bottom: 5px;
+}
+
+.info p {
+  font-weight: bold;
+  color: black;
+}
+
+.botao {
+  background-color: #16360B;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.botao:hover {
+  background-color: #E9B150;
+   transition: 0.3s;
 }

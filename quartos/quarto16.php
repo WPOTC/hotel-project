@@ -12,7 +12,7 @@ $descricao = "Ambiente funcional e confortável.
             Decoração prática e minimalista.
             Chá e café disponíveis.
 ";
-$valor = "400,00";
+$valor = "500,00";
 $imagens = <<<'HTML'
 <img src='../uploads/quartos/banheiro-suite-economica.jpg' alt='Suíte econômica' style='width:200px; margin:10px; border-radius:8px;'><br><img src='../uploads/quartos/suite-economica.jpg' alt='Suíte econômica' style='width:200px; margin:10px; border-radius:8px;'><br><img src='../uploads/quartos/suite-economica2.jpg' alt='Suíte econômica' style='width:200px; margin:10px; border-radius:8px;'><br>
 HTML;

@@ -7,7 +7,7 @@
 </head>
 <body>
     <h2>Spa Suite</h2>
-    <h3>R$ 999,00</h3>
+    <h3>R$ 1.000,00</h3>
 
     <ul>
         <ol>

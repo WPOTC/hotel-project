@@ -16,7 +16,7 @@ $descricao = "Ambiente espaçoso e elegante.
             Decoração sofisticada e iluminação ambiente ajustável.
             Serviço de limpeza diário.
 ";
-$valor = "570,00";
+$valor = "990,00";
 $imagens = <<<'HTML'
 <img src='../uploads/quartos/banheiro-premium.jpg' alt='Suíte Premium' style='width:200px; margin:10px; border-radius:8px;'><br><img src='../uploads/quartos/suite-premium.jpg' alt='Suíte Premium' style='width:200px; margin:10px; border-radius:8px;'><br><img src='../uploads/quartos/suite-premium2.jpg' alt='Suíte Premium' style='width:200px; margin:10px; border-radius:8px;'><br>
 HTML;
