@@ -11,7 +11,7 @@ $descricao = " Tamanho: geralmente entre 40 m² e 60 m².
                 Produtos de higiene pessoal gratuitos.
             Exemplos de comodidades adicionais: jacuzzi, sauna, cozinha privativa.
 ";
-$valor = "559,90";
+$valor = "3.500,00";
 $imagens = <<<'HTML'
 <img src='../uploads/quartos/banheiro-master.png' alt='Suíte Master' style='width:200px; margin:10px; border-radius:8px;'><br><img src='../uploads/quartos/master1.png' alt='Suíte Master' style='width:200px; margin:10px; border-radius:8px;'><br><img src='../uploads/quartos/master2.png' alt='Suíte Master' style='width:200px; margin:10px; border-radius:8px;'><br>
 HTML;

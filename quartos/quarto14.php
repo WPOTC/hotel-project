@@ -12,7 +12,7 @@ $descricao = "Ambiente confortável e funcional.
             Decoração moderna e aconchegante.
             Serviço de limpeza diário.
             Chá e café disponíveis no quarto.";
-$valor = "254,00";
+$valor = "550,00";
 $imagens = <<<'HTML'
 <img src='../uploads/quartos/banheiro-junior.jpg' alt='Suíte Júnior' style='width:200px; margin:10px; border-radius:8px;'><br><img src='../uploads/quartos/junior1.png' alt='Suíte Júnior' style='width:200px; margin:10px; border-radius:8px;'><br><img src='../uploads/quartos/junior2.png' alt='Suíte Júnior' style='width:200px; margin:10px; border-radius:8px;'><br>
 HTML;

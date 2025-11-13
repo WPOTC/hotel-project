@@ -16,7 +16,7 @@ $descricao = "Ambiente amplo e relaxante.
             Decoração zen com iluminação suave e elementos naturais.
             Serviço de massagens e tratamentos disponíveis sob demanda.
             Varanda ou janela com vista relaxante (quando aplicável).";
-$valor = "999,00";
+$valor = "1.000,00";
 $imagens = <<<'HTML'
 <img src='../uploads/quartos/banheiro-spa.jpg' alt='Suíte Spa' style='width:200px; margin:10px; border-radius:8px;'><br><img src='../uploads/quartos/master2.jpg' alt='Suíte Spa' style='width:200px; margin:10px; border-radius:8px;'><br><img src='../uploads/quartos/spa2.jpg' alt='Suíte Spa' style='width:200px; margin:10px; border-radius:8px;'><br>
 HTML;

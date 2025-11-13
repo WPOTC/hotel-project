@@ -7,7 +7,7 @@
 </head>
 <body>
     <h2>Suíte Premium / Deluxe</h2>
-    <h3>R$ 570,00</h3>
+    <h3>R$ 990,00</h3>
     
     <ul>
         <ol>

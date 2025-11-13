@@ -7,7 +7,7 @@
 </head>
 <body>
     <h2>Suíte econômica</h2>
-    <h3>R$ 400,00</h3>
+    <h3>R$ 500,00</h3>
 
     <ul>
         <ol>
