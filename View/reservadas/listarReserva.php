@@ -16,8 +16,11 @@ $UsuarioController = new UsuarioController($pdo);
   <link rel="stylesheet" href="../../css/reservar.css">
 </head>
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 ?>
+
 <body>
 
 <footer>

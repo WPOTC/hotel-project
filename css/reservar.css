@@ -17,7 +17,7 @@ body, html {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
-  
+  color: #000;
 }
 
 
@@ -109,14 +109,8 @@ nav {
   padding: 15px 50px;
   z-index: 1000;
   backdrop-filter: blur(8px);
+  position: fixed;
 }
-
-
-nav a[href *="index.php"] {
-  color: #E9B150;
-}
-
-
 
 .cadastro img{
   width: 70px;
@@ -179,9 +173,13 @@ nav a[href *="index.php"] {
   color: #E9B150 ; /* tom dourado sofisticado */
 }
 
+nav a[href *="listarReserva"]{
+  color: #E9B150;
+}
 
 .titulo{
   margin-top: 50px;
+  margin-top: 200px;
 }
 
 
@@ -199,4 +197,3 @@ footer p{
   padding: 20px;
   font-size: 14px;
 }
-
