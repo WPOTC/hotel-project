@@ -7,7 +7,7 @@
 </head>
 <body>
     <h2>Suíte Júnior</h2>
-    <h3>R$ 254,00</h3>
+    <h3>R$ 550,00</h3>
 
     <ul>
         <ol>
