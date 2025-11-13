@@ -8,21 +8,21 @@ $descricao = "2222
 2222";
 $valor = "2.500,00";
 $imagens = <<<'HTML'
-<img src='../uploads/quartos/anaMA.png' alt='cartao' style='width:200px; margin:10px; border-radius:8px;'><br><img src='../uploads/quartos/cinnanhe-removebg-preview.png' alt='cartao' style='width:200px; margin:10px; border-radius:8px;'><br><img src='../uploads/quartos/IMG-20250815-WA0207.jpg' alt='cartao' style='width:200px; margin:10px; border-radius:8px;'><br>
-HTML;
-?>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title><?php echo $titulo; ?></title>
-    <style>
-        body { font-family: Arial; margin: 40px; background: #f9f9f9; }
-        .container { background: white; padding: 20px; border-radius: 8px; width: 600px; }
-        img { display: block; max-width: 100%; height: auto; }
-    </style>
-    <link rel="stylesheet" href="../css/quarto-individual.css">
-</head>
+
+<div class='slider'>
+
+    <div class='slides'>
+
+        <img src='../uploads/quartos/anaMA.png';><br>
+
+        <img src='../uploads/quartos/cinnanhe-removebg-preview.png' alt='cartao' style='margin:0px; border-radius:8px;'><br>
+        <img src='../uploads/quartos/IMG-20250815-WA0207.jpg' alt='cartao' style='margin:0px; border-radius:8px;'><br>
+    
+    </div>
+    <button class="prev">⟨</button>
+    <button class="next">⟩</button>
+
+</div>
 <script>
         document.querySelectorAll('.slider').forEach(slider => {
             const slidesContainer = slider.querySelector('.slides');
@@ -42,13 +42,46 @@ HTML;
         });
 
     </script>
+HTML;
+?>
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title><?php echo $titulo; ?></title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 40px;
+            background: #f9f9f9;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+ 
+    </style>
+    <link rel="stylesheet" href="../css/quarto-individual.css">
+</head>
+
+
 <body>
-     <nav>
-        <div class="menulogo">
+    <nav>
+        <div class="menu">
+
+            <div class="menulogo">
             <img src="../img/logo-2.png" alt="Logo Hotel Villa do Sol">
+            </div>
         </div>
         <div class="textos-nav">
             <h1>Hotel Villa do Sol</h1>
+
+
             <ul>
                 <li><a href="../index.php">INÍCIO</a></li>
                 <li><a href="../quartos.php">QUARTOS</a></li>
@@ -65,19 +98,14 @@ HTML;
 
         <div class="cont">
             <div class="left-box">
-                <!-- SLIDER DE IMAGENS -->
-                <div class="slider">
-                    <div class="slides">
-                        <?php echo $imagens;?>
-                    </div>
-                    <button class="prev">❮</button>
-                    <button class="next">❯</button>
-                </div>
+                        <?php echo $imagens; ?>
             </div>
+                    
+            
 
             <div class="titulo-valor">
                 <h1><?php echo $titulo; ?></h1>
-                <h3>R$ <?php echo $valor;?></h3>
+                <h3>R$ <?php echo $valor; ?></h3>
                 <button><a href="../View/reservadas/reserva.php">Agendar</a></button>
             </div>
         </div>
@@ -90,12 +118,12 @@ HTML;
     </div>
 
     <footer>
-        <p>© 2025 Hotel Villa do Sol. Todos os direitos reservados.  
+        <p>© 2025 Hotel Villa do Sol. Todos os direitos reservados.
             Contato: (11) 1234-5678 | Email: villasol@gmail.com
         </p>
     </footer>
 
-    
+
 
 </body>
 
