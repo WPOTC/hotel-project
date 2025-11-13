@@ -68,14 +68,15 @@ session_start();
 
   </nav>
   <section>
-     <header>
-        <img src="../../img/logo.png" alt="">
-        <h1 class="cortitulo">Faça sua reserva</h1><br>
-      </header>
+    <header>
+      <img src="../../img/logo.png" alt="">
+      <h1 class="cortitulo">Faça sua reserva</h1><br>
+    </header>
     <form method="POST">
-      <label>Previsão de Entrada:</label>
-      <input type="datetime-local" name="datetime" required>
-      <input type="submit" value="reservar">
+      <input type="hidden" name="id_quarto" value="<?= $idQuarto ?>">
+      <label>Data da reserva:</label>
+      <input type="date" name="data" required>
+      <button type="submit">Reservar</button>
     </form>
   </section>
   <footer class="footer-simple" role="contentinfo">
@@ -93,19 +94,13 @@ session_start();
 
   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    $reserva = $_POST['datetime'];
+    $reserva = $_POST['data'];
 
-
-
-
-
-
-    $reservar = $UsuarioController->reservas($reserva);
-    if ($reservas) {
-      $UsuarioController->loginUsuario($email, $senha);
-      header('Location: ../../index.php');
+    $controller = new ReservasController($pdo);
+    if ($controller->reservar($data,  $idQuarto,$idUsuario )) {
+      echo "Reserva feita com sucesso!";
     } else {
-      echo "Email já cadastrado!";
+      echo "Erro ao fazer reserva!";
     }
   }
   ?>

@@ -15,17 +15,17 @@ class ReservasModel {
     }
 
 
-public function reservar($reserva) {
-   $sql = "INSERT INTO cadastro (reserva) VALUES (:reserva)";
-   $stmt = $this->pdo->prepare($sql);
-   return $stmt->execute([
-    ':reserva' => $reserva
-    
-   
-
+public function reservar($id_usuario, $id_quarto, $data) {
+    $sql = "INSERT INTO reserva (data, id_usuario, id_quarto) 
+            VALUES (:data, :id_usuario, :id_quarto)";
+    $stmt = $this->pdo->prepare($sql);
+    return $stmt->execute([
+        ':data' => $data,
+        ':id_usuario' => $id_usuario,
+        ':id_quarto' => $id_quarto
     ]);
-
 }
+
 
 
 public function buscarReservas($id){
