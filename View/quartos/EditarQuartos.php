@@ -39,8 +39,57 @@ if (isset($_GET['id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Quarto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background: #f5f5f5;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 400px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            margin-top: 15px;
+            background-color: #16360B;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #E9B150;
+            transition: 0.03s;
+        }
+        .mensagem {
+            margin-top: 20px;
+            padding: 10px;
+            background: #e7f3e7;
+            border: 1px solid #b2d8b2;
+            color: #256029;
+            border-radius: 5px;
+        }
+
+        a{
+            color:  #16360B;
+        }
+    </style>
 </head>
 <body>
+    
+<a href="../../quartos.php">⬅ Voltar</a>
+
     <h1>Editar Quarto</h1>
     <form method="post">
         <label for="nome">Nome:</label><br>
