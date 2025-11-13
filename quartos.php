@@ -155,7 +155,7 @@ foreach ($Quartos as $quarto) {
             
             <h2>Suíte Presidencial</h2>
 
-            <p>R$ 1.187,68</p>
+            <p>R$ 3.000,00</p>
 
            <a href="quartos/quarto1.php"> <button type="submit" class="botao">Agendar</button></a>
 
@@ -176,7 +176,7 @@ foreach ($Quartos as $quarto) {
             
             <h2>Suíte Master</h2>
 
-            <p>R$ 559,90</p>
+            <p>R$ 3.500,00</p>
 
            <a href="quartos/quarto2.php"> <button type="submit" class="botao">Agendar</button></a>
 
@@ -201,7 +201,7 @@ foreach ($Quartos as $quarto) {
             
             <h2>Suíte Premium </h2>
 
-            <p>R$ 570,00</p>
+            <p>R$ 990,00</p>
 
             <a href="quartos/quarto3.php"><button type="submit" class="botao">Agendar</button></a>
 
@@ -222,7 +222,7 @@ foreach ($Quartos as $quarto) {
             
             <h2>Suíte Júnior</h2>
 
-            <p>R$ 454,00</p>
+            <p>R$ 550,00</p>
 
             <a href="quartos/quarto4.php"><button type="submit" class="botao">Agendar</button></a>
 
@@ -247,7 +247,7 @@ foreach ($Quartos as $quarto) {
             
             <h2>Suíte Spa</h2>
 
-            <p>R$ 999,00</p>
+            <p>R$ 1.000,00</p>
 
             <a href="quartos/quarto5.php"><button type="submit" class="botao">Agendar</button></a>
 
@@ -268,7 +268,7 @@ foreach ($Quartos as $quarto) {
             
             <h2>Suíte econômica</h2>
 
-            <p>R$ 400,00</p>
+            <p>R$ 500,00</p>
 
             <a href="quartos/quarto6"><button type="submit" class="botao">Agendar</button></a>
 
@@ -293,7 +293,7 @@ foreach ($Quartos as $quarto) {
             
             <h2>Suíte Real</h2>
 
-            <p>R$ 390,00</p>
+            <p>R$ 3.500,00</p>
 
            <a href="quartos/quarto7.php"><button type="submit" class="botao">Agendar</button></a>
 
@@ -314,7 +314,7 @@ foreach ($Quartos as $quarto) {
             
             <h2>Casa de campo</h2>
 
-            <p>R$ 1.500,00</p>
+            <p>R$ 1.800,00</p>
 
             <a href="quartos/quarto8.php"><button type="submit" class="botao">Agendar</button></a>
 
@@ -339,7 +339,7 @@ foreach ($Quartos as $quarto) {
             
             <h2>Suíte elegante</h2>
 
-            <p>R$ 535,00</p>
+            <p>R$ 1.900,00</p>
 
             <a href="quartos/quarto9.php"><button type="submit" class="botao">Agendar</button></a>
 
@@ -360,7 +360,7 @@ foreach ($Quartos as $quarto) {
             
             <h2>Suíte mais mais</h2>
 
-            <p>R$ 2.400,00</p>
+            <p>R$ 3.400,00</p>
 
            <a href="quartos/quarto10.php"> <button type="submit" class="botao">Agendar</button></a>
 
