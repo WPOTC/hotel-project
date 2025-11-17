@@ -37,7 +37,7 @@ class ReservasController
     $idUsuario = $_SESSION['email'];
 
     // Aqui você deve chamar o MODEL, não a si próprio!
-    return $this->ReservasModel->reservar($data, $id_quarto, $idUsuario);
+    return $this->ReservasModel->reservar($data, $id_quarto, $id_usuario);
 }
 
 
