@@ -61,5 +61,14 @@ class ReservasController
       $Reservas = $this->ReservasModel->deletarReservas($id);
       return $Reservas;
    }
+   public function reserva($data, $id_quarto, $id_usuario)
+{
+    if ($this->model->reservaExiste($data, $id_quarto, $id_usuario)) {
+        return "existe";
+    }
+
+    return $this->model->reservar($data, $id_quarto, $id_usuario);
+}
+
 
 }
