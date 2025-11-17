@@ -61,5 +61,4 @@ class ReservasController
       $Reservas = $this->ReservasModel->deletarReservas($id);
       return $Reservas;
    }
-
 }
