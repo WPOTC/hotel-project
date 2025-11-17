@@ -58,13 +58,13 @@ session_start();
   }
 
 
-  if (isset($_SESSION['nome'])) {
-    echo "<div class='usuario'><a href = 'View/Usuario/exibirUsuario.php'class='cadastro'><img src='../../img/logo-cadastro-feito.png'></a>" . "Seja bem-vindo(a),  " . htmlspecialchars($_SESSION['nome']) . "!</div>";
-  } elseif (!isset($_SESSION['nome'])) {
-    echo "<a href = 'View/Usuario/cadastrarUsuario.php' class='cadastro'><img src='../../img/logo-cadastro.png'></a>";
+  if(isset($_SESSION['nome'])){
+            echo "<div class='usuario'><a href = 'View/Usuario/exibirUsuario.php'class='cadastro'><img src='img/logo-cadastro-feito.png'></a>" . "Seja bem-vindo(a),  " . htmlspecialchars($_SESSION['nome']) . "!</div>";
+        }elseif(!isset($_SESSION['nome'])){
+            echo "<a href = 'View/Usuario/cadastrarUsuario.php' class='cadastro'><img src='img/logo-cadastro.png'></a>";
 
-  }
-  ?>
+        }
+        ?>
 
   </nav>
   <section>
