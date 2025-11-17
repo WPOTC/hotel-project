@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reserva</title>
-  <link rel="stylesheet" href="../../css/reservar.css">
+  <link rel="stylesheet" href="../../css/reserva-quarto.css">
 </head>
 <?php
 session_start();
@@ -21,7 +21,7 @@ session_start();
     <div class="menu">
 
       <div class="menulogo">
-        <img src="../../img/logo-cadastro.png" alt="img">
+        <img src="../../img/logo-2.png" alt="img">
       </div>
 
       <div class="textos-nav">
@@ -53,25 +53,28 @@ session_start();
           <li><a href="../../sobre.php">SOBRE NÓS</a></li>
 
         </ul>
-      </div>
     </div>';
   }
 
-
   if (isset($_SESSION['nome'])) {
-    echo "<div class='usuario'><a href = 'View/Usuario/exibirUsuario.php'class='cadastro'><img src='../../img/logo-cadastro-feito.png'></a>" . "Seja bem-vindo(a),  " . htmlspecialchars($_SESSION['nome']) . "!</div>";
+    echo "<div class='usuario'><a href = '../View/Usuario/exibirUsuario.php'class='cadastro'><img src='../../img/logo-cadastro-feito.png'></a>" . "Seja bem-vindo(a),  " . htmlspecialchars($_SESSION['nome']) . "!</div>";
   } elseif (!isset($_SESSION['nome'])) {
     echo "<a href = 'View/Usuario/cadastrarUsuario.php' class='cadastro'><img src='../../img/logo-cadastro.png'></a>";
 
   }
   ?>
-
+</div>
   </nav>
+  
+  <a href="../../quartos.php" class="cadastro-voltar"><img src="../../img/logo-voltar.png"></a>
+    
   <section>
     <header>
       <img src="../../img/logo.png" alt="">
       <h1 class="cortitulo">Faça sua reserva</h1><br>
     </header>
+        
+    
     <form method="POST">
       <input type="hidden" name="id_quarto" value="<?= $idQuarto ?>">
       <label>Data da reserva:</label>
