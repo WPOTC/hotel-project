@@ -1,29 +1,33 @@
 <?php
-$titulo = "Suíte elegante";
-$descricao = "Ambiente sofisticado e refinado.
-            Cama king size ou queen size com roupa de cama premium.
-            Banheiro privativo com acabamento em mármore e amenities de alta qualidade.
-            TV de tela plana com canais a cabo e sistema de som ambiente.
-            Ar-condicionado com controle individual.
-            Wi-Fi de alta velocidade gratuito.
-            Área de estar com poltronas confortáveis e mesa de centro.
-            Iluminação suave e decorativa para ambiente acolhedor.
-            Cofre digital para pertences pessoais.
-            Mini bar bem abastecido.
-            Mesa de trabalho elegante com boa iluminação.
-            Decoração clássica e atemporal com detalhes em madeira ou tecido sofisticado.
-            Serviço de limpeza diário.
-            Serviço de quarto 24 horas disponível.";
+session_start();
+$titulo = "SUÍTE ELEGANTE";
+$descricao = "Ambiente sofisticado e refinado.<br>
+            Cama king size ou queen size com roupa de cama premium.<br>
+            Banheiro privativo com acabamento em mármore e amenities de alta qualidade.<br>
+            TV de tela plana com canais a cabo e sistema de som ambiente.<br>
+            Ar-condicionado com controle individual.<br>
+            Wi-Fi de alta velocidade gratuito.<br>
+            Área de estar com poltronas confortáveis e mesa de centro.<br>
+            Iluminação suave e decorativa para ambiente acolhedor.<br>
+            Cofre digital para pertences pessoais.<br>
+            Mini bar bem abastecido.<br>
+            Mesa de trabalho elegante com boa iluminação.<br>
+            Decoração clássica e atemporal com detalhes em madeira ou tecido sofisticado<br>.
+            Serviço de limpeza diário.<br>
+            Serviço de quarto 24 horas disponível.<br>";
 $valor = "1.900,00";
 $imagens = <<<'HTML'
 <div class='slider'>
     <div class='slides'>
 
-<img src='../uploads/quartos/banheiro-elegante.png' alt='Suíte elegante' style='width:200px; margin:10px; border-radius:8px;'><br>
+<img src='../uploads/quartos/elegante.png' alt='Suíte elegante'
+ style=' margin:0px; border-radius:8px;'><br>
 
-<img src='../uploads/quartos/elegante.png' alt='Suíte elegante' style='width:200px; margin:10px; border-radius:8px;'><br>
+<img src='../uploads/quartos/elegante2.png' alt='Suíte elegante'
+ style=' margin:0px; border-radius:8px;'><br>
 
-<img src='../uploads/quartos/elegante2.png' alt='Suíte elegante' style='width:200px; margin:10px; border-radius:8px;'><br>
+<img src='../uploads/quartos/banheiro-elegante.png' alt='Suíte elegante' 
+style=' margin:0px; border-radius:8px;'><br>
    </div>
 
     <button class="prev">⟨</button>
@@ -76,17 +80,6 @@ HTML;
 </head>
 
 <body>
-<<<<<<< HEAD
-    <div class="container">
-        <button><a href="../View/reservadas/reserva/php?id=19">Editar</a></button>
-        <h1><?php echo $titulo; ?></h1>
-        <p><?php echo $descricao; ?></p>
-        <p><b>Valor:</b> R$ <?php echo $valor; ?></p>
-        <h3>Imagens:</h3>
-<?php echo $imagens; ?>
-<br>
-<a href="../index.php">⬅ Voltar à lista</a>
-=======
 
     <?php
 
@@ -95,7 +88,7 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
     <div class="menu">
 
       <div class="menulogo">
-        <img src="img/logo-2.png" alt="">
+        <img src="../img/logo-2.png" alt="">
       </div>
 
       <div class="textos-nav">
@@ -162,10 +155,15 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 
             <h3> R$ <?php echo $valor; ?></h3>
 
+            <div class="botoes">
+
             <button><a href="../View/reservadas/reserva/php">Agendar</a></button>
+            
+            <button><a href="../View/quartos/EditarQuartos.php?id=11">Editar</a></button>
+            </div>
+
         </div>
-    
->>>>>>> b5a5c7b8d5dc7135323fe74c2bbccf3531571ff4
+
     </div>
 
         <div class="descricao">

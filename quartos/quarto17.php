@@ -1,33 +1,37 @@
 <?php
-$titulo = "Suíte Real";
-$descricao = "Ambiente extremamente espaçoso e luxuoso.
-            Cama king size com roupa de cama de altíssima qualidade.
-            Banheiro privativo com banheira de hidromassagem, duchas separadas e amenities de luxo.
-            Sala de estar ampla e elegante com móveis sofisticados.
-            Sala de jantar privativa.
-            TV de tela plana grande com canais a cabo e sistema de som premium.
-            Ar-condicionado com controle individual.
-            Wi-Fi de alta velocidade gratuito.
-            Varanda ou terraço privativo com vista panorâmica (quando disponível).
-            Mini bar completo e adega de vinhos.
-            Cofre digital para objetos de valor.
-            Área de trabalho ampla com iluminação especial.
-            Serviço de quarto 24 horas e concierge personalizado.
-            Decoração refinada com detalhes em materiais nobres (madeira, mármore, etc.).
-            Amenidades exclusivas de spa e beleza.
-            Sistema de iluminação ambiente ajustável.
-            Serviço de limpeza e arrumação várias vezes ao dia.
+session_start();
+$titulo = "SUÍTE REAL";
+$descricao = "Ambiente extremamente espaçoso e luxuoso.<br>
+            Cama king size com roupa de cama de altíssima qualidade.<br>
+            Banheiro privativo com banheira de hidromassagem, duchas separadas e amenities de luxo.<br>
+            Sala de estar ampla e elegante com móveis sofisticados.<br>
+            Sala de jantar privativa.<br>
+            TV de tela plana grande com canais a cabo e sistema de som premium.<br>
+            Ar-condicionado com controle individual.<br>
+            Wi-Fi de alta velocidade gratuito.<br>
+            Varanda ou terraço privativo com vista panorâmica (quando disponível).<br>
+            Mini bar completo e adega de vinhos.<br>
+            Cofre digital para objetos de valor.<br>
+            Área de trabalho ampla com iluminação especial.<br>
+            Serviço de quarto 24 horas e concierge personalizado.<br>
+            Decoração refinada com detalhes em materiais nobres (madeira, mármore, etc.).<br>
+            Amenidades exclusivas de spa e beleza.<br>
+            Sistema de iluminação ambiente ajustável.<br>
+            Serviço de limpeza e arrumação várias vezes ao dia.<br>
 ";
 $valor = "3.500,00";
 $imagens = <<<'HTML'
 <div class='slider'>
     <div class='slides'>
 
-<img src='../uploads/quartos/banheiro-real.png' alt='Suíte Real' style='width:200px; margin:10px; border-radius:8px;'><br>
+<img src='../uploads/quartos/real1.png' alt='Suíte Real' 
+style=' margin:0px; border-radius:8px;'><br>
 
-<img src='../uploads/quartos/real1.png' alt='Suíte Real' style='width:200px; margin:10px; border-radius:8px;'><br>
+<img src='../uploads/quartos/real2.png' alt='Suíte Real' 
+style=' margin:0px; border-radius:8px;'><br>
 
-<img src='../uploads/quartos/real2.png' alt='Suíte Real' style='width:200px; margin:10px; border-radius:8px;'><br>
+<img src='../uploads/quartos/banheiro-real.png' alt='Suíte Real' 
+style=' margin:0px; border-radius:8px;'><br>
    </div>
 
     <button class="prev">⟨</button>
@@ -75,22 +79,15 @@ HTML;
              width: 50px;
              margin: 5px;
         }
+
+         .titulo-valor h1{
+            margin-left: 100px;
+        }
     </style>
     <link rel="stylesheet" href="../css/quarto-individual.css">
 </head>
 
 <body>
-<<<<<<< HEAD
-    <div class="container">
-        <button><a href="../View/reservadas/reserva/php?id=17">Editar</a></button>
-        <h1><?php echo $titulo; ?></h1>
-        <p><?php echo $descricao; ?></p>
-        <p><b>Valor:</b> R$ <?php echo $valor; ?></p>
-        <h3>Imagens:</h3>
-<?php echo $imagens; ?>
-<br>
-<a href="../index.php">⬅ Voltar à lista</a>
-=======
 
     <?php
 
@@ -99,7 +96,7 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
     <div class="menu">
 
       <div class="menulogo">
-        <img src="img/logo-2.png" alt="">
+        <img src="../img/logo-2.png" alt="">
       </div>
 
       <div class="textos-nav">
@@ -166,10 +163,15 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 
             <h3> R$ <?php echo $valor; ?></h3>
 
+            <div class="botoes">
+
             <button><a href="../View/reservadas/reserva/php">Agendar</a></button>
+            
+            <button><a href="../View/quartos/EditarQuartos.php?id=11">Editar</a></button>
+            </div>
+
         </div>
     
->>>>>>> b5a5c7b8d5dc7135323fe74c2bbccf3531571ff4
     </div>
 
         <div class="descricao">

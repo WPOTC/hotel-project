@@ -1,27 +1,36 @@
 <?php
-$titulo = "Suíte mais mais";
-$descricao = "Ambiente ultra espaçoso e exclusivo.
-            Cama king size extra larga com lençóis de algodão egípcio e travesseiros de pluma.
-            Banheiro de luxo com banheira de hidromassagem, ducha dupla, sauna privativa e amenities de marcas premium.
-            Sala de estar ampla com sofá de design, poltronas e lareira moderna.
-            Sala de jantar particular com serviço de garçom exclusivo.
-            Varanda ou terraço privativo com vista panorâmica deslumbrante.
-            Sistema de som surround e TV de última geração com canais a cabo, streaming e controle por voz.
-            Ar-condicionado com controle climático individual e purificador de ar.
-            Wi-Fi ultra rápido e dedicado.
-            Mini bar gourmet com bebidas premium e snacks finos.
-            Máquina de café expresso profissional e utensílios para chá.
-            Escritório completo com tecnologia de ponta (impressora, scanner, iluminação regulável).            	    Serviço de concierge 24 horas e mordomo particular.
-            Decoração sofisticada com obras de arte exclusivas e design personalizado.
-            Sistema de iluminação inteligente com diversas opções de ambiente.
-            Amenidades exclusivas de spa e cuidados pessoais.
-            Segurança reforçada e privacidade total.";
+session_start();
+$titulo = "SUÍTE MAIS MAIS";
+$descricao = "Ambiente ultra espaçoso e exclusivo.<br>
+            Cama king size extra larga com lençóis de algodão egípcio e travesseiros de pluma.<br>
+            Banheiro de luxo com banheira de hidromassagem, ducha dupla, sauna privativa e amenities de marcas premium.<br>
+            Sala de estar ampla com sofá de design, poltronas e lareira moderna.<br>
+            Sala de jantar particular com serviço de garçom exclusivo.<br>
+            Varanda ou terraço privativo com vista panorâmica deslumbrante.<br>
+            Sistema de som surround e TV de última geração com canais a cabo, streaming e controle por voz.<br>
+            Ar-condicionado com controle climático individual e purificador de ar.<br>
+            Wi-Fi ultra rápido e dedicado.<br>
+            Mini bar gourmet com bebidas premium e snacks finos.<br>
+            Máquina de café expresso profissional e utensílios para chá.<br>
+            Escritório completo com tecnologia de ponta (impressora, scanner, iluminação regulável). <br>           	   
+            Decoração sofisticada com obras de arte exclusivas e design personalizado. <br>
+            Serviço de concierge 24 horas e mordomo particular<br>
+            Sistema de iluminação inteligente com diversas opções de ambiente.<br>
+            Amenidades exclusivas de spa e cuidados pessoais.<br>
+            Segurança reforçada e privacidade total.<br>";
 $valor = "3.400,00";
 $imagens = <<<'HTML'
 <div class='slider'>
     <div class='slides'>
 
-<img src='../uploads/quartos/banheiro-mais-mais.png' alt='Suíte mais mais' style='width:200px; margin:10px; border-radius:8px;'><br><img src='../uploads/quartos/mais-mais1.png' alt='Suíte mais mais' style='width:200px; margin:10px; border-radius:8px;'><br><img src='../uploads/quartos/mais-mais2.png' alt='Suíte mais mais' style='width:200px; margin:10px; border-radius:8px;'><br>
+<img src='../uploads/quartos/mais-mais1.png' alt='Suíte mais mais' 
+style=' margin:10px; border-radius:8px;'><br>
+
+<img src='../uploads/quartos/mais-mais2.png' alt='Suíte mais mais' 
+style=' margin:10px; border-radius:8px;'><br>
+
+<img src='../uploads/quartos/banheiro-mais-mais.png' alt='Suíte mais mais' 
+style=' margin:10px; border-radius:8px;'><br>
    </div>
 
     <button class="prev">⟨</button>
@@ -74,17 +83,6 @@ HTML;
 </head>
 
 <body>
-<<<<<<< HEAD
-    <div class="container">
-        <button><a href="../View/reservadas/reserva/php?id=20">Editar</a></button>
-        <h1><?php echo $titulo; ?></h1>
-        <p><?php echo $descricao; ?></p>
-        <p><b>Valor:</b> R$ <?php echo $valor; ?></p>
-        <h3>Imagens:</h3>
-<?php echo $imagens; ?>
-<br>
-<a href="../index.php">⬅ Voltar à lista</a>
-=======
 
     <?php
 
@@ -93,7 +91,7 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
     <div class="menu">
 
       <div class="menulogo">
-        <img src="img/logo-2.png" alt="">
+        <img src="../img/logo-2.png" alt="">
       </div>
 
       <div class="textos-nav">
@@ -159,11 +157,15 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
             <h1><?php echo $titulo; ?></h1>
 
             <h3> R$ <?php echo $valor; ?></h3>
+            
+            <div class="botoes">
 
             <button><a href="../View/reservadas/reserva/php">Agendar</a></button>
+            
+            <button><a href="../View/quartos/EditarQuartos.php?id=11">Editar</a></button>
+            </div>
         </div>
-    
->>>>>>> b5a5c7b8d5dc7135323fe74c2bbccf3531571ff4
+
     </div>
 
         <div class="descricao">

@@ -1,15 +1,16 @@
 <?php
-$titulo = "Suíte econômica";
-$descricao = "Ambiente funcional e confortável.
-            Cama queen size ou duas camas de solteiro.
-            Banheiro privativo com amenidades básicas.
-            TV de tela plana com canais a cabo.
-            Ar-condicionado ou ventilador.
-            Wi-Fi gratuito.
-            Mesa de trabalho simples.
-            Armário ou espaço para roupas.
-            Serviço de limpeza diário.
-            Decoração prática e minimalista.
+session_start();
+$titulo = "SUÍTE ECONÔMICA";
+$descricao = "Ambiente funcional e confortável.<br>
+            Cama queen size ou duas camas de solteiro.<br>
+            Banheiro privativo com amenidades básicas.<br>
+            TV de tela plana com canais a cabo.<br>
+            Ar-condicionado ou ventilador.<br>
+            Wi-Fi gratuito.<br>
+            Mesa de trabalho simples.<br>
+            Armário ou espaço para roupas.<br>
+            Serviço de limpeza diário.<br>
+            Decoração prática e minimalista.<br>
             Chá e café disponíveis.
 ";
 $valor = "500,00";
@@ -17,11 +18,14 @@ $imagens = <<<'HTML'
 <div class='slider'>
     <div class='slides'>    
 
-<img src='../uploads/quartos/banheiro-suite-economica.jpg' alt='Suíte econômica' style='width:200px; margin:10px; border-radius:8px;'><br>
+<img src='../uploads/quartos/suite-economica.jpg' alt='Suíte econômica'
+ style=' margin:0px; border-radius:8px;'><br>
 
-<img src='../uploads/quartos/suite-economica.jpg' alt='Suíte econômica' style='width:200px; margin:10px; border-radius:8px;'><br>
-
-<img src='../uploads/quartos/suite-economica2.jpg' alt='Suíte econômica' style='width:200px; margin:10px; border-radius:8px;'><br>
+<img src='../uploads/quartos/suite-economica2.jpg' alt='Suíte econômica'
+ style=' margin:0px; border-radius:8px;'><br>
+ 
+<img src='../uploads/quartos/banheiro-suite-economica.jpg' alt='Suíte econômica' 
+style=' margin:0px; border-radius:8px;'><br>
    </div>
 
     <button class="prev">⟨</button>
@@ -74,17 +78,6 @@ HTML;
 </head>
 
 <body>
-<<<<<<< HEAD
-    <div class="container">
-        <button><a href="../View/reservadas/reserva/php?id=16">Editar</a></button>
-        <h1><?php echo $titulo; ?></h1>
-        <p><?php echo $descricao; ?></p>
-        <p><b>Valor:</b> R$ <?php echo $valor; ?></p>
-        <h3>Imagens:</h3>
-<?php echo $imagens; ?>
-<br>
-<a href="../index.php">⬅ Voltar à lista</a>
-=======
 
     <?php
 
@@ -93,7 +86,7 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
     <div class="menu">
 
       <div class="menulogo">
-        <img src="img/logo-2.png" alt="">
+        <img src="../img/logo-2.png" alt="">
       </div>
 
       <div class="textos-nav">
@@ -160,10 +153,14 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 
             <h3> R$ <?php echo $valor; ?></h3>
 
+            <div class="botoes">
+
             <button><a href="../View/reservadas/reserva/php">Agendar</a></button>
+            
+            <button><a href="../View/quartos/EditarQuartos.php?id=11">Editar</a></button>
+            </div>
         </div>
     
->>>>>>> b5a5c7b8d5dc7135323fe74c2bbccf3531571ff4
     </div>
 
         <div class="descricao">
