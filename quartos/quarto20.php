@@ -75,8 +75,8 @@ HTML;
             display: block;
             height: auto;
             height: 50px;
-             width: 50px;
-             margin: 5px;
+            width: 50px;
+            margin: 5px;
         }
     </style>
     <link rel="stylesheet" href="../css/quarto-individual.css">
@@ -86,8 +86,8 @@ HTML;
 
     <?php
 
-if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
-   echo '<nav>
+    if (isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com') {
+        echo '<nav>
     <div class="menu">
 
       <div class="menulogo">
@@ -106,8 +106,8 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
         </ul>
       </div>
     </div>';
-}else{
-  echo '<nav>
+    } else {
+        echo '<nav>
     <div class="menu">
 
       <div class="menulogo">
@@ -125,66 +125,66 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
         </ul>
       </div>
     </div>';
-}
+    }
 
 
-    if(isset($_SESSION['nome'])){
-            echo "<a href = '../View/Usuario/exibirUsuario.php' class='cadastro'><img src='../img/logo-cadastro-feito.png'</a>" . "Seja bem-vindo(a), " . htmlspecialchars($_SESSION['nome']) . "!";
-        }elseif(!isset($_SESSION['nome'])){
-            echo "<a href = '../View/Usuario/cadastrarUsuario.php'class='cadastro'><img src='../img/logo-cadastro.png'></a>";
-         
-        }
-        ?>
-  </nav>
+    if (isset($_SESSION['nome'])) {
+        echo "<a href = '../View/Usuario/exibirUsuario.php' class='cadastro'><img src='../img/logo-cadastro-feito.png'</a>" . "Seja bem-vindo(a), " . htmlspecialchars($_SESSION['nome']) . "!";
+    } elseif (!isset($_SESSION['nome'])) {
+        echo "<a href = '../View/Usuario/cadastrarUsuario.php'class='cadastro'><img src='../img/logo-cadastro.png'></a>";
 
-                </ul>
-            </div>
-        </div>
+    }
+    ?>
     </nav>
 
-    
-    <a href="../quartos.php" ><img src="../img/logo-voltar.png"></a>
+    </ul>
+    </div>
+    </div>
+    </nav>
+
+
+    <a href="../quartos.php"><img src="../img/logo-voltar.png"></a>
 
     <div class="product-container">
 
-     <div class="cont">
+        <div class="cont">
 
-        <div class="left-box">
-            <?php echo $imagens; ?>
-        </div>
-
-        <div class="titulo-valor">
-            <h1><?php echo $titulo; ?></h1>
-
-            <h3> R$ <?php echo $valor; ?></h3>
-            
-            <div class="botoes">
-
-             <button><a href="../View/reservadas/reserva.php">Agendar</a></button>
-            
-<?php        
-if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){   ?>
-            <button><a href="../View/quartos/EditarQuartos.php?id=11">Editar</a></button>
-            <?php } ?>
+            <div class="left-box">
+                <?php echo $imagens; ?>
             </div>
-        </div>
 
-    </div>
+            <div class="titulo-valor">
+                <h1><?php echo $titulo; ?></h1>
+
+                <h3> R$ <?php echo $valor; ?></h3>
+
+                <div class="botoes">
+
+                    <button><a href="../View/reservadas/reserva.php">Agendar</a></button>
+
+                    <?php
+                    if (isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com') { ?>
+                        <button><a href="../View/quartos/EditarQuartos.php?id=11">Editar</a></button>
+                    <?php } ?>
+                </div>
+            </div>
+
+        </div>
 
         <div class="descricao">
 
-        <h3>Descrição: </h3>
+            <h3>Descrição: </h3>
             <p><?php echo $descricao; ?></p>
         </div>
         <br>
 
     </div>
 
-    <footer >
-            <p>© 2025 Hotel Villa do Sol . Todos os direitos reservados.
-                Número de contato: (11) 1234-5678. Email:villasol@gmail.com
-            </p>
-    
+    <footer>
+        <p>© 2025 Hotel Villa do Sol . Todos os direitos reservados.
+            Número de contato: (11) 1234-5678. Email:villasol@gmail.com
+        </p>
+
     </footer>
 </body>
 
