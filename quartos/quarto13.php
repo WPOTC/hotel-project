@@ -1,31 +1,35 @@
 <?php
-$titulo = "Suíte Premium";
-$descricao = "Ambiente espaçoso e elegante.
-            Cama king size com roupa de cama de alta qualidade.
-            Banheiro privativo com amenities de luxo.
-            TV de tela plana com canais a cabo e streaming.
-            Ar-condicionado com controle individual.
-            Wi-Fi de alta velocidade gratuito.
-            Área de estar confortável com poltronas ou sofá.
-            Mini bar abastecido.
-            Cofre digital para objetos de valor.
-            Varanda ou janela panorâmica com vista privilegiada (quando aplicável).
-            Serviço de quarto 24 horas.
-            Máquina de café expresso ou chaleira elétrica.
-            Mesa de trabalho com iluminação adequada.
-            Decoração sofisticada e iluminação ambiente ajustável.
-            Serviço de limpeza diário.
+session_start();
+$titulo = "SUÍTE PREMIUM";
+$descricao = "Ambiente espaçoso e elegante. <br>
+            Cama king size com roupa de cama de alta qualidade. <br>
+            Banheiro privativo com amenities de luxo. <br>
+            TV de tela plana com canais a cabo e streaming. <br>
+            Ar-condicionado com controle individual. <br>
+            Wi-Fi de alta velocidade gratuito. <br>
+            Área de estar confortável com poltronas ou sofá. <br>
+            Mini bar abastecido. <br>
+            Cofre digital para objetos de valor. <br>
+            Varanda ou janela panorâmica com vista privilegiada (quando aplicável). <br>
+            Serviço de quarto 24 horas. <br>
+            Máquina de café expresso ou chaleira elétrica. <br>
+            Mesa de trabalho com iluminação adequada. <br>
+            Decoração sofisticada e iluminação ambiente ajustável. <br>
+            Serviço de limpeza diário. <br>
 ";
 $valor = "990,00";
 $imagens = <<<'HTML'
 <div class='slider'>
     <div class='slides'>
 
-<img src='../uploads/quartos/banheiro-premium.jpg' alt='Suíte Premium' style='width:200px; margin:10px; border-radius:8px;'><br>
+<img src='../uploads/quartos/suite-premium.jpg' alt='Suíte Premium' 
+style='margin:0px; border-radius:8px;'><br>
 
-<img src='../uploads/quartos/suite-premium.jpg' alt='Suíte Premium' style='width:200px; margin:10px; border-radius:8px;'><br>
+<img src='../uploads/quartos/suite-premium2.jpg' alt='Suíte Premium' 
+style='margin:0px; border-radius:8px;'><br>
 
-<img src='../uploads/quartos/suite-premium2.jpg' alt='Suíte Premium' style='width:200px; margin:10px; border-radius:8px;'><br>
+<img src='../uploads/quartos/banheiro-premium.jpg' alt='Suíte Premium' 
+style='margin:0px; border-radius:8px;'><br>
 
     </div>
 
@@ -79,17 +83,6 @@ HTML;
 </head>
 
 <body>
-<<<<<<< HEAD
-    <div class="container">
-        <button><a href="../View/reservadas/reserva/php?id=13">Editar</a></button>
-        <h1><?php echo $titulo; ?></h1>
-        <p><?php echo $descricao; ?></p>
-        <p><b>Valor:</b> R$ <?php echo $valor; ?></p>
-        <h3>Imagens:</h3>
-<?php echo $imagens; ?>
-<br>
-<a href="../index.php">⬅ Voltar à lista</a>
-=======
 
     <?php
 
@@ -98,7 +91,7 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
     <div class="menu">
 
       <div class="menulogo">
-        <img src="img/logo-2.png" alt="">
+        <img src="../img/logo-2.png" alt="">
       </div>
 
       <div class="textos-nav">
@@ -164,10 +157,14 @@ if(isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com'){
 
             <h3> R$ <?php echo $valor; ?></h3>
 
+            <div class="botoes">
+
             <button><a href="../View/reservadas/reserva/php">Agendar</a></button>
+
+            <button><a href="../View/quartos/EditarQuartos.php?id=11">Editar</a></button>
+            </div>
         </div>
     
->>>>>>> b5a5c7b8d5dc7135323fe74c2bbccf3531571ff4
     </div>
 
         <div class="descricao">

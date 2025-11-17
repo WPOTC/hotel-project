@@ -195,12 +195,17 @@ HTML;
         </div>
 
         <div class="titulo-valor">
-            <button><a href="../View/quartos/EditarQuartos.php?id={$idQuartos}">Editar</a></button>
-            <h1><?php echo \$titulo; ?></h1>
+        
+        <h1><?php echo \$titulo; ?></h1>
 
-            <h3> R$ <?php echo \$valor; ?></h3>
+        <h3> R$ <?php echo \$valor; ?></h3>
+
+        <div class='botoes'>
+            <button><a href="../View/quartos/EditarQuartos.php?id={$idQuartos}">Editar</a></button>
+            
 
             <button><a href="../View/reservadas/reserva.php">Agendar</a></button>
+            </div>
         </div>
 
     </div>
