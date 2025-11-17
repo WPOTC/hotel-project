@@ -91,13 +91,15 @@ session_start();
 
     <form method="POST">
 
-      <?php
+      <?php 
       // Conexão
       $pdo = new PDO("mysql:host=localhost;dbname=hotel", "root", "");
-      <?php
-      // Conexão
-      $pdo = new PDO("mysql:host=localhost;dbname=hotel", "root", "");
+      ?>
 
+      <?php
+      // Conexão
+      $pdo = new PDO("mysql:host=localhost;dbname=hotel", "root", "");
+      
       // Busca dos hóspedes
       $stmt = $pdo->query("SELECT id, nome, telefone FROM cadastro");
       $hospedes = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -108,7 +110,7 @@ session_start();
       // Busca dos quartos
       $stmt2 = $pdo->query("SELECT id, nome_quarto FROM quartos");
       $quartos = $stmt2->fetchAll(PDO::FETCH_ASSOC);
-      ?>
+      
       // Busca dos quartos
       $stmt2 = $pdo->query("SELECT id, nome_quarto FROM quartos");
       $quartos = $stmt2->fetchAll(PDO::FETCH_ASSOC);
@@ -129,15 +131,6 @@ session_start();
       </select>
       </select>
 
-      <br><br>
-      <br><br>
-
-
-
-
-      <!-- DATA -->
-      <label>Data da reserva:</label>
-      <input type="date" name="data" required>
       <!-- DATA -->
       <label>Data da reserva:</label>
       <input type="date" name="data" required>
@@ -169,6 +162,7 @@ session_start();
 
     $reserva = $_POST['data'];
     $idQuarto = $_POST['id_quarto'];
+    $idUsuario = $_POST['id_usuario'];
     $idUsuario = $_SESSION['id'];
     echo $idUsuario;
 
@@ -187,6 +181,6 @@ session_start();
       echo "Erro ao fazer reserva!";
     }
   }
-
+  }
 
   ?>

@@ -59,6 +59,7 @@ form {
   border-radius: 12px;
   box-shadow: 0 8px 25px rgba(0,0,0,0.1);
   border: 1px  #E9B150 solid ;
+  gap: 15px;
 }
 
 label {
@@ -100,6 +101,7 @@ button {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
+  margin-top: -60px;
 
 }
 
