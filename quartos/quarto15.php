@@ -78,6 +78,10 @@ HTML;
              width: 50px;
              margin: 5px;
         }
+
+        .titulo-valor h1{
+            margin-left: 100px;
+        }
     </style>
     <link rel="stylesheet" href="../css/quarto-individual.css">
 </head>
