@@ -21,24 +21,21 @@ class ReservasController
       return $Reservas;
    }
 
-   public function reservar($data, $id_quarto, $id_usuario)
+   public function reservar($data, $id_quarto)
 {
-    // Evita erro de sessão já iniciada
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
 
-    // Verifica login
     if (!isset($_SESSION['email'])) {
         die("Usuário não logado!");
     }
 
-    // Pegando ID do usuário logado
-    $idUsuario = $_SESSION['email'];
+    $id_usuario = $_SESSION['id'];
 
-    // Aqui você deve chamar o MODEL, não a si próprio!
     return $this->ReservasModel->reservar($data, $id_quarto, $id_usuario);
 }
+
 
 
    public function editar($data, $hospedes, $ocupacao, $id)
