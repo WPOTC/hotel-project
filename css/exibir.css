@@ -97,7 +97,9 @@ footer {
     background-color: #16360B;
     color: white;
     margin-top: 20px;
-    position: relative;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 

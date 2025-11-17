@@ -5,8 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reserva</title>
-  <link rel="stylesheet" href="../../css/reservar.css">
+  <link rel="stylesheet" href="../../css/reserva-quarto.css">
 </head>
+<script>
+  const user = JSON.parse(localStorage.getItem("usuarioLogado"))
+</script>
 <?php
 session_start();
 ?>
@@ -21,7 +24,7 @@ session_start();
     <div class="menu">
 
       <div class="menulogo">
-        <img src="../../img/logo-cadastro.png" alt="img">
+        <img src="../../img/logo-2.png" alt="img">
       </div>
 
       <div class="textos-nav">
@@ -34,8 +37,14 @@ session_start();
           <li><a href="View/reservadas/listarReserva.php">RESERVAS</a></li>
 
         </ul>
-      </div>
-    </div>';
+      </div>';
+       if (isset($_SESSION['nome'])) {
+    echo "<div class='usuario'><a href = '../../View/Usuario/exibirUsuario.php'class='cadastro'><img src='../../img/logo-cadastro-feito.png'></a>" . "Seja bem-vindo(a),  " . htmlspecialchars($_SESSION['nome']) . "!</div>";
+  } elseif (!isset($_SESSION['nome'])) {
+    echo "<div class='usuario'><a href = '../../View/Usuario/cadastrarUsuario.php' class='cadastro'><img src='../../img/logo-cadastro.png'></a></div>";
+
+  }
+  echo '</div>';
   } else {
     echo '<nav>
     <div class="menu">
@@ -53,51 +62,91 @@ session_start();
           <li><a href="../../sobre.php">SOBRE NÓS</a></li>
 
         </ul>
-      </div>
     </div>';
   }
 
+  if (isset($_SESSION['nome']) && $_SESSION['nome'] != 'Villa do Sol') {
+    echo "<div class='usuario'><a href = '../../View/Usuario/exibirUsuario.php'class='cadastro'><img src='../../img/logo-cadastro-feito.png'></a>" . "Seja bem-vindo(a),  " . htmlspecialchars($_SESSION['nome']) . "!</div>";
+  } elseif (!isset($_SESSION['nome'])) {
+    echo "<div class='usuario'><a href = '../../View/Usuario/cadastrarUsuario.php' class='cadastro'><img src='../../img/logo-cadastro.png'></a></div>";
 
-  if(isset($_SESSION['nome'])){
-            echo "<div class='usuario'><a href = 'View/Usuario/exibirUsuario.php'class='cadastro'><img src='img/logo-cadastro-feito.png'></a>" . "Seja bem-vindo(a),  " . htmlspecialchars($_SESSION['nome']) . "!</div>";
-        }elseif(!isset($_SESSION['nome'])){
-            echo "<a href = 'View/Usuario/cadastrarUsuario.php' class='cadastro'><img src='img/logo-cadastro.png'></a>";
-
-        }
-        ?>
-
+  }
+  ?>
+  </div>
+  </div>
   </nav>
+
+
+  <a href="../../quartos.php" class="cadastro-voltar"><img src="../../img/logo-voltar.png"></a>
+
+
   <section>
     <header>
       <img src="../../img/logo.png" alt="">
       <h1 class="cortitulo">Faça sua reserva</h1><br>
     </header>
+
+
+
+
     <form method="POST">
-      <input type="hidden" name="id_quarto" value="<?= $idQuarto ?>">
+
       <?php
-// Exemplo de conexão PDO
-$pdo = new PDO("mysql:host=localhost;dbname=hotel", "root", "");
+      // Conexão
+      $pdo = new PDO("mysql:host=localhost;dbname=hotel", "root", "");
+      <?php
+      // Conexão
+      $pdo = new PDO("mysql:host=localhost;dbname=hotel", "root", "");
 
-// Busca os dados dos hóspedes
-$stmt = $pdo->query("SELECT id, nome, telefone, data_inicio FROM hospedes");
-$hospedes = $stmt->fetchAll(PDO::FETCH_ASSOC);
-?>
+      // Busca dos hóspedes
+      $stmt = $pdo->query("SELECT id, nome, telefone FROM cadastro");
+      $hospedes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      // Busca dos hóspedes
+      $stmt = $pdo->query("SELECT id, nome, telefone FROM cadastro");
+      $hospedes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-<label for="hospede">Selecione o Hóspede:</label>
-<select name="hospede" id="hospede" class="form-control">
-    <option value="">-- Escolha --</option>
+      // Busca dos quartos
+      $stmt2 = $pdo->query("SELECT id, nome_quarto FROM quartos");
+      $quartos = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+      ?>
+      // Busca dos quartos
+      $stmt2 = $pdo->query("SELECT id, nome_quarto FROM quartos");
+      $quartos = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+      ?>
 
-    <?php foreach ($hospedes as $h): ?>
-        <option value="<?= $h['id'] ?>">
-            <?= $h['nome'] ?> - <?= $h['telefone'] ?> - <?= date('d/m/Y', strtotime($h['data_inicio'])) ?>
-        </option>
-    <?php endforeach; ?>
+      <!-- DROPDOWN DE QUARTOS -->
+      <label for="id_quarto">Selecione o Quarto:</label>
+      <select name="id_quarto" id="id" class="form-control" required>
+        <option value=""> - Escolha um quarto - </option>
+        <?php foreach ($quartos as $q): ?>
+          <option value="<?= $q['id'] ?>">
+            <?= $q['id'] ?> - <?= $q['nome_quarto'] ?>
+          </option>
+          <option value="<?= $q['id'] ?>">
+            <?= $q['id'] ?> - <?= $q['nome_quarto'] ?>
+          </option>
+        <?php endforeach; ?>
+      </select>
+      </select>
 
-</select>
+      <br><br>
+      <br><br>
 
+
+
+
+      <!-- DATA -->
       <label>Data da reserva:</label>
       <input type="date" name="data" required>
-      <button type="submit">Reservar</button>
+      <!-- DATA -->
+      <label>Data da reserva:</label>
+      <input type="date" name="data" required>
+
+      <br><br>
+      <br><br>
+
+      <button><a href='../View/reservadas/quartos.php'>Reservar</a></button>
+
     </form>
   </section>
   <footer class="footer-simple" role="contentinfo">
@@ -105,26 +154,39 @@ $hospedes = $stmt->fetchAll(PDO::FETCH_ASSOC);
       <p>© 2025 Hotel Villa do Sol . Todos os direitos reservados.
         Número de contato: (11) 1234-5678. Email:villasol@gmail.com
       </p>
-      <button><a href='../View/reservadas/reserva.php'>Agendar</a></button>
+
     </div>
   </footer>
   <?php
   require_once "C:/Turma1/xampp/htdocs/hotel-project/Controller/ReservasController.php";
   require_once "C:/Turma1/xampp/htdocs/hotel-project/DB/Database.php";
 
+
+
   $ReservasController = new ReservasController($pdo);
 
   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $reserva = $_POST['data'];
-    $idQuarto ='11' ;
-    $idUsuario = $_SESSION['nome'];
+    $idQuarto = $_POST['id_quarto'];
+    $idUsuario = $_SESSION['id'];
+    echo $idUsuario;
 
     $controller = new ReservasController($pdo);
-    if ($controller->reservar($reserva,  $idQuarto,$idUsuario )) {
+
+    if (!isset($_SESSION['nome'])) {
+      echo "Você precisa estar logado na sua conta antes de reservar.";
+    if (!isset($_SESSION['nome'])) {
+      echo "Você precisa estar logado na sua conta antes de reservar.";
+
+    } elseif (isset($_SESSION['nome'])) {
+    } elseif (isset($_SESSION['nome'])) {
+      $controller->reservar($reserva, $idQuarto, $idUsuario);
       echo "Reserva feita com sucesso!";
     } else {
       echo "Erro ao fazer reserva!";
     }
   }
+
+
   ?>

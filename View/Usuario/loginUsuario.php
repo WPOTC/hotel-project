@@ -60,18 +60,28 @@ $UsuarioController = new UsuarioController($pdo);
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-  
   $email = $_POST['email'];
- 
   $senha = $_POST['senha'];
- 
 
+  $usuario = $UsuarioController->loginUsuario($email,$senha);
 
-  if($UsuarioController -> loginUsuario($email,$senha) == NULL){
+  if($usuario == NULL){
 
-    echo "<script>alert('Login ou senha incorretos!');</script>";
-  }else{
-    header('Location: ../../index.php');}
+      echo "<script>alert('Login ou senha incorretos!');</script>";
+
+  } else {
+
+      // 🔥 SALVA NO LOCALSTORAGE E REDIRECIONA
+      echo "<script>
+            localStorage.setItem('usuarioLogado', JSON.stringify({
+                id: '{$usuario['id']}',
+                nome: '{$usuario['nome']}',
+                email: '{$usuario['email']}'
+            }));
+            window.location.href = '../../index.php';
+        </script>";
+      exit;
+  }
 }
 
 ?>
