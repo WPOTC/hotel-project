@@ -59,39 +59,9 @@ class ReservasModel
         $stmt = $this->pdo->prepare($sql);
         return $stmt->execute([$id]);
     }
-public function reservaExiste($data, $id_quarto, $id_usuario)
-{
-    $sql = "SELECT COUNT(*) FROM reservas 
-            WHERE data = :data 
-            AND id_quarto = :id_quarto 
-            AND id_usuario = :id_usuario";
 
-    $stmt = $this->pdo->prepare($sql);
-    $stmt->bindParam(':data', $data);
-    $stmt->bindParam(':id_quarto', $id_quarto);
-    $stmt->bindParam(':id_usuario', $id_usuario);
-    $stmt->execute();
 
-    return $stmt->fetchColumn() > 0; // retorna true se existir
-}
 
-public function reserva($data, $id_quarto, $id_usuario)
-{
-    // Impede duplicidade
-    if ($this->reservaExiste($data, $id_quarto, $id_usuario)) {
-        return false; // Já existe reserva igual
-    }
-
-    $sql = "INSERT INTO reservas (data, id_quarto, id_usuario)
-            VALUES (:data, :id_quarto, :id_usuario)";
-
-    $stmt = $this->pdo->prepare($sql);
-    $stmt->bindParam(':data', $data);
-    $stmt->bindParam(':id_quarto', $id_quarto);
-    $stmt->bindParam(':id_usuario', $id_usuario);
-
-    return $stmt->execute();
-}
 
 }
 

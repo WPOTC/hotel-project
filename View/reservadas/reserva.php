@@ -168,15 +168,6 @@ session_start();
       echo "Erro ao fazer reserva!";
     }
   }
-  $resultado = $controller->reservar($reserva, $idQuarto, $idUsuario);
-
-if ($resultado === "existe") {
-    echo "<script>alert('Você já possui uma reserva para este quarto nesta data!');</script>";
-} elseif ($resultado) {
-    echo "<script>alert('Reserva feita com sucesso!');</script>";
-} else {
-    echo "<script>alert('Erro ao fazer reserva!');</script>";
-}
 
   
 
