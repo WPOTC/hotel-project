@@ -73,32 +73,43 @@ session_start();
       <h1 class="cortitulo">Faça sua reserva</h1><br>
     </header>
     <form method="POST">
-      <input type="hidden" name="id_quarto" value="<?= $idQuarto ?>">
-      <?php
-// Exemplo de conexão PDO
-$pdo = new PDO("mysql:host=localhost;dbname=hotel", "root", "");
 
-// Busca os dados dos hóspedes
-$stmt = $pdo->query("SELECT id, nome, telefone, data_inicio FROM hospedes");
-$hospedes = $stmt->fetchAll(PDO::FETCH_ASSOC);
-?>
+    <?php
+    // Conexão
+    $pdo = new PDO("mysql:host=localhost;dbname=hotel", "root", "");
 
-<label for="hospede">Selecione o Hóspede:</label>
-<select name="hospede" id="hospede" class="form-control">
-    <option value="">-- Escolha --</option>
+    // Busca dos hóspedes
+    $stmt = $pdo->query("SELECT id, nome, telefone FROM cadastro");
+    $hospedes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    <?php foreach ($hospedes as $h): ?>
-        <option value="<?= $h['id'] ?>">
-            <?= $h['nome'] ?> - <?= $h['telefone'] ?> - <?= date('d/m/Y', strtotime($h['data_inicio'])) ?>
-        </option>
-    <?php endforeach; ?>
+    // Busca dos quartos
+    $stmt2 = $pdo->query("SELECT id, nome_quarto FROM quartos");
+    $quartos = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+    ?>
 
-</select>
+    <!-- DROPDOWN DE QUARTOS -->
+    <label for="id_quarto">Selecione o Quarto:</label>
+    <select name="id_quarto" id="id" class="form-control" required>
+        <option value="">-- Escolha um quarto --</option>
+        <?php foreach ($quartos as $q): ?>
+            <option value="<?= $q['id'] ?>">
+                <?= $q['id'] ?> - <?= $q['nome_quarto'] ?>
+            </option>
+        <?php endforeach; ?>
+    </select>
 
-      <label>Data da reserva:</label>
-      <input type="date" name="data" required>
-      <button type="submit">Reservar</button>
-    </form>
+    <br><br>
+
+  
+
+    <!-- DATA -->
+    <label>Data da reserva:</label>
+    <input type="date" name="data" required>
+
+    <br><br>
+
+    <button type="submit">Reservar</button>
+</form> 
   </section>
   <footer class="footer-simple" role="contentinfo">
     <div class="container">
@@ -117,14 +128,21 @@ $hospedes = $stmt->fetchAll(PDO::FETCH_ASSOC);
   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $reserva = $_POST['data'];
-    $idQuarto ='11' ;
-    $idUsuario = $_SESSION['nome'];
+    $idQuarto = $_POST['id_quarto'];
+    $idUsuario = $_POST['id_usuario'];
 
     $controller = new ReservasController($pdo);
-    if ($controller->reservar($reserva,  $idQuarto,$idUsuario )) {
+
+    if(!isset($_SESSION['nome'])){
+            echo "Você precisa estar logado na sua conta antes de reservar.";
+
+        }elseif(isset($_SESSION['nome'])) { 
+      $controller->reservar($reserva, $idQuarto, $idUsuario);
       echo "Reserva feita com sucesso!";
     } else {
       echo "Erro ao fazer reserva!";
     }
   }
+
+
   ?>
