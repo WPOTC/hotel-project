@@ -74,6 +74,7 @@ HTML;
              width: 50px;
              margin: 5px;
         }
+
     </style>
     <link rel="stylesheet" href="../css/quarto-individual.css">
 </head>

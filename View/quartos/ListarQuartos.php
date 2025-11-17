@@ -10,6 +10,11 @@ global $pdo;
 $QuartosController = new QuartosController($pdo);
 $Quartos = $QuartosController->listarQuartosComImagens();
 
+usort($Quartos, function($a, $b) {
+    return strcmp($a['nome_quarto'], $b['nome_quarto']);
+});
+
+
 // Percorre e exibe os quartos
 //foreach ($Quartos as $quarto) {
 //    echo $quarto['id'] . "<br>";
