@@ -23,6 +23,7 @@ class QuartosModel {
                 qi.caminho_imagem
             FROM quartos q
             INNER JOIN quartos_imagens qi ON q.id = qi.quartos_id
+            ORDER BY q.nome_quarto ASC
         ");
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);

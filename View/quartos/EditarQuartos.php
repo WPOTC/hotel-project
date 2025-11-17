@@ -24,11 +24,11 @@ if (isset($_GET['id'])) {
         // Chama o método no controller com os parâmetros corretos
         $QuartosController->editarQuartos($nome, $descricao, $valor, $id);
 
-        header("Location: ListarQuartos.php");
+        header("Location: ../../quartos.php");
         exit;
     }
 } else {
-    header("Location: ListarQuartos.php");
+    header("Location: ../../quartos.php");
     exit;
 }
 ?>
