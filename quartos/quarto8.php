@@ -155,7 +155,7 @@ HTML;
                 <h3> R$ <?php echo $valor; ?></h3>
 
                 <div class="botoes">
-                    <button><a href="../View/reservadas/reserva/php">Agendar</a></button>
+                    <button><a href="../View/reservadas/reserva.php">Agendar</a></button>
                     <?php
                     if (isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com') { ?>
                         <button><a href="../View/quartos/EditarQuartos.php?id=11">Editar</a></button>

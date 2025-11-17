@@ -100,16 +100,11 @@ session_start();
       // Conexão
       $pdo = new PDO("mysql:host=localhost;dbname=hotel", "root", "");
       
-      // Busca dos hóspedes
-      $stmt = $pdo->query("SELECT id, nome, telefone FROM cadastro");
-      $hospedes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+ 
       // Busca dos hóspedes
       $stmt = $pdo->query("SELECT id, nome, telefone FROM cadastro");
       $hospedes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-      // Busca dos quartos
-      $stmt2 = $pdo->query("SELECT id, nome_quarto FROM quartos");
-      $quartos = $stmt2->fetchAll(PDO::FETCH_ASSOC);
       
       // Busca dos quartos
       $stmt2 = $pdo->query("SELECT id, nome_quarto FROM quartos");
@@ -124,12 +119,10 @@ session_start();
           <option value="<?= $q['id'] ?>">
             <?= $q['id'] ?> - <?= $q['nome_quarto'] ?>
           </option>
-          <option value="<?= $q['id'] ?>">
-            <?= $q['id'] ?> - <?= $q['nome_quarto'] ?>
-          </option>
+         
         <?php endforeach; ?>
       </select>
-      </select>
+      
 
       <!-- DATA -->
       <label>Data da reserva:</label>
@@ -138,7 +131,7 @@ session_start();
       <br><br>
       <br><br>
 
-      <button><a href='../View/reservadas/quartos.php'>Reservar</a></button>
+      <button type="submit">Reservar</button>
 
     </form>
   </section>
@@ -162,18 +155,12 @@ session_start();
 
     $reserva = $_POST['data'];
     $idQuarto = $_POST['id_quarto'];
-    $idUsuario = $_POST['id_usuario'];
     $idUsuario = $_SESSION['id'];
-    echo $idUsuario;
 
     $controller = new ReservasController($pdo);
 
     if (!isset($_SESSION['nome'])) {
       echo "Você precisa estar logado na sua conta antes de reservar.";
-    if (!isset($_SESSION['nome'])) {
-      echo "Você precisa estar logado na sua conta antes de reservar.";
-
-    } elseif (isset($_SESSION['nome'])) {
     } elseif (isset($_SESSION['nome'])) {
       $controller->reservar($reserva, $idQuarto, $idUsuario);
       echo "Reserva feita com sucesso!";
@@ -181,6 +168,6 @@ session_start();
       echo "Erro ao fazer reserva!";
     }
   }
-  }
+  
 
   ?>
