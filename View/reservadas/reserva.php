@@ -74,6 +74,27 @@ session_start();
     </header>
     <form method="POST">
       <input type="hidden" name="id_quarto" value="<?= $idQuarto ?>">
+      <?php
+// Exemplo de conexão PDO
+$pdo = new PDO("mysql:host=localhost;dbname=hotel", "root", "");
+
+// Busca os dados dos hóspedes
+$stmt = $pdo->query("SELECT id, nome, telefone, data_inicio FROM hospedes");
+$hospedes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+
+<label for="hospede">Selecione o Hóspede:</label>
+<select name="hospede" id="hospede" class="form-control">
+    <option value="">-- Escolha --</option>
+
+    <?php foreach ($hospedes as $h): ?>
+        <option value="<?= $h['id'] ?>">
+            <?= $h['nome'] ?> - <?= $h['telefone'] ?> - <?= date('d/m/Y', strtotime($h['data_inicio'])) ?>
+        </option>
+    <?php endforeach; ?>
+
+</select>
+
       <label>Data da reserva:</label>
       <input type="date" name="data" required>
       <button type="submit">Reservar</button>
@@ -84,6 +105,7 @@ session_start();
       <p>© 2025 Hotel Villa do Sol . Todos os direitos reservados.
         Número de contato: (11) 1234-5678. Email:villasol@gmail.com
       </p>
+      <button><a href='../View/reservadas/reserva.php'>Agendar</a></button>
     </div>
   </footer>
   <?php
@@ -95,9 +117,11 @@ session_start();
   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $reserva = $_POST['data'];
+    $idQuarto ='11' ;
+    $idUsuario = $_SESSION['nome'];
 
     $controller = new ReservasController($pdo);
-    if ($controller->reservar($data,  $idQuarto,$idUsuario )) {
+    if ($controller->reservar($reserva,  $idQuarto,$idUsuario )) {
       echo "Reserva feita com sucesso!";
     } else {
       echo "Erro ao fazer reserva!";
