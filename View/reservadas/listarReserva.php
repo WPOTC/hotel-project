@@ -61,12 +61,12 @@ if (isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com') {
 
 <main class="container">
 
-  <h2 class="titulo">Reservas Realizadas</h2>
+  <h2 class="titulo">Reservas Realizadas: </h2>
 
   <?php if (empty($reservas)): ?>
     <p class="titulo">Nenhuma reserva cadastrada.</p>
   <?php else: ?>
-    <table border="1" cellpadding="5" cellspacing="0" class="tabela-reservas">
+    <table border ="1" cellpadding="5" cellspacing="0" class="tabela-reservas">
       <thead>
         <tr>
           <th>ID</th>

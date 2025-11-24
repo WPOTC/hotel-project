@@ -184,7 +184,6 @@ nav a[href *="listarReserva"]{
 
 
 footer{
-  position: fixed;
   bottom: 0;
   width: 100%;
 }
@@ -196,4 +195,68 @@ footer p{
   text-align: center;
   padding: 20px;
   font-size: 14px;
+}
+
+
+.tabela-reservas {
+    width: 60%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    font-family: "Georgia", serif;
+    margin-left: 20%;
+    margin-bottom: 20px;
+}
+
+/* Cabeçalho */
+.tabela-reservas thead th {
+    background: #d4af37; /* Dourado */
+    color: #ffffff;
+    padding: 14px;
+    font-size: 18px;
+    text-align: left;
+    letter-spacing: 0.5px;
+}
+
+/* Linhas da tabela */
+.tabela-reservas tbody tr {
+    background: #fdfdfd;
+    transition: 0.3s ease;
+}
+
+.tabela-reservas tbody tr:nth-child(even) {
+    background: #f5f1e8; /* Bege suave luxuoso */
+}
+
+/* Hover elegante */
+.tabela-reservas tbody tr:hover {
+    background: #fff8d6;
+}
+
+/* Células */
+.tabela-reservas td {
+    padding: 12px 14px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Link de excluir */
+.tabela-reservas a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.tabela-reservas a:hover {
+    color: #ff0000;
+    text-decoration: underline;
+}
+
+.titulo{
+  color: #16360B;
+  text-align: center;
+ 
 }

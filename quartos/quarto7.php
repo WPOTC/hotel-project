@@ -81,8 +81,9 @@ HTML;
         }
 
          .titulo-valor h1{
-            margin-left: 100px;
+            margin-left: -15px;
         }
+
     </style>
     <link rel="stylesheet" href="../css/quarto-individual.css">
 </head>
