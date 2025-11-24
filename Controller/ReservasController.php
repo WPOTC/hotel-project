@@ -21,7 +21,7 @@ class ReservasController
       return $Reservas;
    }
 
-   public function reservar($data, $id_quarto)
+   public function reservar($data, $id_quarto , $id_usuario)
 {
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
@@ -30,8 +30,6 @@ class ReservasController
     if (!isset($_SESSION['email'])) {
         die("Usuário não logado!");
     }
-
-    $id_usuario = $_SESSION['id'];
 
     return $this->ReservasModel->reservar($data, $id_quarto, $id_usuario);
 }
