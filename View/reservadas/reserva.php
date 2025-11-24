@@ -34,7 +34,7 @@ session_start();
           <li><a href="../../index.php">INÍCIO</a></li>
           <li><a href="../../quartos.php">QUARTO</a></li>
           <li><a href="../../sobre.php">SOBRE NÓS</a></li>
-          <li><a href="View/reservadas/listarReserva.php">RESERVAS</a></li>
+          <li><a href="listarReserva.php">RESERVAS</a></li>
 
         </ul>
       </div>';
