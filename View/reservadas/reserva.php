@@ -138,21 +138,21 @@ session_start();
 
     $controller = new ReservasController($pdo);
 
-    if (!isset($_SESSION['nome'])) {
-      echo "Você precisa estar logado na sua conta antes de reservar.";
-
+  if (!isset($_SESSION['nome'])) {
+      echo " <div class= 'precisa-logar'> ⚙️ Você precisa estar logado na sua conta antes de reservar.</div>";
     } elseif (isset($_SESSION['nome'])) {
-      $statusreserva = $controller->reservar($reserva, $idQuarto, $idUsuario);
-
-      if ($statusreserva['status'] == false) {
-        echo $statusreserva['mensagem'];
-      } else {
-        echo $statusreserva['mensagem'];
-      }
+      $stats = $controller->reservar($reserva, $idQuarto, $idUsuario);
+  if($stats ['status'] == false){
+    echo"<div class = 'erro'> Este quarto já está reservado nesta data!</div>";
+  }else{
+    echo "<div class='sucesso'> ✅ Reserva feita com sucesso!</div>";
+  }
+     
     } else {
-      echo "Erro ao fazer reserva!";
+      echo "<div class = 'erro'> ❌Erro ao fazer reserva!</div>";
     }
   }
+  
 
 
   ?>
