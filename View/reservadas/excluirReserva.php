@@ -17,12 +17,11 @@ if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
     
-    $stmt = $pdo->prepare("DELETE FROM reservas WHERE id = :id");
-    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+    $stmt = $pdo->prepare("DELETE FROM reserva WHERE id_reserva = $id");
 
     if ($stmt->execute()) {
         echo "<h3>✅ Reserva excluída com sucesso!</h3>";
-        echo "<a href='listar_reservas.php'>Voltar à lista de reservas</a>";
+        echo "<a href='listarReserva.php'>Voltar à lista de reservas</a>";
     } else {
         echo "<h3>❌ Erro ao excluir a reserva.</h3>";
     }
