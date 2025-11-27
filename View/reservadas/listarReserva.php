@@ -52,7 +52,7 @@ if (isset($_SESSION['email']) && $_SESSION['email'] == 'v1ll4s0l@gmail.com') {
         </ul>
       </div>';
       if (isset($_SESSION['nome'])) {
-          echo "<div class='usuario'><a href='../Usuario/exibir' class='cadastro'>
+          echo "<div class='usuario'><a href='../Usuario/exibirUsuario.php' class='cadastro'>
           <img src='../../img/logo-cadastro-feito.png'></a>Seja bem-vindo(a), " . $_SESSION['nome'] . "!</div>";
       }
   echo '</div></nav>';
