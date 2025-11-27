@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 17/11/2025 às 15:36
+-- Tempo de geração: 27/11/2025 às 19:25
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -42,7 +42,8 @@ CREATE TABLE `cadastro` (
 
 INSERT INTO `cadastro` (`id`, `nome`, `email`, `telefone`, `cpf`, `senha`) VALUES
 (1, 'João Augusto Mergulhão Rosa', 'gutomergr.s@gmail.com', '18996065487', '54471694880', 'guto29-11G'),
-(2, 'Villa do Sol', 'v1ll4s0l@gmail.com', '18999999999', '1234567890', 'Adm!n2025');
+(2, 'Villa do Sol', 'v1ll4s0l@gmail.com', '18999999999', '1234567890', 'Adm!n2025'),
+(3, 'Ana Luisa', 'Analu@gmail', '11 99785652', '524626520', '1208');
 
 -- --------------------------------------------------------
 
@@ -137,6 +138,26 @@ CREATE TABLE `reserva` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Despejando dados para a tabela `reserva`
+--
+
+INSERT INTO `reserva` (`id_reserva`, `data`, `id_usuario`, `id_quarto`) VALUES
+(1, '5200-02-15', 2, 1),
+(2, '2002-02-15', 2, 2),
+(3, '2002-02-15', 2, 2),
+(4, '2002-02-15', 2, 2),
+(5, '2002-02-15', 2, 2),
+(6, '2002-02-15', 2, 2),
+(7, '2002-02-15', 2, 2),
+(8, '2002-02-15', 2, 2),
+(9, '2002-02-15', 2, 2),
+(10, '2002-02-15', 2, 2),
+(11, '2002-02-15', 2, 2),
+(12, '1999-12-07', 2, 5),
+(13, '2025-11-24', 3, 10),
+(15, '2222-02-15', 2, 2);
+
+--
 -- Índices para tabelas despejadas
 --
 
@@ -174,7 +195,7 @@ ALTER TABLE `reserva`
 -- AUTO_INCREMENT de tabela `cadastro`
 --
 ALTER TABLE `cadastro`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `quartos`
@@ -192,7 +213,7 @@ ALTER TABLE `quartos_imagens`
 -- AUTO_INCREMENT de tabela `reserva`
 --
 ALTER TABLE `reserva`
-  MODIFY `id_reserva` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_reserva` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
