@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once "C:/Turma1/xampp/htdocs/hotel-project/DB/Database.php";
 require_once "C:/Turma1/xampp/htdocs/hotel-project/Controller/CadastroController.php";
 

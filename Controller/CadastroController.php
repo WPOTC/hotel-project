@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 require_once "C:/Turma1/xampp/htdocs/hotel-project/Model/CadastroModel.php";  
 
 class UsuarioController{

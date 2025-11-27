@@ -8,9 +8,9 @@ $UsuarioController = new UsuarioController($pdo);
 if(isset($_GET['id'])){
     $id = $_GET['id'];
     $usuario = $UsuarioController->deletarUsuario($id);
-    header('Location: ../../index.php');
+    header('Location: exibirUsuario.php');
 }else{
-    header('Location: ../../index.php');
+    header('Location: exibirUsuario.php');
 }
 
 ?>

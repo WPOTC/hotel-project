@@ -1,12 +1,12 @@
 <?php
+if(session_status() === PHP_SESSION_NONE){
+    session_start();
+}
 
 require_once "C:/Turma1/xampp/htdocs/hotel-project/DB/Database.php";
 require_once "C:/Turma1/xampp/htdocs/hotel-project/Controller/CadastroController.php";
 
-session_start();
 $UsuarioController = new UsuarioController($pdo);
-
-
 
 ?>
 
@@ -16,7 +16,7 @@ $UsuarioController = new UsuarioController($pdo);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Usuário</title>
-    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/editarusuario.css">
 </head>
 <body>
 <nav>
@@ -41,16 +41,19 @@ $UsuarioController = new UsuarioController($pdo);
         </div>
   </nav>
 
-    <a href="../../index.php">Voltar</a>
+    <a href="../../index.php" img src="img/logo-voltar.png"></a>></a>
 
     
 
 
 <?php
 if(isset($_GET['id'])){
+    
     $id = $_GET['id'];
     $usuario = $UsuarioController->buscarUsuario($id);
     ?>
+
+<div class="cadastrado">
     <form method="post">
     <label for="nome">Nome: </label>
     <input type="text" name="nome" value="<?=$usuario['nome'];?>" required> <br>
@@ -68,7 +71,7 @@ if(isset($_GET['id'])){
     <input type="password" name="senha" value="<?=$usuario['senha'];?>" required> <br>
 
     <input type="submit" value="Salvar" onclick="return confirm('Tem certeza?')">
-</form>
+</form></div>
 </body>
 </html>
 
