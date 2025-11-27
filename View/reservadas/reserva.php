@@ -39,7 +39,7 @@ session_start();
     </div>';
   } else {
     echo '<nav>
-    <div class="menu">
+    <div class="menu-2">
 
       <div class="menulogo">
         <img src="../../img/logo-2.png" alt="">
